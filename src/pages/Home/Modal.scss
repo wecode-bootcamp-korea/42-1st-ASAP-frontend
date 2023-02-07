@@ -1,0 +1,72 @@
+.loginOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 50px;
+  z-index: 1000;
+  .loginModal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 50px;
+    z-index: 1000;
+    width: 600px;
+    height: 650px;
+    color: black;
+    img {
+      position: absolute;
+      cursor: pointer;
+      width: 15px;
+      top: 30px;
+      right: 30px;
+    }
+    .loginText {
+      font-size: 25px;
+    }
+    input {
+      border: none;
+      border-bottom: 1px solid #cccccc;
+      margin-top: 50px;
+      font-size: 18px;
+      padding-bottom: 6px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .loginBtn {
+      color: white;
+      background-color: #333333;
+      padding: 20px;
+      margin-top: 50px;
+      &:hover {
+        background-color: black;
+      }
+      &:disabled {
+        color: red;
+      }
+    }
+    .notMember {
+      font-size: 20px;
+      font-weight: 350;
+      margin-top: 30px;
+    }
+    .signupBtn {
+      color: black;
+      border: 1px solid #d6d5cb;
+      padding: 20px;
+      margin-top: 20px;
+      &:hover {
+        background-color: #333333;
+        color: #fffef2;
+      }
+    }
+  }
+}
