@@ -3,7 +3,7 @@ import './Footer.scss';
 
 function Footer() {
   return (
-    <div className="footerContainer">
+    <div className="Footer">
       <div className="topWrapper">
         <section className="communication">
           <h3 className="title">이솝 커뮤니케이션</h3>
@@ -65,10 +65,10 @@ function Footer() {
           <div className="devider" />
           <ul>
             <li className="text">
-              <a>문의하기</a>
+              <a href="temp.html">문의하기</a>
             </li>
             <li className="text">
-              <a>자주 묻는 질문</a>
+              <a href="temp.html">자주 묻는 질문</a>
               <img
                 alt="go"
                 className="upperArrow"
@@ -76,7 +76,7 @@ function Footer() {
               />
             </li>
             <li className="text">
-              <a>배송</a>
+              <a href="temp.html">배송</a>
               <img
                 alt="go"
                 className="upperArrow"
@@ -84,7 +84,7 @@ function Footer() {
               />
             </li>
             <li className="text">
-              <a>반품</a>
+              <a href="temp.html">반품</a>
               <img
                 alt="go"
                 className="upperArrow"
@@ -92,7 +92,7 @@ function Footer() {
               />
             </li>
             <li className="text">
-              <a>배송 조회하기</a>
+              <a href="temp.html">배송 조회하기</a>
               <img
                 alt="go"
                 className="upperArrow"
@@ -100,10 +100,10 @@ function Footer() {
               />
             </li>
             <li className="text">
-              <a>주문 내역</a>
+              <a href="temp.html">주문 내역</a>
             </li>
             <li className="text">
-              <a>이용 약관</a>
+              <a href="temp.html">이용 약관</a>
             </li>
           </ul>
         </section>
@@ -112,16 +112,16 @@ function Footer() {
           <div className="devider" />
           <ul>
             <li className="text">
-              <a>기업체 구매</a>
+              <a href="temp.html">기업체 구매</a>
             </li>
             <li className="text">
-              <a>페이셜 어포인트먼트</a>
+              <a href="temp.html">페이셜 어포인트먼트</a>
             </li>
             <li className="text">
-              <a>1:1 채팅 상담</a>
+              <a href="temp.html">1:1 채팅 상담</a>
             </li>
             <li className="text">
-              <a>린스 앤 리턴 캠페인</a>
+              <a href="temp.html">린스 앤 리턴 캠페인</a>
             </li>
           </ul>
         </section>
@@ -130,11 +130,15 @@ function Footer() {
           <div className="devider" />
           <div className="locationBox">
             <span className="locationText">배송:</span>
-            <a className="locationLink">대한민국</a>
+            <a href="temp.html" className="locationLink">
+              대한민국
+            </a>
           </div>
           <div className="locationBox">
             <span className="locationText">언어:</span>
-            <a className="locationLink">한국어</a>
+            <a href="temp.html" className="locationLink">
+              한국어
+            </a>
           </div>
         </section>
       </div>
@@ -145,16 +149,16 @@ function Footer() {
           <div className="devider" />
           <ul>
             <li className="text">
-              <a>기업체 구매</a>
+              <a href="temp.html">기업체 구매</a>
             </li>
             <li className="text">
-              <a>페이셜 어포인트먼트</a>
+              <a href="temp.html">페이셜 어포인트먼트</a>
             </li>
             <li className="text">
-              <a>1:1 채팅 상담</a>
+              <a href="temp.html">1:1 채팅 상담</a>
             </li>
             <li className="text">
-              <a>린스 앤 리턴 캠페인</a>
+              <a href="temp.html">린스 앤 리턴 캠페인</a>
             </li>
           </ul>
         </section>
@@ -163,25 +167,25 @@ function Footer() {
           <div className="devider" />
           <ul>
             <li className="text">
-              <a>브랜드 스토리</a>
+              <a href="temp.html">브랜드 스토리</a>
             </li>
             <li className="text">
-              <a>이솝 재단</a>
+              <a href="temp.html">이솝 재단</a>
             </li>
             <li className="text">
-              <a>채용</a>
+              <a href="temp.html">채용</a>
             </li>
             <li className="text">
-              <a>개인정보처리방침</a>
+              <a href="temp.html">개인정보처리방침</a>
             </li>
             <li className="text">
-              <a>영상정보처리기기 운영/관리 방침</a>
+              <a href="temp.html">영상정보처리기기 운영/관리 방침</a>
             </li>
             <li className="text">
-              <a>정품 인증</a>
+              <a href="temp.html">정품 인증</a>
             </li>
             <li className="text">
-              <a>쿠키 정책</a>
+              <a href="temp.html">쿠키 정책</a>
             </li>
           </ul>
         </section>
@@ -190,7 +194,7 @@ function Footer() {
           <div className="devider" />
           <ul>
             <li className="text">
-              <a>Instagram</a>
+              <a href="temp.html">Instagram</a>
               <img
                 alt="go"
                 className="upperArrow"
@@ -198,7 +202,7 @@ function Footer() {
               />
             </li>
             <li className="text">
-              <a>Twitter</a>
+              <a href="temp.html">Twitter</a>
               <img
                 alt="go"
                 className="upperArrow"
@@ -206,7 +210,7 @@ function Footer() {
               />
             </li>
             <li className="text">
-              <a>LinkedIn</a>
+              <a href="temp.html">LinkedIn</a>
               <img
                 alt="go"
                 className="upperArrow"
@@ -214,7 +218,7 @@ function Footer() {
               />
             </li>
             <li className="text">
-              <a>KaKao Plus Friend</a>
+              <a href="temp.html">KaKao Plus Friend</a>
               <img
                 alt="go"
                 className="upperArrow"
