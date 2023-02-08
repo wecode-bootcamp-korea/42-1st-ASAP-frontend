@@ -1,0 +1,132 @@
+.SliderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  z-index: 1;
+
+  .lines {
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+
+    .line1 {
+      position: absolute;
+      margin-top: 30px;
+      margin-bottom: 50px;
+      transition: ease 0.5s, ease-out 0.5s;
+      width: 500px;
+      border: 1px solid black;
+      z-index: 100;
+    }
+
+    .line2 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      margin-bottom: 50px;
+      border: 1px solid lightgray;
+      z-index: 1;
+    }
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 100px;
+
+    width: 100vw;
+
+    &:hover {
+      .leftArrow {
+        opacity: 1;
+        margin-left: 0;
+      }
+      .rightArrow {
+        opacity: 1;
+        margin-right: 0;
+      }
+    }
+
+    .leftArrow {
+      position: absolute;
+      width: 80px;
+      left: 0;
+      top: 40%;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      z-index: 1;
+      background-color: black;
+    }
+
+    .rightArrow {
+      position: absolute;
+      width: 80px;
+      right: 0;
+      top: 40%;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      z-index: 1;
+      background-color: black;
+    }
+
+    .carouselWrapper {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      margin: 0 auto;
+      overflow-x: hidden;
+
+      .carousel {
+        display: flex;
+        position: absolute;
+        transition: 0.5s;
+        gap: 30px;
+
+        .imgBox {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 400px;
+
+          .image {
+            width: 100px;
+            margin-top: 50px;
+          }
+
+          .image:hover ~ .text .recommendedItemName {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            cursor: pointer;
+          }
+        }
+
+        .recommendTitleBox {
+          width: 400px;
+          height: 400px;
+          margin-left: 150px;
+
+          p {
+            font-size: 40px;
+            color: #333333;
+            font-weight: 400;
+          }
+        }
+        .text {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          p {
+            margin: 5px 0;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}
