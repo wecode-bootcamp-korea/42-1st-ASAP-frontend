@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Modal from '../../pages/Home/Modal';
 import './Nav.scss';
 

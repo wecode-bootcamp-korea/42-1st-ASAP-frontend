@@ -1,0 +1,28 @@
+.filter-box {
+  display: flex;
+  width: 100%;
+  background-color: #ebeade;
+
+  .filter-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 250px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 300;
+
+    .filter-title {
+      margin-bottom: 20px;
+    }
+
+    .checkbox-wrapper {
+      line-height: 1.5;
+    }
+
+    .product-name {
+      margin-left: 10px;
+    }
+  }
+}

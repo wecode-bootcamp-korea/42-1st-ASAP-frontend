@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "img_url": "./images/product01.png",
+    "name": "아로마틱 핸드 워시",
+    "price": "￦46,000 원부터"
+  },
+  {
+    "id": 2,
+    "img_url": "./images/product07.png",
+    "name": "아로마틱 핸드 밤",
+    "price": "￦31,000 원부터"
+  },
+  {
+    "id": 3,
+    "img_url": "./images/product08.png",
+    "name": "레버런스 핸드 밤",
+    "price": "￦31,000 원부터"
+  },
+  {
+    "id": 4,
+    "img_url": "./images/product09.png",
+    "name": "레저렉션 핸드 밤",
+    "price": "￦31,000 원부터"
+  },
+  {
+    "id": 5,
+    "img_url": "./images/product10.png",
+    "name": "제라늄 핸드 밤",
+    "price": "￦31,000 원부터"
+  }
+]

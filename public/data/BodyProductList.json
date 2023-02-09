@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "img_url": "./images/product04.png",
+    "name": "바디 로션",
+    "price": "￦37,000 원부터"
+  },
+  {
+    "id": 2,
+    "img_url": "./images/product04.png",
+    "name": "바디 클랜저",
+    "price": "￦37,000 원부터"
+  },
+  {
+    "id": 3,
+    "img_url": "./images/product05.png",
+    "name": "바디 스크럽",
+    "price": "￦43,000 원부터"
+  },
+  {
+    "id": 4,
+    "img_url": "./images/product03.png",
+    "name": "바디 미스트",
+    "price": "￦32,000 원부터"
+  }
+]
