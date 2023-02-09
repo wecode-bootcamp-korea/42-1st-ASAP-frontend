@@ -21,6 +21,7 @@ const Nav = () => {
   const menuSelect = id => {
     setMenuSelected(id - 1);
   };
+  console.log(menuSelected);
 
   return (
     <>

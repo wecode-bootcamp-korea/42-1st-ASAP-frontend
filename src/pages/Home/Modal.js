@@ -37,7 +37,9 @@ const Modal = props => {
       <div className="loginModal" id="modalScroll">
         <img src="images/delete.png" onClick={() => setIsOpen(false)} alt="" />
         <div className="loginText">로그인</div>
+        <label className="label1" for="inputEmail" />
         <input
+          id="inputEmail"
           name="id"
           placeholder="이메일 주소"
           onChange={changeFormInput}

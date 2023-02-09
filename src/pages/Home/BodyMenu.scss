@@ -17,13 +17,6 @@
       display: flex;
       justify-content: space-evenly;
       margin: 120px 0px 0px 80px;
-      img {
-        position: absolute;
-        left: 60px;
-        top: 120px;
-        width: 120px;
-        margin-top: -15px;
-      }
       ul {
         li {
           margin-bottom: 20px;
@@ -35,6 +28,14 @@
           }
         }
       }
+      img {
+        position: absolute;
+        left: 60px;
+        top: 120px;
+        width: 120px;
+        margin-top: -15px;
+      }
+
       button {
         position: relative;
         background-color: transparent;
