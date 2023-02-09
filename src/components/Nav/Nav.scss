@@ -2,37 +2,53 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333333;
   height: 80px;
   padding: 0px 20px;
+  background-color: #252525;
+  z-index: 100;
   .navbar-left {
     display: flex;
-    list-style: none;
     height: 100%;
+    list-style: none;
+
     li {
       display: flex;
       align-items: center;
-      margin: 0px 14.404px 0px 0px;
-      font-size: 13.218px;
       height: 100%;
+      margin-right: 14.404px;
+      font-size: 13.218px;
       a {
         padding: 4px;
         color: #fffef2;
+        text-decoration: none;
         cursor: pointer;
+      }
+    }
+    .hiddenBtn {
+      display: none;
+    }
+    .closeBtn {
+      .menuClose {
+        padding: 5px;
+        border: 1px solid white;
+        &:hover {
+          border: 1px solid blue;
+          color: white;
+        }
       }
     }
   }
   .navbar-right {
     display: flex;
+    height: 100%;
     color: #fffef2;
     list-style: none;
-    height: 100%;
     li {
       display: flex;
       align-items: center;
+      height: 100%;
       margin: 0px 14.404px 0px 0px;
       font-size: 13.218px;
-      height: 100%;
       button {
         padding: 4px;
         border: none;

@@ -1,0 +1,79 @@
+.bodyMenuOn {
+  position: absolute;
+  display: flex;
+  top: 80px;
+  right: 0;
+  left: 0;
+  height: 100vw;
+  background-color: #ece3d3;
+  overflow-y: hidden;
+  overflow: hidden;
+  z-index: 50;
+
+  .bodyMenu-right {
+    width: 65%;
+
+    .right-container {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 120px 0px 0px 80px;
+      img {
+        position: absolute;
+        left: 60px;
+        top: 120px;
+        width: 120px;
+        margin-top: -15px;
+      }
+      ul {
+        li {
+          margin-bottom: 20px;
+          font-size: 15px;
+          font-weight: 400;
+          &:first-child {
+            font-size: 20px;
+            color: #ed0086;
+          }
+        }
+      }
+      button {
+        position: relative;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 0px;
+          height: 1px;
+          background-color: black;
+          transition: all 0.2s ease-in-out;
+          transition-duration: 0.25s;
+          opacity: 0;
+        }
+        &:hover:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .bodyMenu-imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 800px;
+    background: linear-gradient(180deg, pink, lightblue);
+    img {
+      position: absolute;
+      width: 100px;
+    }
+  }
+}
+.bodyMenuOff {
+  display: none;
+}

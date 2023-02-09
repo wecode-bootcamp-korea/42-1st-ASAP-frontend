@@ -4,10 +4,12 @@ import Home from './pages/Home/Home';
 import Product from './pages/ProductList/Product/Product';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import ProductList from './pages/ProductList/ProductList';
+import Nav from './components/Nav/Nav';
 
 function Router() {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />

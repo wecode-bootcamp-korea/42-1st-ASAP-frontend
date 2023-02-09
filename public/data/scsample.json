@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "image": "images/product01.png",
+    "product": "가나다",
+    "info": "abc"
+  },
+  {
+    "id": "2",
+    "image": "images/product04.png",
+    "product": "가나다",
+    "info": "abc"
+  },
+  {
+    "id": "3",
+    "image": "images/product05.png",
+    "product": "가나다",
+    "info": "abc"
+  },
+  {
+    "id": "4",
+    "image": "images/product06.png",
+    "product": "가나다",
+    "info": "abc"
+  }
+]

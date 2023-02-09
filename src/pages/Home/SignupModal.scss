@@ -1,0 +1,77 @@
+.signOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  overflow-y: scroll;
+  .signModal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+
+    padding: 50px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: black;
+    z-index: 999;
+    overflow-y: auto;
+    .arrow {
+      position: absolute;
+      left: 30px;
+      width: 20px;
+    }
+    .signUpText {
+      font-size: 25px;
+    }
+    .signUpAlram {
+      margin-top: 20px;
+      color: #666666;
+    }
+    .inputBox {
+      display: flex;
+      justify-content: space-between;
+      .firstInput {
+        width: 240px;
+      }
+      .secondInput {
+        width: 220px;
+      }
+    }
+    .checkBox {
+      input {
+        margin-right: 10px;
+      }
+    }
+    .terms {
+      height: 100px;
+      margin-top: 10px;
+      padding: 2px;
+      border: 1px solid;
+      overflow-y: scroll;
+    }
+    .signUpBtn {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #333333;
+      color: white;
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+}
+
+.signupClose {
+  display: none;
+  .modalClose {
+    display: none;
+  }
+}
