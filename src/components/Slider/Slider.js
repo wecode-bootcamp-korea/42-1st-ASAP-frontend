@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ItemCard from './ItemCard';
 import './Slider.scss';
 
 const IMG_WIDTH = 500;
@@ -8,6 +9,7 @@ const Slider = () => {
   const [move, setMove] = useState(0);
   const [progress, setProgress] = useState(0);
   const [recommends, setRecommends] = useState([]);
+
   const moveLeft = () => {
     if (move <= -IMG_WIDTH) {
       setMove(move => move + IMG_WIDTH);
@@ -75,18 +77,6 @@ const Slider = () => {
           className="line1"
         />
         <div className="line2" />
-      </div>
-    </div>
-  );
-};
-
-const ItemCard = ({ img, name, description }) => {
-  return (
-    <div className="imgBox">
-      <img src={img} className="image" alt="제품 사진" />
-      <div className="text">
-        <p className="recommendedItemName">{name}</p>
-        <p>{description}</p>
       </div>
     </div>
   );
