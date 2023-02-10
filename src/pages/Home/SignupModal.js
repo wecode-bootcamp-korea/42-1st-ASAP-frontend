@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import SignUpSuccess from './SignUpSuccess';
 import './SignupModal.scss';
 
 const SignupModal = props => {
   const { signUpOpen, setSignUpOpen, setIsOpen } = props;
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
   const [signUpForm, setSignUpForm] = useState({
     last_name: '',
     first_name: '',
@@ -83,17 +85,26 @@ const SignupModal = props => {
         </div>
         <button
           className="signUpBtn"
-          disabled={
-            !(
-              signUpForm.email.includes('@') &&
-              signUpForm.password.length > 5 &&
-              signUpForm.last_name > 0 &&
-              signUpForm.first_name > 0
-            )
-          }
+          // disabled={
+          //   !(
+          //     signUpForm.email.includes('@') &&
+          //     signUpForm.password.length > 5 &&
+          //     signUpForm.last_name > 0 &&
+          //     signUpForm.first_name > 0
+          //   )
+          // }
+          onClick={() => {
+            setSignUpSuccess(true);
+          }}
         >
           회원가입
         </button>
+        <SignUpSuccess
+          signUpSuccess={signUpSuccess}
+          setIsOpen={setIsOpen}
+          setSignUpOpen={setSignUpOpen}
+          first_name={signUpForm.first_name}
+        />
       </div>
     </div>
   );

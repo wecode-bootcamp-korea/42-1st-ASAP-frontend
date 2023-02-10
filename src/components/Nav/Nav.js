@@ -21,19 +21,27 @@ const Nav = () => {
   const menuSelect = id => {
     setMenuSelected(id - 1);
   };
-  console.log(menuSelected);
 
   return (
     <>
-      <div className="navbar">
+      <div
+        className="navbar"
+        style={{
+          backgroundColor: menuOpen ? '#fffef2' : '#252525',
+          borderBottom: menuOpen ? '1px solid #D6D5CB' : 'none',
+        }}
+      >
         <ul className="navbar-left">
           {navMenuList.map(info => (
             <li key={info.id}>
               <a
+                style={{ color: !menuOpen ? '#fffef2' : '#252525' }}
                 href="#none"
                 className="bodyBtn"
                 onClick={() => {
-                  setMenuOpen(menuOpen => !menuOpen);
+                  if (!menuOpen) {
+                    setMenuOpen(menuOpen => !menuOpen);
+                  }
                   menuSelect(info.id);
                 }}
               >
@@ -43,6 +51,7 @@ const Nav = () => {
           ))}
           <li>
             <a
+              style={{ color: !menuOpen ? '#fffef2' : '#252525' }}
               className={menuOpen ? 'closeBtn' : 'hiddenBtn'}
               onClick={() => setMenuOpen(menuOpen => !menuOpen)}
               href="#none"
@@ -54,7 +63,10 @@ const Nav = () => {
         <ul className="navbar-right">
           <li>
             <div className="modalBtn">
-              <button onClick={() => setIsOpen(prev => !prev)}>
+              <button
+                onClick={() => setIsOpen(prev => !prev)}
+                style={{ color: !menuOpen ? '#fffef2' : '#252525' }}
+              >
                 {loginStatus}
               </button>
               <Modal
@@ -67,7 +79,9 @@ const Nav = () => {
             </div>
           </li>
           <li>
-            <button>카트</button>
+            <button style={{ color: !menuOpen ? '#fffef2' : '#252525' }}>
+              카트
+            </button>
           </li>
         </ul>
       </div>

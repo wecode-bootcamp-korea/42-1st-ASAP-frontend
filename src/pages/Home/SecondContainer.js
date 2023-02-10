@@ -7,9 +7,12 @@ const SecondContainer = () => {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    fetch('/data/scsample.json')
+    fetch('http://10.58.52.162:3000/')
       .then(res => res.json())
-      .then(data => setProductList(data));
+      .then(data => {
+        setProductList(data.data);
+        console.log(productList);
+      });
   }, []);
 
   return (

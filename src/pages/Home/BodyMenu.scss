@@ -11,20 +11,26 @@
   z-index: 50;
 
   .bodyMenu-right {
-    width: 65%;
+    width: 75%;
 
     .right-container {
-      display: flex;
-      justify-content: space-evenly;
       margin: 120px 0px 0px 80px;
-      ul {
-        li {
-          margin-bottom: 20px;
-          font-size: 15px;
-          font-weight: 400;
-          &:first-child {
-            font-size: 20px;
-            color: #ed0086;
+      .ulContainer {
+        display: flex;
+        margin-left: 150px;
+
+        ul {
+          margin-left: 30px;
+          .ulTitle {
+            margin-bottom: 30px;
+          }
+          .link {
+            li {
+              color: black;
+              margin-bottom: 20px;
+              font-size: 14px;
+              font-weight: 300;
+            }
           }
         }
       }
@@ -34,6 +40,7 @@
         top: 120px;
         width: 120px;
         margin-top: -15px;
+        cursor: pointer;
       }
 
       button {
@@ -66,7 +73,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 30%;
     height: 800px;
     background: linear-gradient(180deg, pink, lightblue);
     img {

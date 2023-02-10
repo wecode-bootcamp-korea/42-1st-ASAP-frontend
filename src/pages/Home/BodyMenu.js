@@ -20,7 +20,6 @@ const BodyMenu = ({ menuOpen, menuSelected, setMenuOpen, navMenuList }) => {
       className="bodyMenuOn"
       style={{
         backgroundColor: navMenuList[menuSelected].color,
-        borderTop: menuOpen ? '2px solid red' : null,
       }}
     >
       <div className="bodyMenu-right">
@@ -30,14 +29,24 @@ const BodyMenu = ({ menuOpen, menuSelected, setMenuOpen, navMenuList }) => {
             onClick={() => setMenuOpen(menuOpen => !menuOpen)}
             alt="logo"
           />
-
-          {navMenuList[menuSelected].detail.map(con => (
-            <ul key={con.id}>
-              {con.head.map(inside => (
-                <li key={inside.id}>{inside.content}</li>
-              ))}
-            </ul>
-          ))}
+          <div className="ulContainer">
+            {navMenuList[menuSelected].detail.map(con => (
+              <ul key={con.id}>
+                <div className="ulTitle">{con.title}</div>
+                {con.list.map(inside => (
+                  <Link
+                    to={inside.path}
+                    key={inside.id}
+                    onClick={() => setMenuOpen(menuOpen => !menuOpen)}
+                    style={{ textDecoration: 'none' }}
+                    className="link"
+                  >
+                    <li key={inside.id}>{inside.content}</li>
+                  </Link>
+                ))}
+              </ul>
+            ))}
+          </div>
 
           <div />
         </div>
