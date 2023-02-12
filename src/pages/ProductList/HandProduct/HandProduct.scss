@@ -1,6 +1,6 @@
 .product-photo {
-  width: 160px;
-  height: 400px;
+  width: 140px;
+  height: 340px;
   background-size: cover;
 }
 
@@ -16,6 +16,13 @@
     align-items: center;
     margin-right: 120px;
 
+    &:hover {
+      .description-title {
+        text-decoration: underline;
+        text-underline-offset: 0.3rem;
+      }
+    }
+
     .button {
       text-decoration: none;
       color: #000;
@@ -28,4 +35,10 @@
 .description {
   margin-top: 20px;
   text-align: center;
+
+  .description-title {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

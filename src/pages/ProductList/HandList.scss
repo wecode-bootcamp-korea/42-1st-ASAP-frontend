@@ -1,6 +1,7 @@
 .hand-body {
   width: 100%;
   background-color: #f6f5e8;
+  position: relative;
 
   .logo {
     width: 150px;
@@ -13,20 +14,6 @@
     margin-left: 40px;
     padding-bottom: 25px;
     font-size: 30px;
-  }
-  .container-box {
-    .h-product-title {
-      margin-left: 40px;
-      font-size: 30px;
-    }
-
-    .h-product-description {
-      margin-top: 30px;
-      margin-bottom: 30px;
-      margin-left: 40px;
-      line-height: 1.5;
-      font-size: 15px;
-    }
   }
 }
 

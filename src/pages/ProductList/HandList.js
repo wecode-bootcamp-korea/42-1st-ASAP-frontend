@@ -1,17 +1,56 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import FilterNav from './Filter/FilterNav';
+import FilterModal from './Filter/FilterModal';
 import HandProductList from './HandProductList/HandProductList';
+import FilterButton from './FilterButton/FilterButton';
 import './HandList.scss';
 
 export default function HandList() {
+  const [handCardList, setHandCardList] = useState([]);
+  const [checkdeValues, setCheckdeValues] = useState(null);
+  const [isModal, setIsModal] = useState(false);
+
+  const ModalHandler = () => {
+    setIsModal(prev => !prev);
+  };
+
+  // useEffect(() => {
+  //   fetch('http://10.58.52.162:3000/products/body-hand/hand', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setHandCardList(data.data);
+  //     });
+  // }, []);
+
+  useEffect(() => {
+    fetch('./data/ProductData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setHandCardList(data);
+      });
+  }, []);
+
+  const onChange = e => {
+    setCheckdeValues(e.target.value);
+  };
+
   return (
     <>
       <section className="hand-body">
         <img className="logo" src="./images/asaplogo.png" alt="logo-img" />
         <h1 className="title">핸드</h1>
-        <FilterNav />
-        <HandProductList />
+        <FilterNav onChange={onChange} />
+        {isModal && <FilterModal setIsModal={setIsModal} onChange={onChange} />}
+        <FilterButton ModalHandler={ModalHandler} isModal={isModal} />
+        <HandProductList
+          handCardList={handCardList}
+          checkdeValues={checkdeValues}
+        />
       </section>
       <section className="present-body">
         <div className="present-wrapper">

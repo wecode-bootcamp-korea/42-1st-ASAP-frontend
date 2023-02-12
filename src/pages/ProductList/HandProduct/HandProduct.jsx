@@ -6,12 +6,12 @@ export default function Product() {
   const [HandtListData, setHandListData] = useState([]);
 
   useEffect(() => {
-    fetch('./data/HandProductList.json', {
+    fetch('./data/BodyData.json', {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        setHandListData(data);
+        setHandListData(data[0].data);
       });
   }, []);
 
@@ -26,7 +26,7 @@ export default function Product() {
               alt="product-img"
             />
             <div className="description">
-              <h3>{handtListData.name}</h3>
+              <h3 className="description-title">{handtListData.name}</h3>
               <span>{handtListData.price}</span>
             </div>
           </Link>
