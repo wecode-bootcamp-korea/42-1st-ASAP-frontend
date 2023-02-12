@@ -9,15 +9,15 @@ export default function FilterModal({ onChange }) {
           <h3 className="filter-title">{category.category}</h3>
           {category.subcategory.map(subcategory => (
             <div className="checkbox-wrapper" key={subcategory.id}>
-              <input
-                id={subcategory.title}
-                type="checkbox"
-                onChange={onChange}
-                value={subcategory.title}
-                className="checkbox"
-                name={subcategory.title}
-              />
-              <label htmlFor={subcategory.title} className="checkbox">
+              <label className="checkbox">
+                <input
+                  id={subcategory.title}
+                  type="checkbox"
+                  onChange={onChange}
+                  value={subcategory.title}
+                  className="checkbox"
+                  name={subcategory.title}
+                />
                 {subcategory.title}
               </label>
             </div>

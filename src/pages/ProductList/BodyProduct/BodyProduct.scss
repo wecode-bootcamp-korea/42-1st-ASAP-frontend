@@ -1,3 +1,8 @@
+@mixin itemCenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .body-color {
   background-color: #ebeade;
   padding-bottom: 100px;
@@ -9,9 +14,7 @@
   }
 
   .product-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include itemCenter;
     line-height: 1.5;
 
     .product-box {

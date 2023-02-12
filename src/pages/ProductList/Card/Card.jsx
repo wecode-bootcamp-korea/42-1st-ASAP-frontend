@@ -9,7 +9,16 @@ export default function HandCard({ cardData }) {
 
   useEffect(() => {
     if (loading)
-      fetch('./data/ProductData.json')
+      fetch('', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify({
+          title: 'update title',
+          content: '서버에 요청할때 담아서 보내는 정보',
+        }),
+      })
         .then(res => res.json())
         .then(data => {
           setInputValue(data);
@@ -48,7 +57,7 @@ export default function HandCard({ cardData }) {
           </p>
           <div className="radio-box">
             {JSON.parse(cardData.options).map((element, index) => (
-              <>
+              <label className="radio-label" key={index}>
                 <input
                   id={element.size}
                   type="radio"
@@ -57,14 +66,8 @@ export default function HandCard({ cardData }) {
                   onChange={handleChangeValue}
                   defaultChecked={index === 0}
                 />
-                <label
-                  className="radio-label"
-                  key={index}
-                  htmlFor={element.size}
-                >
-                  {element.size}
-                </label>
-              </>
+                {element.size}
+              </label>
             ))}
           </div>
         </div>

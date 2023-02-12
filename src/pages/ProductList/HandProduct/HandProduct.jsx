@@ -4,7 +4,6 @@ import './HandProduct.scss';
 
 export default function Product() {
   const [HandtListData, setHandListData] = useState([]);
-
   useEffect(() => {
     fetch('./data/BodyData.json', {
       method: 'GET',
