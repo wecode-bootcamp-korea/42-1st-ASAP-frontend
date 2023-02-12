@@ -1,11 +1,22 @@
-import { Link } from 'react-router-dom';
-import { productListData } from './Data/ProductData';
+import { Link, useNavigate } from 'react-router-dom';
+import { productListData } from './Data/ProductListData';
 import HandProduct from './HandProduct/HandProduct';
 import BodyProduct from './BodyProduct/BodyProduct';
 import Nav from '../../components/Nav/Nav';
 import './ProductList.scss';
 
 const ProductList = () => {
+  const navigate = useNavigate();
+  const onClick = list => {
+    if (list === '핸드') {
+      return navigate('/hand-list');
+    } else if (list === '바디') {
+      return navigate('/body-list');
+    } else if (list === '모든 바디 & 핸드') {
+      return navigate('/product-list');
+    }
+  };
+
   return (
     <>
       <Nav />
@@ -31,17 +42,12 @@ const ProductList = () => {
         <div className="filter-wrapper">
           <div className="filter-nav">
             <ul className="filter-nav-list">
-              <span>
-                <button className="filter-nav-button" type="button">
-                  모든 바디 & 핸드
-                </button>
-              </span>
               {productListData.map(productListData => (
                 <button
                   className="filter-nav-button"
                   type="button"
                   key={productListData.id}
-                  to="/"
+                  onClick={() => onClick(productListData.prductList)}
                 >
                   <li>{productListData.prductList}</li>
                 </button>
@@ -60,7 +66,7 @@ const ProductList = () => {
               손에 수분과 영양을 공급하고 부드럽게 가꿔줍니다.
               <br />
             </p>
-            <Link className="see-all" to="/">
+            <Link className="see-all" to="/hand-list">
               핸드 모두보기&#40;5&#41;
               <img
                 className="see-all-arrow"
@@ -82,7 +88,7 @@ const ProductList = () => {
               깨끗하고 부드러운 피부를 유지하도록 도와줍니다.
               <br />
             </p>
-            <Link className="see-all" to="">
+            <Link className="see-all" to="/body-list">
               바디 모두보기&#40;4&#41;
               <img
                 className="see-all-arrow"
@@ -90,8 +96,8 @@ const ProductList = () => {
                 alt="see-all-arrow"
               />
             </Link>
-            <BodyProduct />
           </div>
+          <BodyProduct />
         </section>
         <section className="scent-body">
           <div className="scent-wrapper">
