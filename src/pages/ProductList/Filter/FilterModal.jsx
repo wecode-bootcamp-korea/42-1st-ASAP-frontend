@@ -1,57 +1,29 @@
-import { scentListData } from '../Data/ScentData';
-import { priceListData } from '../Data/PriceData';
-import { typeListData } from '../Data/TypeData';
+import { FilterData } from '../Data/FilterData';
 import './FilterModal.scss';
-import { useState } from 'react';
 
-export default function FilterModal() {
-  const [checkedList, setcheckedList] = useState([]);
-
-  const oncheckedElment = (checked, item) => {
-    if (checked) {
-      setcheckedList([...checkedList, item]);
-    } else if (!checked) {
-      setcheckedList(checkedList.filter(el => el !== item));
-    }
-  };
-
+export default function FilterModal({ onChange }) {
   return (
     <div className="filter-box">
-      <div className="filter-checkbox">
-        <h3 className="filter-title">아로마</h3>
-        {scentListData.map(scentListData => (
-          <div className="checkbox-wrapper" key={scentListData.id}>
-            <input
-              type="checkbox"
-              onChange={oncheckedElment}
-              value={scentListData.data}
-            />
-            <label className="product-name">{scentListData.scent}</label>
-          </div>
-        ))}
-      </div>
-      <div className="filter-checkbox">
-        <h3 className="filter-title">가격 범위</h3>
-        {priceListData.map(priceListData => (
-          <div className="checkbox-wrapper" key={priceListData.id}>
-            <input type="checkbox" onChange={oncheckedElment} />
-            <label className="product-name">{priceListData.price}</label>
-          </div>
-        ))}
-      </div>
-      <div className="filter-checkbox">
-        <h3 className="filter-title">제형 타입</h3>
-        {typeListData.map(typeListData => (
-          <div className="checkbox-wrapper" key={typeListData.id}>
-            <input
-              className="checkbox"
-              type="checkbox"
-              onChange={oncheckedElment}
-            />
-            <label className="product-name">{typeListData.type}</label>
-          </div>
-        ))}
-      </div>
+      {FilterData.map(category => (
+        <div className="filter-checkbox" key={category.id}>
+          <h3 className="filter-title">{category.category}</h3>
+          {category.subcategory.map(subcategory => (
+            <div className="checkbox-wrapper" key={subcategory.id}>
+              <input
+                id={subcategory.title}
+                type="checkbox"
+                onChange={onChange}
+                value={subcategory.title}
+                className="checkbox"
+                name={subcategory.title}
+              />
+              <label htmlFor={subcategory.title} className="checkbox">
+                {subcategory.title}
+              </label>
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
