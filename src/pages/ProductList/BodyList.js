@@ -15,8 +15,18 @@ export default function BodyList() {
     setIsModal(prev => !prev);
   };
 
+  // useEffect(() => {
+  //   fetch('http://10.58.52.169:3000/products/2/13', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setBodyCardList(data.data);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('http://10.58.52.169:3000/products/2/13', {
+    fetch('./data/MockData.json', {
       method: 'GET',
     })
       .then(res => res.json())

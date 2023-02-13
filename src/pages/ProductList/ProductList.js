@@ -5,8 +5,14 @@ import BodyProduct from './BodyProduct/BodyProduct';
 import Nav from '../../components/Nav/Nav';
 import ProductBox from './ProductBox/ProductBox';
 import './ProductList.scss';
+import { useEffect, useState } from 'react';
 
 const ProductList = () => {
+  const [allProductData, setAllProductData] = useState([]);
+
+  const HandData = allProductData.filter(el => el.sub_category === '핸드');
+  const BodyData = allProductData.filter(el => el.sub_category === '바디');
+
   const navigate = useNavigate();
   const onClick = list => {
     if (list === '핸드') {
@@ -17,6 +23,27 @@ const ProductList = () => {
       return navigate('/product-list');
     }
   };
+  // GET
+  // getProductsByMainCategory
+  // useEffect(() => {
+  //   fetch('./data/MockData.json', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setHandListData(data.data);
+  //     });
+  // }, []);
+
+  useEffect(() => {
+    fetch('./data/MockData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setAllProductData(data.data);
+      });
+  }, []);
 
   return (
     <>
@@ -70,7 +97,7 @@ const ProductList = () => {
               손에 수분과 영양을 공급하고 부드럽게 가꿔줍니다.
               <br />
             </ProductBox>
-            <HandProduct />
+            <HandProduct HandData={HandData} />
           </div>
         </section>
         <section className="body-color">
@@ -88,7 +115,7 @@ const ProductList = () => {
               <br />
             </ProductBox>
           </div>
-          <BodyProduct />
+          <BodyProduct BodyData={BodyData} />
         </section>
         <section className="scent-body">
           <div className="scent-wrapper">

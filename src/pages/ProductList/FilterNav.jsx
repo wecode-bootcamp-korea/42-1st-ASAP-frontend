@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { productListData } from './Data/ProductListData';
 import './FilterNav.scss';
 
-export default function FilterNav({ onChange }) {
+export default function FilterNav() {
   const navigate = useNavigate();
 
   const onClick = list => {
