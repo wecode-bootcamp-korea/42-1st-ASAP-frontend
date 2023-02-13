@@ -34,19 +34,16 @@ const LoginModal = props => {
       .then(response => response.json())
       .then(response => {
         console.log(response);
+        alert('로그인 되셨습니다');
+        setIsOpen(false);
+        setFormData({ email: '', password: '' });
+        setLoginStatus('로그아웃');
       });
   };
 
   const changeFormInput = ({ target }) => {
     const { name, value } = target;
     setFormData({ ...formData, [name]: value });
-  };
-
-  const alertLogin = () => {
-    alert('로그인 되셨습니다');
-    setIsOpen(false);
-    setFormData({ email: '', password: '' });
-    setLoginStatus('로그아웃');
   };
 
   if (!isOpen) return null;
