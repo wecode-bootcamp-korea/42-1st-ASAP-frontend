@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import { MenuContext } from '../../components/Nav/MenuModal/Hide';
 import FirstContainer from './FirstContainer/FirstContainer';
 import SecondContainer from './SecondContainer/SecondContainer';
-import { MenuContext } from '../../components/Nav/MenuModal/Hide';
 
 import './Home.scss';
 

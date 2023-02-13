@@ -31,13 +31,22 @@ const LoginModal = props => {
         password: formData.password,
       }),
     })
-      .then(response => response.json())
       .then(response => {
-        console.log(response);
-        alert('로그인 되셨습니다');
-        setIsOpen(false);
-        setFormData({ email: '', password: '' });
-        setLoginStatus('로그아웃');
+        if (response.ok === true) {
+          return response.json('통신실패');
+        }
+        throw new Error();
+      })
+      .catch(error => console.log(error))
+      .then(data => {
+        if (data.result) {
+          alert('로그인 되셨습니다');
+          setIsOpen(false);
+          setFormData({ email: '', password: '' });
+          setLoginStatus('로그아웃');
+        } else {
+          alert('아이디 혹은 비밀번호를 확인해주세요!');
+        }
       });
   };
 

@@ -12,8 +12,6 @@ const SignupModal = props => {
     password: '',
   });
 
-  console.log(signUpForm);
-
   const signUpCondition =
     signUpForm.email.includes('@') &&
     signUpForm.password.length > 5 &&
@@ -35,7 +33,6 @@ const SignupModal = props => {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         setSignUpSuccess(true);
       });
   };

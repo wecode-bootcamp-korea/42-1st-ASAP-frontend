@@ -7,7 +7,6 @@
       {
         "title": "카테고리",
         "list": [
-          { "content": "카테고리", "id": 1, "path": "/#none" },
           { "content": "스킨 케어 모두 보기", "id": 2, "path": "/#none" },
           { "content": "클렌저", "id": 3, "path": "/#none" },
           { "content": "각질 제거 ", "id": 4, "path": "/#none" },
@@ -26,7 +25,6 @@
       {
         "title": "피부타입",
         "list": [
-          { "content": "피부타입", "id": 14, "path": "/#none" },
           { "content": "중성", "id": 15, "path": "/#none" },
           { "content": "건성", "id": 16, "path": "/#none" },
           { "content": "지성", "id": 17, "path": "/#none" },
@@ -37,7 +35,6 @@
       {
         "title": "레인지",
         "list": [
-          { "content": "레인지 ", "id": 19, "path": "/#none" },
           { "content": "파슬리 씨드", "id": 20, "path": "/#none" },
           { "content": "스킨케어 플러스", "id": 21, "path": "/#none" }
         ],
@@ -46,7 +43,6 @@
       {
         "title": "사랑받는 제품",
         "list": [
-          { "content": "사랑받는 제품", "id": 22, "path": "/#none" },
           {
             "content": "루센트 페이셜 컨센트레이트",
             "id": 23,
@@ -71,7 +67,6 @@
       {
         "title": "카테고리",
         "list": [
-          { "content": "카테고리", "id": 26, "path": "/#none" },
           {
             "content": "바디 & 핸드 모두 보기",
             "id": 27,
@@ -84,16 +79,12 @@
       },
       {
         "title": "레인지",
-        "list": [
-          { "content": "레인지", "id": 30, "path": "/#none" },
-          { "content": "제라늄 리프", "id": 31, "path": "/#none" }
-        ],
+        "list": [{ "content": "제라늄 리프", "id": 31, "path": "/#none" }],
         "id": 6
       },
       {
         "title": "데일리 에센셜",
         "list": [
-          { "content": "데일리 에센셜 ", "id": 32, "path": "/#none" },
           { "content": "레저렉션 아로마틱 핸드밤", "id": 33, "path": "/#none" },
           { "content": "레저렉션 아로마틱 워시", "id": 34, "path": "/#none" },
           { "content": "레버런스 듀엣", "id": 35, "path": "/#none" }
@@ -110,7 +101,6 @@
       {
         "title": "카테고리",
         "list": [
-          { "content": "카테고리", "id": 36, "path": "/#none" },
           { "content": "헤어 모두 보기", "id": 37, "path": "/#none" },
           { "content": "샴푸", "id": 38, "path": "/#none" },
           { "content": "컨디셔너", "id": 39, "path": "/#none" },
@@ -122,7 +112,6 @@
       {
         "title": "조화로운 셀렉션",
         "list": [
-          { "content": "조화로운 셀렉션", "id": 42, "path": "/#none" },
           { "content": "샴푸", "id": 43, "path": "/#none" },
           { "content": "컨디셔너", "id": 44, "path": "/#none" },
           { "content": "테임 헤어 세럼 ", "id": 45, "path": "/#none" }
@@ -139,7 +128,6 @@
       {
         "title": "향수",
         "list": [
-          { "content": "향수", "id": 46, "path": "/#none" },
           { "content": "향수 모두 보기", "id": 47, "path": "/#none" },
           { "content": "이더시스", "id": 48, "path": "/#none" },
           { "content": "미라세티", "id": 49, "path": "/#none" },
@@ -155,7 +143,6 @@
       {
         "title": "향수 아로마",
         "list": [
-          { "content": "향수 아로마", "id": 56, "path": "/#none" },
           { "content": "플로럴", "id": 57, "path": "/#none" },
           { "content": "프레쉬 ", "id": 58, "path": "/#none" },
           { "content": "우디", "id": 59, "path": "/#none" },
@@ -165,16 +152,12 @@
       },
       {
         "title": "레인지",
-        "list": [
-          { "content": "레인지", "id": 61, "path": "/#none" },
-          { "content": "아더토피아", "id": 62, "path": "/#none" }
-        ],
+        "list": [{ "content": "아더토피아", "id": 62, "path": "/#none" }],
         "id": 12
       },
       {
         "title": "신제품",
         "list": [
-          { "content": "신제품", "id": 63, "path": "/#none" },
           { "content": "이더시스 오 드 퍼퓸", "id": 64, "path": "/#none" }
         ],
         "id": 13
@@ -189,7 +172,6 @@
       {
         "title": "카테고리",
         "list": [
-          { "content": "카테고리", "id": 65, "path": "/#none" },
           { "content": "홈 모두 보기", "id": 66, "path": "/#none" },
           { "content": "홈", "id": 67, "path": "/#none" },
           { "content": "문학", "id": 68, "path": "/#none" },
@@ -200,7 +182,6 @@
       {
         "title": "신제품",
         "list": [
-          { "content": "신제품", "id": 70, "path": "/#none" },
           { "content": "브론즈 인센스 홀더", "id": 71, "path": "/#none" },
           { "content": "사라시나 아로마틱 인센스", "id": 72, "path": "/#none" },
           { "content": "무라사키 아로마틱 인센스", "id": 73, "path": "/#none" }
@@ -217,7 +198,6 @@
       {
         "title": "카테고리",
         "list": [
-          { "content": "카테고리", "id": 74, "path": "/#none" },
           {
             "content": "키트 & 여행 제품 모두 보기",
             "id": 75,
@@ -233,7 +213,6 @@
       {
         "title": "신제품",
         "list": [
-          { "content": "신제품", "id": 80, "path": "/#none" },
           { "content": "인더스트리어스", "id": 81, "path": "/#none" },
           { "content": "콘그루어스", "id": 82, "path": "/#none" },
           { "content": "이그니어스", "id": 83, "path": "/#none" }
@@ -249,7 +228,6 @@
       {
         "title": "기프트 가이드",
         "list": [
-          { "content": "기프트 가이드", "id": 84, "path": "/#none" },
           { "content": "전체 기프트", "id": 85, "path": "/#none" },
           { "content": "시즈널 기프트 키트", "id": 86, "path": "/#none" },
           { "content": "이솝에서 사랑받는 제품들", "id": 87, "path": "/#none" },
@@ -265,7 +243,6 @@
       {
         "title": "감각적인 축하",
         "list": [
-          { "content": "감각적인 축하", "id": 94, "path": "/#none" },
           { "content": "인더스트리어스", "id": 95, "path": "/#none" },
           { "content": "이더시스 오 드 퍼퓸", "id": 96, "path": "/#none" },
           { "content": "레저렉션 듀엣", "id": 97, "path": "/#none" }
@@ -280,16 +257,12 @@
     "detail": [
       {
         "title": "더 아테네움",
-        "list": [
-          { "content": "더 아테네움", "id": 98, "path": "/#none" },
-          { "content": "모두보기", "id": 99, "path": "/#none" }
-        ],
+        "list": [{ "content": "모두보기", "id": 99, "path": "/#none" }],
         "id": 20
       },
       {
         "title": "최신뉴스",
         "list": [
-          { "content": "최신뉴스", "id": 100, "path": "/#none" },
           { "content": "정원에서의 사색", "id": 101, "path": "/#none" },
           { "content": "섬세한 눈가 피부 관리법", "id": 102, "path": "/#none" },
           {
@@ -309,7 +282,6 @@
       {
         "title": "회사 소개",
         "list": [
-          { "content": "회사 소개", "id": 106, "path": "/#none" },
           { "content": "브랜드 스토리", "id": 107, "path": "/#none" },
           { "content": "채용", "id": 108, "path": "/#none" },
           { "content": "이솝 재단", "id": 109, "path": "/#none" },
@@ -320,7 +292,6 @@
       {
         "title": "철학",
         "list": [
-          { "content": "철학", "id": 111, "path": "/#none" },
           { "content": "디자인", "id": 112, "path": "/#none" },
           { "content": "제품", "id": 113, "path": "/#none" }
         ],
