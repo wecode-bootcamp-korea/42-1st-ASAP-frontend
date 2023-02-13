@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Footer';
 import Slider from '../../components/Slider/Slider';
+import RadioBox from './RadioBox';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
+  const [detailData, setDetailData] = useState([]);
+  const [optionState, setOptionState] = useState(true);
+  // const [sizeArr, setSizeArr] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/detailData.json')
+      .then(res => res.json())
+      .then(data => setDetailData(data.data[0]));
+  }, []);
+
+  const sizeChoice = '';
+
+  // useEffect(() => {
+  //   fetch('http://10.58.52.169:3000/products/detail/5')
+  //     .then(res => res.json())
+  //     .then(data => setDetailData(data.data[0]));
+  // }, []);
+
+  const onChangeOption = () => setOptionState(prev => !prev);
+
+  // useEffect(() => {
+  //   setSizeArr(detailData.options);
+  //   if (detailData.options) {
+  //     console.log(detailData.options[0]);
+  //   }
+  // }, [setSizeArr, detailData.options]);
+
   return (
     <div className="productDetail">
       <div className="topWrapper">
@@ -15,7 +43,7 @@ const ProductDetail = () => {
               <img
                 className="productImg1"
                 alt="productimg"
-                src="./images/product01.png"
+                src={detailData.image_url}
               />
             </div>
           </div>
@@ -23,33 +51,65 @@ const ProductDetail = () => {
             <div className="detailWrapper">
               <ul className="categoryList">
                 <li>
-                  <a className="category_a">스킨</a>
+                  <a className="category_a">{detailData.main_category}</a>
                 </li>
                 <li className="categoryDot">
-                  <a className="category_b">하이드레이터</a>
+                  <a className="category_b">{detailData.sub_category}</a>
                 </li>
               </ul>
-              <h2 className="productName">루센트 페이셜 컨센트레이트</h2>
+              <h2 className="productName">{detailData.name}</h2>
               <div className="productDetail">
-                <p>
-                  비타민 C 유도체가 풍부한 가벼운 레이어링 세럼으로 보습과
-                  컨디셔닝, 그리고 피부 지탱 성분이 복합적으로 블렌딩 되어
-                  피부에 수분과 영양을 공급하고 균형을 잡아줍니다.
-                </p>
+                <p>{detailData.description}</p>
               </div>
               <div className="descriptionWrapper">
                 <dl className="textLists">
-                  <dt>피부 타입</dt>
-                  <dd>대부분의 피부 타입</dd>
                   <dt>사용감</dt>
-                  <dd>매끄러움, 수분 공급, 매트한 마무리</dd>
+                  <dd>
+                    {detailData.feeling_of_use &&
+                      detailData.feeling_of_use.join(', ')}
+                  </dd>
+                  <dt>향</dt>
+                  <dd>{detailData.scents && detailData.scents.join(', ')}</dd>
                   <dt>주요 성분</dt>
-                  <dd>로즈, 소듐 아스코빌 포스페이트, 나이아신아마이드</dd>
+                  <dd>{detailData.main_ingredient}</dd>
                   <dt>사이즈</dt>
-                  <dd>60ml</dd>
+                  <dd className="radioBoxContainer">
+                    <div className="RadioBox">
+                      <input
+                        type="radio"
+                        id="option01"
+                        name="sizeText"
+                        className="radioBtn"
+                        onChange={onChangeOption}
+                        checked={optionState === true}
+                      />
+                      <label for="option01">
+                        {detailData.options && detailData.options[0].size}
+                      </label>
+
+                      <input
+                        type="radio"
+                        id="option02"
+                        name="sizeText"
+                        className="radioBtn"
+                        onChange={onChangeOption}
+                      />
+                      <label for="option02">
+                        {detailData.options && detailData.options[1].size}
+                      </label>
+                    </div>
+                  </dd>
+                  <dd className="radioBoxContainer" />
                 </dl>
               </div>
-              <btn className="addCart">카트에 추가하기 - 140,000원</btn>
+              <button className="addCart">
+                <span>
+                  카트에 추가하기&nbsp;-&nbsp;₩
+                  {optionState
+                    ? detailData.options && detailData.options[0].price
+                    : detailData.options && detailData.options[1].price}
+                </span>
+              </button>
             </div>
           </div>
         </div>
@@ -83,17 +143,20 @@ const ProductDetail = () => {
           <div className="howToContainer">
             <span className="smallTitle">사용법</span>
             <p className="howToDetail">
-              세안 후 토너를 바른 피부에 사용합니다. 선호하는 이솝
-              하이드레이터와 섞어 더 집중적으로 수분을 공급할 수 있습니다.
+              {detailData.guides && detailData.guides[0].usage_description}
             </p>
 
             <dl className="howToBox">
               <dt className="howToTitle">사용량</dt>
-              <dd className="howToText">반 티스푼</dd>
+              <dd className="howToText">
+                {detailData.guides && detailData.guides[0].usage_amount}
+              </dd>
               <dt className="howToTitle">텍스처</dt>
-              <dd className="howToText">가벼운 무게감의 세럼</dd>
-              <dt className="howToTitle">향</dt>
-              <dd className="howToText">마일드, 플로럴</dd>
+              <dd className="howToText">
+                {detailData.guides && detailData.guides[0].texture}
+              </dd>
+              <dt className="howToTitle">질감</dt>
+              <dd className="howToText">{detailData.formulation}</dd>
             </dl>
           </div>
         </div>

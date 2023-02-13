@@ -1,0 +1,28 @@
+.notice {
+  font-size: 30px;
+}
+.paymentStep01 {
+  display: flex;
+  flex-direction: column;
+  .warning {
+    margin-left: 10px;
+    margin-top: 8px;
+    color: red;
+    font-size: 15px;
+  }
+
+  .btnGo {
+    padding: 20px 20px;
+    width: 250px;
+    margin-top: 50px;
+    border: 0px;
+    background-color: #333333;
+    color: lightgray;
+
+    &:hover {
+      transition: 0.5s;
+      opacity: 1;
+      background-color: black;
+    }
+  }
+}

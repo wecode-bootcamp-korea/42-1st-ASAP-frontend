@@ -1,8 +1,5 @@
-햐body {
+body {
   background-color: #fffef0;
-}
-
-div {
 }
 
 $default-font-color: #585858;
@@ -87,6 +84,16 @@ $default-font-weight: 100;
               margin-bottom: 10px;
             }
           }
+
+          .radioBoxContainer {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            .radioBtn {
+              accent-color: black;
+            }
+          }
         }
       }
     }
@@ -94,11 +101,17 @@ $default-font-weight: 100;
       display: block;
       padding: 25px;
       width: 450px;
-      background-color: black;
+      background-color: #363636;
+      border-width: 0px;
       font-size: 13px;
       font-weight: $default-font-weight;
       text-align: center;
       color: white;
+
+      &:hover {
+        background-color: black;
+        transition: 1s;
+      }
     }
   }
 

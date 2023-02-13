@@ -1,21 +1,21 @@
 .Payment {
   display: flex;
   flex-direction: row;
+  background-color: #e8e7db;
 
   .left {
     display: flex;
     flex-direction: row;
-    padding-top: 150px;
-    padding-right: 100px;
+    padding: 150px 50px;
     width: 60%;
 
     .logoWrapper {
-      width: 40%;
+      width: 30%;
+      position: relative;
 
       .logo {
         position: absolute;
         width: 100px;
-        top: 130px;
         left: 40px;
       }
     }
@@ -23,81 +23,8 @@
     .contextWrapper {
       display: flex;
       flex-direction: column;
+      padding-top: 20px;
       width: 100%;
-
-      .notice {
-        font-size: 30px;
-      }
-
-      #inputEmail {
-        margin-top: 70px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-        width: 100%;
-        font-size: 30px;
-        background-color: transparent;
-        border: 0px;
-        border-bottom: 1px solid lightgray;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      #inputEmailFalse {
-        margin-top: 70px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-        width: 100%;
-        font-size: 30px;
-        background-color: transparent;
-        border: 0px;
-        border-bottom: 1px solid red;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      .labelEmail,
-      #inputEmail:placeholder-shown + label {
-        position: absolute;
-        top: 252px;
-        margin-left: 10px;
-        font-size: 30px;
-        color: gray;
-      }
-
-      #inputEmail:focus + label,
-      #inputEmailFalse:focus + label,
-      #inputEmail:not(placeholder-shown) + label {
-        color: gray;
-        font-size: 12px;
-        top: 230px;
-        transition: 0.2s;
-      }
-
-      .warning {
-        margin-left: 10px;
-        margin-top: 8px;
-        color: red;
-        font-size: 15px;
-      }
-    }
-
-    .btnEmail {
-      padding: 20px 20px;
-      width: 250px;
-      margin-top: 50px;
-      border: 0px;
-      background-color: #333333;
-      color: lightgray;
-
-      &:hover {
-        transition: 0.5s;
-        opacity: 1;
-        background-color: black;
-      }
     }
   }
 }
@@ -110,7 +37,7 @@
   padding-top: 150px;
   padding-right: 50px;
   padding-left: 50px;
-  background-color: #ebeade;
+  background-color: #d5d4c6;
 
   .paymentOverview {
     padding: 0px 20px;

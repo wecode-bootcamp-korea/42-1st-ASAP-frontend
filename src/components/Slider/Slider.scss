@@ -1,7 +1,3 @@
-a {
-  color: lightgray;
-  text-decoration: none;
-}
 .SliderContainer {
   display: flex;
   flex-direction: column;
@@ -11,9 +7,9 @@ a {
   z-index: 1;
 
   .lines {
-    overflow: hidden;
     position: relative;
     width: 80%;
+    overflow: hidden;
 
     .line1 {
       position: absolute;
@@ -41,7 +37,6 @@ a {
     align-items: center;
     position: relative;
     margin-top: 100px;
-
     width: 100vw;
 
     &:hover {
@@ -57,13 +52,13 @@ a {
 
     .leftArrow {
       position: absolute;
-      width: 80px;
       left: 0;
       top: 40%;
+      width: 80px;
+      background-color: black;
       opacity: 0;
       transition: all 0.5s ease-in-out;
       z-index: 1;
-      background-color: black;
     }
 
     .rightArrow {

@@ -1,33 +1,65 @@
 import React, { useState, useEffect } from 'react';
+import PaymentStep01 from './PaymentStep01';
+import PaymentStep03 from './PaymentStep03';
+import PaymentStep04 from './PaymentStep04';
+
 import './Payment.scss';
+import { isCompositeComponent } from 'react-dom/test-utils';
 
 function Payment() {
-  const [inputs, setInputs] = useState({ email: '' });
-  const [inputStyle, setInputStyle] = useState('inputEmail');
+  const [inputs, setInputs] = useState({
+    이메일: '',
+    성: '',
+    이름: '',
+    전화번호: '',
+    주소: '',
+    배송요청사항: '',
+    포장요청사항: '',
+  });
+  const [inputStyle, setInputStyle] = useState('inputTrue');
+  const [isEmailValid, setIsEmailVaild] = useState(false);
+  const [isNameValid, setIsNameValid] = useState(false);
+  const [isAddressValid, setIsAddressValid] = useState(false);
 
-  const { email } = inputs;
+  const { 이메일, 성, 이름, 전화번호, 주소, 배송요청사항, 포장요청사항 } =
+    inputs;
 
   const displayText = e => {
     const { value, name } = e.target;
     setInputs({ ...inputs, [name]: value });
-    setInputStyle('inputEmail');
+    setInputStyle('inputTrue');
+    console.log(inputs.주문요청사항);
   };
-
-  const onClick = () => {
-    if (inputs.email.includes('@')) {
-      setInputStyle('inputEmail');
+  const onClickEmail = e => {
+    e.preventDefault();
+    if (inputs.이메일.includes('@')) {
+      setInputStyle('inputTrue');
+      setIsEmailVaild(true);
     } else {
-      setInputStyle('inputEmailFalse');
-      setInputs({ email: '' });
+      setInputStyle('inputFalse');
+      setInputs({ 이메일: '', 성: '', 이름: '' });
     }
   };
 
-  const handleClickOutside = () => {
-    if (inputs.email.includes('@')) {
-      setInputStyle('inputEmail');
+  const onClickName = () => {
+    if (inputs.성 && inputs.이름) {
+      setIsNameValid(true);
+      setIsEmailVaild(false);
     } else {
-      setInputStyle('inputEmailFalse');
-      setInputs({ email: '' });
+      setIsEmailVaild(false);
+    }
+  };
+
+  const onClickAddress = () =>
+    inputs.주소.valueOf && inputs.전화번호.valueOf && setIsAddressValid(true);
+
+  const handleClickOutside = () => {
+    if (inputs.이메일.includes('@')) {
+      setInputStyle('inputTrue');
+      setIsEmailVaild(true);
+    } else {
+      setInputStyle('inputFalse');
+      setInputs({ 이메일: '', 성: '', 이름: '', 전화번호: '', 주소: '' });
     }
   };
 
@@ -43,24 +75,33 @@ function Payment() {
           <img alt="logo" className="logo" src="./images/asaplogo.png" />
         </div>
         <div className="contextWrapper">
-          <h2 className="notice">주문자 정보를 입력해주세요</h2>
-          <input
-            name="email"
-            type="text"
-            placeholder=" "
-            id={inputStyle}
-            value={email}
-            onChange={displayText}
-          />
-          <label className="labelEmail" for={inputStyle}>
-            이메일 주소
-          </label>
-          {inputStyle === 'inputEmailFalse' ? (
-            <span className="warning">올바른 이메일을 입력해주세요</span>
+          {isNameValid ? null : (
+            <PaymentStep01
+              value={(성, 이름, 전화번호, 주소, 이메일)}
+              inputStyle={inputStyle}
+              element={(성, 이름, 전화번호, 주소, 이메일)}
+              displayText={displayText}
+              isEmailValid={isEmailValid}
+              onClickEmail={onClickEmail}
+              onClickName={onClickName}
+            />
+          )}
+
+          {isNameValid ? (
+            <PaymentStep03
+              value={(성, 이름, 전화번호, 주소, 이메일)}
+              inputStyle={inputStyle}
+              element={(성, 이름, 전화번호, 주소, 이메일)}
+              displayText={displayText}
+              isEmailValid={isEmailValid}
+              isAddressValid={isAddressValid}
+              onClickAddress={onClickAddress}
+            />
           ) : null}
-          <button className="btnEmail" onClick={onClick}>
-            배송 세부 정보로 계속
-          </button>
+
+          {isAddressValid ? (
+            <PaymentStep04 displayText={displayText} inputs={inputs} />
+          ) : null}
         </div>
       </div>
       <div className="right">

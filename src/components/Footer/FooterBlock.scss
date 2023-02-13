@@ -4,38 +4,12 @@
   grid-template-rows: 1fr 1fr;
   gap: 50px;
 
+  .linkText {
+    color: lightgray;
+    text-decoration: none;
+  }
+
   .communication {
-    .checkboxContainer {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      align-content: center;
-      height: 50px;
-
-      input[type='checkbox'] {
-        display: none;
-      }
-
-      input[type='checkbox'] + label {
-        content: '';
-        width: 20px;
-        height: 20px;
-        border: 2px solid gray;
-      }
-
-      input[type='checkbox']:checked + label::before {
-        content: '✓';
-        position: absolute;
-        font-size: 20px;
-        left: 55px;
-      }
-
-      .checkboxText {
-        font-size: 15px;
-        margin-left: 10px;
-      }
-    }
-
     .communicationText {
       font-size: 15px;
       line-height: 30px;
@@ -102,12 +76,7 @@
   .text {
     margin-top: 20px;
     font-size: 15px;
-  }
-
-  .order {
-  }
-
-  .service {
+    line-height: 20px;
   }
 
   .location {
@@ -120,21 +89,6 @@
         text-decoration: underline;
         margin-top: 20px;
       }
-    }
-  }
-  .maintain {
-  }
-
-  .introduction {
-  }
-
-  .social {
-  }
-
-  .caution {
-    .text {
-      line-height: 30px;
-      font-size: 15px;
     }
   }
 }

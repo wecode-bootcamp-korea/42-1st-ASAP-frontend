@@ -1,0 +1,38 @@
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.paymentStep02 {
+  .inputForm {
+    display: flex;
+    flex-direction: column;
+    animation: smoothAppear 1s;
+
+    .inputWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+
+      .btnGo {
+        padding: 20px 20px;
+        width: 250px;
+        margin-top: 50px;
+        border: 0px;
+        background-color: #333333;
+        color: lightgray;
+
+        &:hover {
+          transition: 0.5s;
+          opacity: 1;
+          background-color: black;
+        }
+      }
+    }
+  }
+}

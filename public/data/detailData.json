@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": 5,
+      "sub_category_id": 13,
+      "sub_category": "바디",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "바디 클렌져",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product03.png?raw=true",
+      "description": "향기로운 클렌징 젤",
+      "feeling_of_use": ["따뜻한", "깨끗한", "상쾌한"],
+      "scents": ["플로랄", "스파이시", "따뜻함"],
+      "main_ingredient": "로즈, 카다멈, 블랙 페퍼",
+      "ingredient": "정제수, 소듐라우레스설페이트, 코카미도프로필하이드록시설테인, 피이지-40하이드로제네이티드캐스터오일, 글리세린, 페녹시에탄올, 씨솔트, 소듐클로라이드, 소듐데하이드로아세테이트, 시트릭애씨드, 다마스크장미꽃오일, 소두구씨오일, 후추열매오일, 시트로넬올, 제라니올",
+      "options": [
+        { "size": "100 mL", "price": 20000 },
+        { "size": "500 mL (펌프 미포함)", "price": 55000 },
+        { "size": "500 mL", "price": 56000 }
+      ],
+      "guides": [
+        {
+          "texture": "투명하고 거품이 적은 젤",
+          "image_url": "image_url",
+          "usage_amount": "필요한 만큼",
+          "usage_description": "손 또는 샤월 볼에 충분히 덜어 목에서 발끝까지 젖은 피부에 마사지 한 후 완전히 헹굽니다."
+        }
+      ],
+      "formulation": "젤"
+    }
+  ]
+}
