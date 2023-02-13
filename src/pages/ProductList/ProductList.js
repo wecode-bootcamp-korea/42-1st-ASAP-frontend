@@ -1,8 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { productListData } from './Data/ProductListData';
 import HandProduct from './HandProduct/HandProduct';
 import BodyProduct from './BodyProduct/BodyProduct';
 import Nav from '../../components/Nav/Nav';
+import ProductBox from './ProductBox/ProductBox';
 import './ProductList.scss';
 
 const ProductList = () => {
@@ -57,52 +58,41 @@ const ProductList = () => {
         </div>
         <section className="product-description">
           <div className="product-description-wrapper">
-            <h1 className="title">핸드</h1>
-            <p className="title-box">
+            <ProductBox
+              title="핸드"
+              seeAll="핸드 모두보기&#40;5&#41;"
+              to="/hand-list"
+            >
               매일 우리에게 안락함을 선사하는 손은 보살핌을
               <br />
               받을 자격이 충분합니다. 아로마 클렌저와 밤은
               <br />
               손에 수분과 영양을 공급하고 부드럽게 가꿔줍니다.
               <br />
-            </p>
-            <Link className="see-all" to="/hand-list">
-              핸드 모두보기&#40;5&#41;
-              <img
-                className="see-all-arrow"
-                src="./images/see-all-arrow.png"
-                alt="see-all-arrow"
-              />
-            </Link>
+            </ProductBox>
+            <HandProduct />
           </div>
-          <HandProduct />
         </section>
         <section className="body-color">
           <div className="product-description">
-            <h1 className="title">바디</h1>
-            <p className="title-box">
+            <ProductBox
+              title="바디"
+              seeAll="바디 모두보기&#40;6&#41;"
+              to="/body-list"
+            >
               보태니컬 원료가 풍부하게 함유된 바디 클랜저,
               <br />
               하이드레이터 그리고 부드러운 바디 트리트먼트 오일은
               <br />
               깨끗하고 부드러운 피부를 유지하도록 도와줍니다.
               <br />
-            </p>
-            <Link className="see-all" to="/body-list">
-              바디 모두보기&#40;4&#41;
-              <img
-                className="see-all-arrow"
-                src="./images/see-all-arrow.png"
-                alt="see-all-arrow"
-              />
-            </Link>
+            </ProductBox>
           </div>
           <BodyProduct />
         </section>
         <section className="scent-body">
           <div className="scent-wrapper">
-            <h1 className="title">향수</h1>
-            <p className="title-box">
+            <ProductBox title="향수" seeAll="향수보기" to="/" linkstyle={true}>
               일본의 숲과 높은 산의 정상, 모로코의 재래시장처럼
               <br />
               다채로운 지역 특성에서 영감을 받아 탄생한
@@ -110,15 +100,7 @@ const ProductList = () => {
               다양한 개성의 향수 제품.
               <br />
               소중한 분을 위한 선물로 이상적입니다.
-            </p>
-            <Link className="scent" to="/">
-              향수보기
-              <img
-                className="see-all-arrow"
-                src="./images/see-all-arrow.png"
-                alt="see-all-arrow"
-              />
-            </Link>
+            </ProductBox>
           </div>
           <img
             className="scent-img"

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import FilterNav from './Filter/FilterNav';
-import FilterModal from './Filter/FilterModal';
+import FilterNav from './FilterNav';
+import FilterModal from './Filter/HandFilter';
 import HandProductList from './HandProductList/HandProductList';
 import FilterButton from './FilterButton/FilterButton';
 import './HandList.scss';
@@ -10,7 +10,6 @@ export default function HandList() {
   const [handCardList, setHandCardList] = useState([]);
   const [checkdeValues, setCheckdeValues] = useState(null);
   const [isModal, setIsModal] = useState(false);
-
   const ModalHandler = () => {
     setIsModal(prev => !prev);
   };

@@ -1,4 +1,5 @@
 .h-product-wrapper {
+  border: 1px solid red;
   width: 400px;
   margin-left: 60px;
 
@@ -88,19 +89,6 @@
   }
 
   .add-cart {
-    height: 60px;
-    width: 400px;
-    border: 1px solid rgba(51, 51, 51, 0.1);
-    background: inherit;
-    text-decoration: none;
-    background-color: #000;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 300;
-    visibility: hidden;
-    cursor: pointer;
-  }
-  .added-cart {
     height: 60px;
     width: 400px;
     border: 1px solid rgba(51, 51, 51, 0.1);

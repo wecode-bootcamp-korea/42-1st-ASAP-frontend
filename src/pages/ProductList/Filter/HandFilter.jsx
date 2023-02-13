@@ -1,10 +1,20 @@
-import { FilterData } from '../Data/FilterData';
-import './FilterModal.scss';
+import { HandFilterData } from '../Data/HandFilterData';
+import './HandFilter.scss';
 
 export default function FilterModal({ onChange }) {
+  // useEffect(() => {
+  //   fetch('http://10.58.52.162:3000/products/body-hand/hand', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setCheckdeValues(data.data);
+  //     });
+  // }, []);
+
   return (
     <div className="filter-box">
-      {FilterData.map(category => (
+      {HandFilterData.map(category => (
         <div className="filter-checkbox" key={category.id}>
           <h3 className="filter-title">{category.category}</h3>
           {category.subcategory.map(subcategory => (

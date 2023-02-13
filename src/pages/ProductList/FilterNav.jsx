@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { productListData } from '../Data/ProductListData';
+import { productListData } from './Data/ProductListData';
 import './FilterNav.scss';
 
 export default function FilterNav({ onChange }) {

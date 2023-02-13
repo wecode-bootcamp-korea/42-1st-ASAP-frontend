@@ -4,7 +4,8 @@ import LoadingButton from '../LoadingButton/LoadingButton';
 import './Card.scss';
 
 export default function HandCard({ cardData }) {
-  const [inputValue, setInputValue] = useState([]);
+  const [inputValue, setInputValue] = useState(0);
+  // console.log(inputValue);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -56,19 +57,23 @@ export default function HandCard({ cardData }) {
             {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원 부터
           </p>
           <div className="radio-box">
-            {JSON.parse(cardData.options).map((element, index) => (
-              <label className="radio-label" key={index}>
-                <input
-                  id={element.size}
-                  type="radio"
-                  name="options"
-                  value={element.size}
-                  onChange={handleChangeValue}
-                  defaultChecked={index === 0}
-                />
-                {element.size}
-              </label>
-            ))}
+            {JSON.parse(cardData.options).map((element, index) => {
+              // console.log(index);
+              return (
+                <label className="radio-label" key={index}>
+                  {index}
+                  <input
+                    id={element.size}
+                    type="radio"
+                    name="options"
+                    value={element.size}
+                    onChange={handleChangeValue}
+                    defaultChecked={inputValue === index}
+                  />
+                  {element.size}
+                </label>
+              );
+            })}
           </div>
         </div>
       </div>

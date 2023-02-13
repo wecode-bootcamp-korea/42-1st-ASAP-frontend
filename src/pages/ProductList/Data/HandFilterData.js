@@ -1,4 +1,4 @@
-export const FilterData = [
+export const HandFilterData = [
   {
     id: 1,
     category: '아로마',

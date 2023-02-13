@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import FilterNav from './Filter/FilterNav';
-import FilterModal from './Filter/FilterModal';
+import FilterNav from './FilterNav';
+import BodyFilter from './Filter/BodyFilter';
 import BodyProductList from './BodyProductList/BodyProductList';
 import FilterButton from './FilterButton/FilterButton';
 import './BodyList.scss';
@@ -35,8 +35,8 @@ export default function BodyList() {
         <img className="logo" src="./images/asaplogo.png" alt="logo-img" />
         <h1 className="title">바디</h1>
         <FilterNav onChange={onChange} />
-        {isModal && <FilterModal setIsModal={setIsModal} onChange={onChange} />}
-        <FilterButton ModalHandler={ModalHandler} />
+        {isModal && <BodyFilter setIsModal={setIsModal} onChange={onChange} />}
+        <FilterButton ModalHandler={ModalHandler} isModal={isModal} />
         <BodyProductList
           BodycardList={BodycardList}
           checkdeValues={checkdeValues}
