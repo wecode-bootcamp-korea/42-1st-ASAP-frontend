@@ -4,8 +4,7 @@ import LoadingButton from '../LoadingButton/LoadingButton';
 import './Card.scss';
 
 export default function HandCard({ cardData }) {
-  const [inputValue, setInputValue] = useState(0);
-  // console.log(inputValue);
+  const [inputValue, setInputValue] = useState();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ export default function HandCard({ cardData }) {
     setInputValue(value);
   };
 
-  const price = JSON.parse(cardData.options)[0].price;
+  const price = cardData.options[0].price;
 
   return (
     <div className="h-product-wrapper">
@@ -57,23 +56,19 @@ export default function HandCard({ cardData }) {
             {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원 부터
           </p>
           <div className="radio-box">
-            {JSON.parse(cardData.options).map((element, index) => {
-              // console.log(index);
-              return (
-                <label className="radio-label" key={index}>
-                  {index}
-                  <input
-                    id={element.size}
-                    type="radio"
-                    name="options"
-                    value={element.size}
-                    onChange={handleChangeValue}
-                    defaultChecked={inputValue === index}
-                  />
-                  {element.size}
-                </label>
-              );
-            })}
+            {cardData.options.map((element, index) => (
+              <label className="radio-label" key={index}>
+                <input
+                  id={element.size}
+                  type="radio"
+                  name="options"
+                  value={element.size}
+                  onChange={handleChangeValue}
+                  defaultChecked={index === 0}
+                />
+                {element.size}
+              </label>
+            ))}
           </div>
         </div>
       </div>
@@ -81,7 +76,7 @@ export default function HandCard({ cardData }) {
         <li className="product-detail">
           <span className="texture">사용감</span>
           <span className="texture-feeling">
-            {JSON.parse(cardData.feeling_of_use).map(element => (
+            {cardData.feeling_of_use.map(element => (
               <span key={element} className="feeling">
                 {element}
               </span>
@@ -91,7 +86,7 @@ export default function HandCard({ cardData }) {
         <li className="product-detail">
           <span className="texture">향</span>
           <span className="texture-feeling">
-            {JSON.parse(cardData.scents).map(element => (
+            {cardData.scents.map(element => (
               <span key={element} className="feeling">
                 {element}
               </span>
@@ -104,7 +99,7 @@ export default function HandCard({ cardData }) {
       ) : (
         <button className="add-cart" type="button" onClick={cartLoading}>
           카트에 추가 – ￦&nbsp;
-          {JSON.parse(cardData.options)
+          {cardData.options
             .filter(el => el.size === inputValue)[0]
             ?.price.toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}

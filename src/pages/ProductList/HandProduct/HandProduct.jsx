@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './HandProduct.scss';
 
-export default function Product() {
+export default function HandProduct() {
   const [HandtListData, setHandListData] = useState([]);
   useEffect(() => {
-    fetch('./data/BodyData.json', {
+    fetch('./data/MockData.json', {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        setHandListData(data[0].data);
+        setHandListData(data.data);
       });
   }, []);
 
@@ -21,7 +21,7 @@ export default function Product() {
           <Link className="button" to="/product-detail">
             <img
               className="product-photo"
-              src={handtListData.img_url}
+              src={handtListData.image_url}
               alt="product-img"
             />
             <div className="description">

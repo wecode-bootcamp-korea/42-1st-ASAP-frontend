@@ -16,12 +16,12 @@ export default function BodyList() {
   };
 
   useEffect(() => {
-    fetch('./data/ProductData.json', {
+    fetch('http://10.58.52.169:3000/products/2/13', {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        setBodyCardList(data);
+        setBodyCardList(data.data);
       });
   }, []);
 

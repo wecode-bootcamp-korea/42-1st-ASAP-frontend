@@ -1,17 +1,8 @@
+import React from 'react';
 import { HandFilterData } from '../Data/HandFilterData';
 import './HandFilter.scss';
 
 export default function FilterModal({ onChange }) {
-  // useEffect(() => {
-  //   fetch('http://10.58.52.162:3000/products/body-hand/hand', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setCheckdeValues(data.data);
-  //     });
-  // }, []);
-
   return (
     <div className="filter-box">
       {HandFilterData.map(category => (

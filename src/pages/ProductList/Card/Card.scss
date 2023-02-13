@@ -1,7 +1,7 @@
 .h-product-wrapper {
-  border: 1px solid red;
   width: 400px;
   margin-left: 60px;
+  margin-bottom: 50px;
 
   &:hover {
     background-color: #ebeade;
@@ -37,7 +37,8 @@
 
     .hand-product {
       width: 160px;
-      height: 400px;
+      height: 370px;
+      padding: 20px;
       background-size: cover;
     }
   }
@@ -68,6 +69,7 @@
       display: flex;
       align-items: center;
       height: 60px;
+      padding: 20px;
       border-bottom: 1px solid rgb(173, 173, 173);
 
       .texture {
@@ -98,7 +100,7 @@
     color: #fff;
     font-size: 14px;
     font-weight: 300;
-    visibility: hidden;
+    // visibility: hidden;
     cursor: pointer;
   }
 }

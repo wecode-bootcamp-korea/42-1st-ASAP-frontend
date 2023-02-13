@@ -6,12 +6,12 @@ export default function BodyProduct() {
   const [BodyListData, setBodyListData] = useState([]);
 
   useEffect(() => {
-    fetch('./data/BodyData.json', {
+    fetch('./data/MockData.json', {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        setBodyListData(data[1].data);
+        setBodyListData(data.data);
       });
   }, []);
 
@@ -23,7 +23,7 @@ export default function BodyProduct() {
             <Link className="button" to="/Product-Detail">
               <img
                 className="product-photo"
-                src={bodyListData.img_url}
+                src={bodyListData.image_url}
                 alt="product-img"
               />
               <div className="description">

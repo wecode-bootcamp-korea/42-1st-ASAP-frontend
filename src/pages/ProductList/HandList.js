@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import FilterNav from './FilterNav';
 import FilterModal from './Filter/HandFilter';
 import HandProductList from './HandProductList/HandProductList';
@@ -10,12 +10,13 @@ export default function HandList() {
   const [handCardList, setHandCardList] = useState([]);
   const [checkdeValues, setCheckdeValues] = useState(null);
   const [isModal, setIsModal] = useState(false);
+
   const ModalHandler = () => {
     setIsModal(prev => !prev);
   };
 
   // useEffect(() => {
-  //   fetch('http://10.58.52.162:3000/products/body-hand/hand', {
+  //   fetch('http://10.58.52.169:3000/products/2/12', {
   //     method: 'GET',
   //   })
   //     .then(res => res.json())
@@ -25,18 +26,36 @@ export default function HandList() {
   // }, []);
 
   useEffect(() => {
-    fetch('./data/ProductData.json', {
+    fetch(
+      `http://127.0.0.1:3000/products/2/12?formulation=${checkdeValues}&scent=${checkdeValues}`,
+      {
+        method: 'GET',
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        setHandCardList(data.data);
+      });
+  }, [checkdeValues]);
+
+  useEffect(() => {
+    fetch('./data/MockData.json', {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        setHandCardList(data);
+        setHandCardList(data.data);
       });
   }, []);
 
   const onChange = e => {
     setCheckdeValues(e.target.value);
+    console.log(e.target.value);
   };
+
+  // const onChange = useCallback(e => {
+  //   setCheckdeValues(e.target.value);
+  // });
 
   return (
     <>
