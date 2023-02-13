@@ -8,6 +8,7 @@
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
   overflow-y: scroll;
+
   .successModal {
     position: fixed;
     display: flex;
@@ -20,21 +21,26 @@
     transform: translate(-50%, -50%);
     background-color: #fff;
     color: black;
-    z-index: 999;
+    z-index: 1000;
     overflow-y: auto;
+
     .welcomeText {
       font-size: 25px;
       margin-bottom: 20px;
     }
+
     .createText {
       font-size: 17px;
       color: #666666;
     }
+
     .backBtn {
       margin-top: 50px;
       padding: 20px;
       background-color: #333333;
       color: white;
+      cursor: pointer;
+
       &:hover {
         background-color: black;
       }

@@ -1,47 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './BodyMenu.scss';
+import './Menu.scss';
 
-const BodyMenu = ({ menuOpen, menuSelected, setMenuOpen, navMenuList }) => {
-  useEffect(() => {
-    const html = document.documentElement;
-    if (menuOpen) {
-      html.style.overflowY = 'hidden';
-    } else {
-      html.style.overflowY = 'auto';
-    }
-    return () => {
-      html.style.overflowY = 'auto';
-    };
-  }, [menuOpen]);
+const Menu = props => {
+  const { menuOpen, menuSelected, setMenuOpen, navMenuList } = props;
+  const clickedMenu = navMenuList[menuSelected];
+
   if (!menuOpen) return null;
+
   return (
     <div
       className="bodyMenuOn"
       style={{
-        backgroundColor: navMenuList[menuSelected].color,
+        backgroundColor: clickedMenu.color,
       }}
     >
       <div className="bodyMenu-right">
         <div className="right-container">
           <img
+            className="menuLogo"
             src="images/asaplogo.png"
             onClick={() => setMenuOpen(menuOpen => !menuOpen)}
             alt="logo"
           />
           <div className="ulContainer">
-            {navMenuList[menuSelected].detail.map(con => (
-              <ul key={con.id}>
+            {clickedMenu.detail.map(con => (
+              <ul key={con.id} className="category">
                 <div className="ulTitle">{con.title}</div>
                 {con.list.map(inside => (
                   <Link
                     to={inside.path}
                     key={inside.id}
                     onClick={() => setMenuOpen(menuOpen => !menuOpen)}
-                    style={{ textDecoration: 'none' }}
                     className="link"
                   >
-                    <li key={inside.id}>{inside.content}</li>
+                    <li className="list">{inside.content}</li>
                   </Link>
                 ))}
               </ul>
@@ -53,7 +46,8 @@ const BodyMenu = ({ menuOpen, menuSelected, setMenuOpen, navMenuList }) => {
       </div>
       <div className="bodyMenu-imageContainer">
         <img
-          src={`images/product0${navMenuList[menuSelected].id}.png`}
+          className="productImg"
+          src={`images/sample0${clickedMenu.id}.png`}
           alt="hand"
         />
       </div>
@@ -61,4 +55,4 @@ const BodyMenu = ({ menuOpen, menuSelected, setMenuOpen, navMenuList }) => {
   );
 };
 
-export default BodyMenu;
+export default Menu;

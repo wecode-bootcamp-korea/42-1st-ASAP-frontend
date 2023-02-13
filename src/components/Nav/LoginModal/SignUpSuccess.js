@@ -1,13 +1,12 @@
 import React from 'react';
 import './SignUpSuccess.scss';
 
-const SignUpSuccess = ({
-  signUpSuccess,
-  setIsOpen,
-  setSignUpOpen,
-  first_name,
-}) => {
+const SignUpSuccess = props => {
+  const { signUpSuccess, setIsOpen, setSignUpOpen, first_name, setMenuOpen } =
+    props;
+
   if (!signUpSuccess) return null;
+
   return (
     <div className="successOverLay">
       <div className="successModal">
@@ -18,6 +17,7 @@ const SignUpSuccess = ({
           onClick={() => {
             setIsOpen(false);
             setSignUpOpen(false);
+            setMenuOpen(false);
           }}
         >
           돌아가기

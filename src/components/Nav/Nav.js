@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import BodyMenu from '../../pages/Home/BodyMenu';
-import { Link } from 'react-router-dom';
-import Modal from '../../pages/Home/Modal';
-
+import React, { useState, useEffect, useContext } from 'react';
+import Menu from './MenuModal/Menu';
+import LoginModal from './LoginModal/LoginModal';
 import './Nav.scss';
+import { MenuContext } from './MenuModal/Hide';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginStatus, setLoginStatus] = useState('로그인');
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useContext(MenuContext);
   const [menuSelected, setMenuSelected] = useState(0);
   const [navMenuList, setNavMenuList] = useState([]);
 
@@ -21,27 +20,27 @@ const Nav = () => {
   const menuSelect = id => {
     setMenuSelected(id - 1);
   };
-
   return (
     <>
-      <div
-        className="navbar"
-        style={{
-          backgroundColor: menuOpen ? '#fffef2' : '#252525',
-          borderBottom: menuOpen ? '1px solid #D6D5CB' : 'none',
-        }}
-      >
+      <div className={!menuOpen ? 'navbar' : 'navbar clicked'}>
         <ul className="navbar-left">
           {navMenuList.map(info => (
-            <li key={info.id}>
+            <li
+              key={info.id}
+              className={
+                !(menuSelected === info.id - 1) ? 'menuBtn' : 'menuBtn clicked'
+              }
+            >
               <a
-                style={{ color: !menuOpen ? '#fffef2' : '#252525' }}
                 href="#none"
-                className="bodyBtn"
+                className={!menuOpen ? 'bodyBtn' : 'bodyBtn clicked'}
                 onClick={() => {
+                  //
+
                   if (!menuOpen) {
                     setMenuOpen(menuOpen => !menuOpen);
                   }
+
                   menuSelect(info.id);
                 }}
               >
@@ -49,10 +48,9 @@ const Nav = () => {
               </a>
             </li>
           ))}
-          <li>
+          <li className="menuBtn">
             <a
-              style={{ color: !menuOpen ? '#fffef2' : '#252525' }}
-              className={menuOpen ? 'closeBtn' : 'hiddenBtn'}
+              className={!menuOpen ? 'hiddenBtn' : 'closeBtn'}
               onClick={() => setMenuOpen(menuOpen => !menuOpen)}
               href="#none"
             >
@@ -61,31 +59,32 @@ const Nav = () => {
           </li>
         </ul>
         <ul className="navbar-right">
-          <li>
+          <li className="menuBtn">
             <div className="modalBtn">
               <button
                 onClick={() => setIsOpen(prev => !prev)}
-                style={{ color: !menuOpen ? '#fffef2' : '#252525' }}
+                className={!menuOpen ? 'navLoginBtn' : 'navLoginBtn clicked'}
               >
                 {loginStatus}
               </button>
-              <Modal
+              <LoginModal
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
                 setLoginStatus={setLoginStatus}
-              >
-                Fancy
-              </Modal>
+                setMenuOpen={setMenuOpen}
+              />
             </div>
           </li>
-          <li>
-            <button style={{ color: !menuOpen ? '#fffef2' : '#252525' }}>
+          <li className="menuBtn">
+            <button
+              className={!menuOpen ? 'navLoginBtn' : 'navLoginBtn clicked'}
+            >
               카트
             </button>
           </li>
         </ul>
       </div>
-      <BodyMenu
+      <Menu
         menuOpen={menuOpen}
         menuSelected={menuSelected}
         setMenuOpen={setMenuOpen}

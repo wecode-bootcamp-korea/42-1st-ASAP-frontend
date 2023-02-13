@@ -7,11 +7,12 @@
   padding: 50px;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 999;
+
   .loginModal {
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     top: 50%;
     left: 50%;
     height: 650px;
@@ -32,45 +33,57 @@
       }
     }
 
-    img {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      width: 15px;
-      cursor: pointer;
+    .loginDelete {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 50px;
+      .closeBtn {
+        width: 15px;
+        cursor: pointer;
+      }
     }
+
     .loginText {
       font-size: 25px;
     }
-    input {
+
+    .loginInput {
       margin-top: 50px;
       padding-bottom: 6px;
       border: none;
       border-bottom: 1px solid #cccccc;
       font-size: 18px;
+
       &:focus {
         outline: none;
       }
     }
+
     .loginBtn {
       margin-top: 50px;
       padding: 20px;
       background-color: #333333;
       color: white;
+      cursor: pointer;
+
       &:hover {
         background-color: black;
       }
     }
+
     .notMember {
       margin-top: 30px;
       font-size: 20px;
       font-weight: 350;
     }
+
     .signupBtn {
       margin-top: 20px;
       padding: 20px;
       border: 1px solid #d6d5cb;
       color: black;
+      cursor: pointer;
+
       &:hover {
         background-color: #333333;
         color: #fffef2;
