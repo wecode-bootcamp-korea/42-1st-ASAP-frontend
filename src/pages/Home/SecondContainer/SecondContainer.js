@@ -11,8 +11,10 @@ const SecondContainer = () => {
   //     .then(res => res.json())
   //     .then(data => {
   //       setProductList(data.data);
+  //       console.log(data);
   //     });
   // }, []);
+
   useEffect(() => {
     fetch('data/scsample.json')
       .then(res => res.json())

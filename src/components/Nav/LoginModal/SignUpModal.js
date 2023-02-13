@@ -12,13 +12,11 @@ const SignupModal = props => {
     password: '',
   });
 
-  console.log(signUpForm);
-
-  // const signUpCondition =
-  //   signUpForm.email.includes('@') &&
-  //   signUpForm.password.length > 5 &&
-  //   signUpForm.last_name.length > 0 &&
-  //   signUpForm.first_name.length > 0;
+  const signUpCondition =
+    signUpForm.email.includes('@') &&
+    signUpForm.password.length > 5 &&
+    signUpForm.last_name.length > 0 &&
+    signUpForm.first_name.length > 0;
 
   const signUp = () => {
     fetch('http://10.58.52.217:8000/user/signup', {
@@ -35,8 +33,7 @@ const SignupModal = props => {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
-        // setSignUpSuccess(true);
+        setSignUpSuccess(true);
       });
   };
 
@@ -102,10 +99,6 @@ const SignupModal = props => {
           onChange={changeSignUpInput}
           value={signUpForm.password}
         />
-        {/* <div className="firstCheckBox">
-          <input className="checkBoxBtn" type="checkbox" />
-          <span>본인은 만 14세 이상입니다 (필수)</span>
-        </div> */}
         <div className="secondCheckBox">
           <input className="checkBoxBtn" type="checkbox" />
           <span>이용 약관에 동의합니다 (필수)</span>
@@ -130,7 +123,7 @@ const SignupModal = props => {
         </div>
         <button
           className="signUpBtn"
-          // disabled={!signUpCondition}
+          disabled={!signUpCondition}
           onClick={signUp}
         >
           회원가입

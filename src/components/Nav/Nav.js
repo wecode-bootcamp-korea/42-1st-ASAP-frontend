@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { MenuContext } from './MenuModal/Hide';
 import Menu from './MenuModal/Menu';
 import LoginModal from './LoginModal/LoginModal';
 import './Nav.scss';
-import { MenuContext } from './MenuModal/Hide';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
