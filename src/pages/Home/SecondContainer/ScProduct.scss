@@ -1,0 +1,12 @@
+.scProduct {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+
+  .link {
+    .insideImg {
+      width: 100px;
+      margin-bottom: 30px;
+    }
+  }
+}

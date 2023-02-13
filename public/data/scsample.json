@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "image_url": "images/product01.png",
+    "name": "가나다",
+    "info": "abc"
+  },
+  {
+    "id": "2",
+    "image_url": "images/product04.png",
+    "name": "가나다",
+    "info": "abc"
+  },
+  {
+    "id": "3",
+    "image_url": "images/product05.png",
+    "name": "가나다",
+    "info": "abc"
+  },
+  {
+    "id": "4",
+    "image_url": "images/product06.png",
+    "name": "가나다",
+    "info": "abc"
+  },
+  {
+    "id": "5",
+    "image_url": "images/product06.png",
+    "name": "가나다",
+    "info": "abc"
+  }
+]

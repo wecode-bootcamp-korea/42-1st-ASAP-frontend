@@ -1,0 +1,93 @@
+.loginOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+
+  .loginModal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    height: 650px;
+    width: 600px;
+    padding: 50px;
+    background-color: #fff;
+    color: black;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    animation: fadeIn 0.9s;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .loginDelete {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 50px;
+      .closeBtn {
+        width: 15px;
+        cursor: pointer;
+      }
+    }
+
+    .loginText {
+      font-size: 25px;
+    }
+
+    .loginInput {
+      margin-top: 50px;
+      padding-bottom: 6px;
+      border: none;
+      border-bottom: 1px solid #cccccc;
+      font-size: 18px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .loginBtn {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #333333;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: black;
+      }
+    }
+
+    .notMember {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: 350;
+    }
+
+    .signupBtn {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #d6d5cb;
+      color: black;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #333333;
+        color: #fffef2;
+      }
+    }
+  }
+}
