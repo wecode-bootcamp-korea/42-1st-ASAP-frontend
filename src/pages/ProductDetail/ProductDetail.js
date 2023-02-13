@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Footer';
 import Slider from '../../components/Slider/Slider';
-import RadioBox from './RadioBox';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
