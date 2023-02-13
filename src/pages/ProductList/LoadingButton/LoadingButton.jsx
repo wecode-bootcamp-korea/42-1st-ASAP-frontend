@@ -1,11 +1,14 @@
 import React from 'react';
+import './LoadingButton.scss';
 
 export default function LoadingButton({ cartLoading }) {
   return (
-    <div>
-      <button className="added-cart" type="button" onClick={cartLoading}>
-        카트에 추가됨
-      </button>
+    <div className="added-cart" type="button" onClick={cartLoading}>
+      <div className="loading-spinner-box">
+        <div className="loading-spinner-dot" />
+        <div className="loading-spinner-dot" />
+        <div className="loading-spinner-dot" />
+      </div>
     </div>
   );
 }
