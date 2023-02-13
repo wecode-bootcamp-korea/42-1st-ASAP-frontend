@@ -1,0 +1,94 @@
+.firstAdContainer {
+  display: flex;
+  height: 550px;
+
+  .firstAdContainer-left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    background-color: #f6f5e8;
+
+    .logo {
+      position: absolute;
+      left: 60px;
+      top: 120px;
+      width: 120px;
+      margin-right: 15px;
+    }
+
+    .content1 {
+      width: 350px;
+      margin-left: 130px;
+      padding-bottom: 110px;
+
+      h2 {
+        margin-top: 20px;
+        font-size: 30px;
+        font-weight: 350;
+      }
+
+      h5 {
+        margin-top: 20px;
+        font-weight: 300;
+      }
+
+      h4 {
+        margin-top: 20px;
+        font-weight: 350;
+      }
+
+      .arrowBox {
+        position: relative;
+        display: inline-block;
+        width: 250px;
+        padding: 20px;
+        margin-top: 20px;
+        border: 1px solid #cfcec3;
+        color: #353534;
+        font-weight: 200;
+        font-size: 12px;
+        font-weight: 350;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+
+        .arrow {
+          position: absolute;
+          right: 20px;
+          width: 12px;
+        }
+      }
+    }
+  }
+
+  .firstAdContainer-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50%;
+    padding-bottom: 50px;
+    background: linear-gradient(0deg, #daae63, aquamarine);
+    overflow: hidden;
+
+    .productZindex {
+      position: absolute;
+      width: 130px;
+      z-index: 2;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.firstAdContainerOpen {
+  display: none;
+}

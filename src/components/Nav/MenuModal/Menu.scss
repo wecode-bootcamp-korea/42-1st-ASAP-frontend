@@ -1,0 +1,98 @@
+.bodyMenuOn {
+  position: absolute;
+  display: flex;
+  top: 80px;
+  right: 0;
+  left: 0;
+  min-height: calc(100vh - 80px);
+  background-color: #ece3d3;
+  overflow-y: hidden;
+  overflow: hidden;
+  z-index: 50;
+
+  .bodyMenu-right {
+    width: 75%;
+
+    .right-container {
+      margin: 120px 0px 0px 80px;
+
+      .ulContainer {
+        display: flex;
+        margin-left: 150px;
+
+        .category {
+          display: flex;
+          flex-direction: column;
+          margin-left: 30px;
+
+          .ulTitle {
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: 500px;
+            color: #333;
+          }
+
+          .link {
+            text-decoration: none;
+
+            .list {
+              position: relative;
+              display: inline-block;
+              margin-bottom: 20px;
+              color: #333;
+              font-size: 15px;
+              font-weight: 300;
+
+              &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                border-radius: 5px;
+                height: 1px;
+                bottom: -3px;
+                left: 0;
+                background: currentColor;
+                transform-origin: bottom left;
+                transition: transform 0.4s ease-out;
+              }
+              &:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+              }
+            }
+          }
+        }
+      }
+
+      .menuLogo {
+        position: absolute;
+        left: 60px;
+        top: 120px;
+        width: 120px;
+        margin-top: -15px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bodyMenu-imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: calc(100vh - 80px);
+    background: linear-gradient(180deg, pink, lightblue);
+
+    .productImg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.bodyMenuOff {
+  display: none;
+}

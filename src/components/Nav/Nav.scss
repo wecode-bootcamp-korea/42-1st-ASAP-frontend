@@ -2,43 +2,88 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333333;
   height: 80px;
   padding: 0px 20px;
+  background-color: #252525;
+  z-index: 100;
+
+  &.clicked {
+    background-color: #fffef2;
+    border-bottom: 1px solid #d6d5cb;
+  }
+
   .navbar-left {
     display: flex;
-    list-style: none;
     height: 100%;
-    li {
+    list-style: none;
+
+    .menuBtn {
       display: flex;
       align-items: center;
-      margin: 0px 14.404px 0px 0px;
-      font-size: 13.218px;
       height: 100%;
-      a {
+      margin-right: 14.404px;
+      font-size: 13.218px;
+
+      &.clicked {
+        border-bottom: 2px solid #252525;
+      }
+
+      .bodyBtn {
         padding: 4px;
         color: #fffef2;
+        text-decoration: none;
         cursor: pointer;
+
+        &.clicked {
+          color: #252525;
+        }
+      }
+    }
+    .closeBtn {
+      color: #252525;
+      text-decoration: none;
+    }
+
+    .hiddenBtn {
+      display: none;
+    }
+
+    .closeBtn {
+      .menuClose {
+        padding: 5px;
+        border: 1px solid white;
+
+        &:hover {
+          border: 1px solid blue;
+          color: white;
+        }
       }
     }
   }
+
   .navbar-right {
     display: flex;
+    height: 100%;
     color: #fffef2;
     list-style: none;
-    height: 100%;
-    li {
+
+    .menuBtn {
       display: flex;
       align-items: center;
+      height: 100%;
       margin: 0px 14.404px 0px 0px;
       font-size: 13.218px;
-      height: 100%;
-      button {
+
+      .navLoginBtn {
         padding: 4px;
         border: none;
         background-color: transparent;
         color: #fffef2;
         cursor: pointer;
+
+        &.clicked {
+          color: #252525;
+        }
       }
     }
   }
