@@ -15,18 +15,8 @@ export default function BodyList() {
     setIsModal(prev => !prev);
   };
 
-  useEffect(() => {
-    fetch('http://10.58.52.78:3000/products/2/13', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setBodyCardList(data.data);
-      });
-  }, []);
-
   // useEffect(() => {
-  //   fetch('./data/MockData.json', {
+  //   fetch('http://10.58.52.78:3000/products/2/13', {
   //     method: 'GET',
   //   })
   //     .then(res => res.json())
@@ -34,6 +24,16 @@ export default function BodyList() {
   //       setBodyCardList(data.data);
   //     });
   // }, []);
+
+  useEffect(() => {
+    fetch('./data/MockData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setBodyCardList(data.data);
+      });
+  }, []);
 
   const onChange = e => {
     setCheckdeValues(e.target.value);

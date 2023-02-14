@@ -8,42 +8,18 @@ import './HandList.scss';
 
 export default function HandList() {
   const [handCardList, setHandCardList] = useState([]);
-  const [checkedValue, setCheckedValue] = useState([]);
   const [scent, setScent] = useState('');
   const [price, setPrice] = useState('');
   const [formulation, setFormulation] = useState('');
-  console.log('price::', price, 'scent::', scent, 'formulation::', formulation);
+  // console.log(scent, price, formulation);
   const [isModal, setIsModal] = useState(false);
 
   const ModalHandler = () => {
     setIsModal(prev => !prev);
   };
 
-  useEffect(() => {
-    fetch('http://10.58.52.78:3000/products/2/12', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setHandCardList(data.data);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch(
-      `http://10.58.52.78/products/2/12?formulation=${formulation}&scent=${scent}`,
-      {
-        method: 'GET',
-      }
-    )
-      .then(res => res.json())
-      .then(data => {
-        setHandCardList(data.data);
-      });
-  }, [scent, formulation, price]);
-
   // useEffect(() => {
-  //   fetch('./data/MockData.json', {
+  //   fetch('http://10.58.52.78:3000/products/2/12', {
   //     method: 'GET',
   //   })
   //     .then(res => res.json())
@@ -52,11 +28,37 @@ export default function HandList() {
   //     });
   // }, []);
 
-  const onChange = (e, category, subcategory) => {
-    if (category === '아로마') setScent(e.target.value);
-    else if (category === '가격 범위') setPrice(e.target.value);
-    else if (category === '제형 타입') setFormulation(e.target.value);
-    // setCheckedValue([...checkedValue, subcategory.title]);
+  useEffect(() => {
+    fetch(
+      `http://10.58.52.78/products/2/12?formulation=${formulation}&scent=${scent}&price${price}`,
+      {
+        method: 'GET',
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        //
+        setHandCardList(data.data);
+      });
+  }, [scent, formulation, price]);
+
+  useEffect(() => {
+    fetch('./data/MockData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setHandCardList(data.data);
+      });
+  }, []);
+
+  const onChange = (e, category) => {
+    if (category === '아로마')
+      setScent(prev => (prev === e.target.value ? '' : e.target.value));
+    else if (category === '가격 범위')
+      setPrice(prev => (prev === e.target.value ? '' : e.target.value));
+    else if (category === '제형 타입')
+      setFormulation(prev => (prev === e.target.value ? '' : e.target.value));
   };
 
   return (

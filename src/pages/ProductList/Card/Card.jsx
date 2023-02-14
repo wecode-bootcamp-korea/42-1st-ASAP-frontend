@@ -5,6 +5,7 @@ import './Card.scss';
 
 export default function Card({ cardData }) {
   const [inputValue, setInputValue] = useState();
+  const [sizeChoice, setSizeChoice] = useState();
   const [loading, setLoading] = useState(false);
 
   const cartLoading = e => {
@@ -12,7 +13,8 @@ export default function Card({ cardData }) {
   };
 
   const handleChangeValue = event => {
-    const { value } = event.target;
+    const { value, id } = event.target;
+    setSizeChoice(id);
     setInputValue(value);
   };
 
@@ -25,7 +27,7 @@ export default function Card({ cardData }) {
         },
         body: JSON.stringify({
           userId: 1,
-          productOptionId: 1,
+          productOptionId: inputValue,
           quantity: 1,
         }),
       })
@@ -62,10 +64,10 @@ export default function Card({ cardData }) {
                 <input
                   id={element.size}
                   type="radio"
-                  name="options"
-                  value={element.size}
+                  name={element.product_options_id}
+                  value={element.product_options_id}
                   onChange={handleChangeValue}
-                  defaultChecked={index === 0}
+                  checked={index === 0 && 'checked'}
                 />
                 {element.size}
               </label>
@@ -101,7 +103,7 @@ export default function Card({ cardData }) {
         <button className="add-cart" type="button" onClick={cartLoading}>
           카트에 추가 – ￦&nbsp;
           {cardData.options
-            .filter(el => el.size === inputValue)[0]
+            .filter(el => el.id === inputValue || el.size === sizeChoice)[0]
             ?.price.toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
         </button>
