@@ -8,7 +8,15 @@ const PROGRESS_WIDTH = 200;
 const Slider = () => {
   const [move, setMove] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [recommends, setRecommends] = useState([]);
+  const [sliderData, setSliderData] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/sliderData.json')
+      .then(res => res.json())
+      .then(data => setSliderData(data.data));
+  }, []);
+
+  console.log(sliderData);
 
   const moveLeft = () => {
     if (move <= -IMG_WIDTH) {
@@ -18,16 +26,9 @@ const Slider = () => {
       setProgress(progress => progress + PROGRESS_WIDTH);
     }
   };
-  useEffect(() => {
-    fetch('./data/Recommends.json')
-      .then(res => res.json())
-      .then(data => {
-        setRecommends(data);
-      });
-  }, []);
 
   const moveRight = () => {
-    if (move >= -(recommends.length * IMG_WIDTH) + IMG_WIDTH * 4) {
+    if (move >= -(sliderData.length * IMG_WIDTH) + IMG_WIDTH * 4) {
       setMove(move => move - IMG_WIDTH);
     }
 
@@ -58,13 +59,13 @@ const Slider = () => {
             <div className="recommendTitleBox">
               <p>함께 사용하기 좋은 제품</p>
             </div>
-            {recommends.map(item => {
+            {sliderData.map(item => {
               return (
                 <ItemCard
-                  key={item.product_id}
+                  key={item.id}
                   name={item.name}
-                  img={item.product_image_url}
-                  description={item.product_content}
+                  img={item.image_url}
+                  description={item.description}
                 />
               );
             })}

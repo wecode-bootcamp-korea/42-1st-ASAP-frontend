@@ -81,6 +81,7 @@
 
       .carousel {
         display: flex;
+        align-items: flex-end;
         position: absolute;
         transition: 0.5s;
         gap: 30px;
