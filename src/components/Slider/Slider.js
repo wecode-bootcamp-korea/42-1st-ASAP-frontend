@@ -8,15 +8,19 @@ const PROGRESS_WIDTH = 200;
 const Slider = () => {
   const [move, setMove] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [sliderData, setSliderData] = useState([]);
+  const [recommendData, setRecommendData] = useState([]);
+
+  // useEffect(() => {
+  //   fetch('/data/recommendData.json')
+  //     .then(res => res.json())
+  //     .then(data => setRecommendData(data.data));
+  // }, []);
 
   useEffect(() => {
-    fetch('/data/sliderData.json')
+    fetch('http://10.58.52.78:3000/products?limit=5')
       .then(res => res.json())
-      .then(data => setSliderData(data.data));
+      .then(data => setRecommendData(data.data));
   }, []);
-
-  console.log(sliderData);
 
   const moveLeft = () => {
     if (move <= -IMG_WIDTH) {
@@ -28,7 +32,7 @@ const Slider = () => {
   };
 
   const moveRight = () => {
-    if (move >= -(sliderData.length * IMG_WIDTH) + IMG_WIDTH * 4) {
+    if (move >= -(recommendData.length * IMG_WIDTH) + IMG_WIDTH * 4) {
       setMove(move => move - IMG_WIDTH);
     }
 
@@ -57,9 +61,19 @@ const Slider = () => {
             style={{ transform: `translateX(${move}px)` }}
           >
             <div className="recommendTitleBox">
-              <p>함께 사용하기 좋은 제품</p>
+              <p className="textTop">스킨케어 플러스</p>
+              <h2 className="textMiddle">
+                복잡한 피부를 위한
+                <br />
+                집중 케어 제품
+              </h2>
+              <p className="textBottom">
+                지친 피부와 도시 거주자를 고려해 만들어져 데일리 수분공급은 물론
+                강력한 비타민 효과를 추가로 선사하는 제품을 만나보세요.
+              </p>
+              <button className="recommendBtn">제품 보기→</button>
             </div>
-            {sliderData.map(item => {
+            {recommendData.map(item => {
               return (
                 <ItemCard
                   key={item.id}

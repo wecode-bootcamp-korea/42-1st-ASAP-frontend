@@ -15,22 +15,15 @@ const ProductDetail = () => {
       .then(data => setDetailData(data.data[0]));
   }, []);
 
-  const sizeChoice = '';
-
   // useEffect(() => {
   //   fetch('http://10.58.52.169:3000/products/detail/5')
   //     .then(res => res.json())
   //     .then(data => setDetailData(data.data[0]));
   // }, []);
 
-  const onChangeOption = () => setOptionState(prev => !prev);
+  const sizeChoice = '';
 
-  // useEffect(() => {
-  //   setSizeArr(detailData.options);
-  //   if (detailData.options) {
-  //     console.log(detailData.options[0]);
-  //   }
-  // }, [setSizeArr, detailData.options]);
+  const onChangeOption = () => setOptionState(prev => !prev);
 
   return (
     <div className="productDetail">

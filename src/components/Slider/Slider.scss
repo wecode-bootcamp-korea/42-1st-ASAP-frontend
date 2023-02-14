@@ -78,6 +78,7 @@
       height: 400px;
       margin: 0 auto;
       overflow-x: hidden;
+      overflow-y: hidden;
 
       .carousel {
         display: flex;
@@ -109,10 +110,34 @@
           height: 400px;
           margin-left: 150px;
 
-          p {
-            font-size: 40px;
-            color: #333333;
+          .textTop {
+            font-size: 15px;
             font-weight: 400;
+            color: #333333;
+          }
+
+          .textMiddle {
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 35px;
+            color: #333333;
+            white-space: pre-wrap;
+          }
+
+          .textBottom {
+            margin-top: 20px;
+            line-height: 20px;
+            font-size: 15px;
+            font-weight: 200;
+            color: #333333;
+          }
+
+          .recommendBtn {
+            padding: 0px;
+            border: 0px;
+            margin-top: 25px;
+            background-color: transparent;
           }
         }
         .text {
@@ -123,6 +148,7 @@
 
           p {
             margin: 5px 0;
+            font-size: 15px;
             font-weight: 300;
           }
         }
