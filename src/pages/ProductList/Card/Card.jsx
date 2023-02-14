@@ -3,20 +3,30 @@ import { Link } from 'react-router-dom';
 import LoadingButton from '../LoadingButton/LoadingButton';
 import './Card.scss';
 
-export default function HandCard({ cardData }) {
+export default function Card({ cardData }) {
   const [inputValue, setInputValue] = useState();
   const [loading, setLoading] = useState(false);
 
+  const cartLoading = e => {
+    setLoading(true);
+  };
+
+  const handleChangeValue = event => {
+    const { value } = event.target;
+    setInputValue(value);
+  };
+
   useEffect(() => {
     if (loading)
-      fetch('', {
+      fetch('http://10.58.52.78:3000/orders/carts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
         },
         body: JSON.stringify({
-          title: 'update title',
-          content: '서버에 요청할때 담아서 보내는 정보',
+          userId: 1,
+          productOptionId: 1,
+          quantity: 1,
         }),
       })
         .then(res => res.json())
@@ -27,15 +37,6 @@ export default function HandCard({ cardData }) {
           setLoading(false);
         });
   }, [loading]);
-
-  const cartLoading = e => {
-    setLoading(true);
-  };
-
-  const handleChangeValue = event => {
-    const { value } = event.target;
-    setInputValue(value);
-  };
 
   const price = cardData.options[0].price;
 

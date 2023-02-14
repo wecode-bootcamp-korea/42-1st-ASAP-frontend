@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { productListData } from './Data/ProductListData';
 import HandProduct from './HandProduct/HandProduct';
 import BodyProduct from './BodyProduct/BodyProduct';
@@ -36,7 +36,7 @@ const ProductList = () => {
   // }, []);
 
   useEffect(() => {
-    fetch('./data/MockData.json', {
+    fetch('http://10.58.52.78:3000/products/2', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -55,7 +55,13 @@ const ProductList = () => {
           alt="background-img"
         />
         <div className="goods">
-          <img className="logo" src="./images/asaplogo_w.png" alt="logo-img" />
+          <Link to="/">
+            <img
+              className="logo"
+              src="./images/asaplogo_w.png"
+              alt="logo-img"
+            />
+          </Link>
           <div />
           <div className="product-box">
             <h1 className="title">바디 & 핸드</h1>
@@ -114,8 +120,8 @@ const ProductList = () => {
               깨끗하고 부드러운 피부를 유지하도록 도와줍니다.
               <br />
             </ProductBox>
+            <BodyProduct BodyData={BodyData} />
           </div>
-          <BodyProduct BodyData={BodyData} />
         </section>
         <section className="scent-body">
           <div className="scent-wrapper">

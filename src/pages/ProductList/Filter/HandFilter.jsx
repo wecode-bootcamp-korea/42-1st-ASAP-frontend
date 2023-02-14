@@ -2,7 +2,7 @@ import React from 'react';
 import { HandFilterData } from '../Data/HandFilterData';
 import './HandFilter.scss';
 
-export default function FilterModal({ onChange }) {
+export default function HandFilter({ onChange }) {
   return (
     <div className="filter-box">
       {HandFilterData.map(category => (
@@ -14,7 +14,7 @@ export default function FilterModal({ onChange }) {
                 <input
                   id={subcategory.title}
                   type="checkbox"
-                  onChange={onChange}
+                  onChange={e => onChange(e, category.category)}
                   value={subcategory.title}
                   className="checkbox"
                   name={subcategory.title}

@@ -1,45 +1,26 @@
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import FilterNav from './FilterNav';
-import FilterModal from './Filter/HandFilter';
+import HandFilter from './Filter/HandFilter';
 import HandProductList from './HandProductList/HandProductList';
 import FilterButton from './FilterButton/FilterButton';
 import './HandList.scss';
 
 export default function HandList() {
   const [handCardList, setHandCardList] = useState([]);
-  const [checkdeValues, setCheckdeValues] = useState(null);
+  const [checkedValue, setCheckedValue] = useState([]);
+  const [scent, setScent] = useState('');
+  const [price, setPrice] = useState('');
+  const [formulation, setFormulation] = useState('');
+  console.log('price::', price, 'scent::', scent, 'formulation::', formulation);
   const [isModal, setIsModal] = useState(false);
 
   const ModalHandler = () => {
     setIsModal(prev => !prev);
   };
 
-  // useEffect(() => {
-  //   fetch('http://10.58.52.169:3000/products/2/12', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setHandCardList(data.data);
-  //     });
-  // }, []);
-
   useEffect(() => {
-    fetch(
-      `http://127.0.0.1:3000/products/2/12?formulation=${checkdeValues}&scent=${checkdeValues}`,
-      {
-        method: 'GET',
-      }
-    )
-      .then(res => res.json())
-      .then(data => {
-        setHandCardList(data.data);
-      });
-  }, [checkdeValues]);
-
-  useEffect(() => {
-    fetch('./data/MockData.json', {
+    fetch('http://10.58.52.78:3000/products/2/12', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -48,14 +29,35 @@ export default function HandList() {
       });
   }, []);
 
-  const onChange = e => {
-    setCheckdeValues(e.target.value);
-    console.log(e.target.value);
-  };
+  useEffect(() => {
+    fetch(
+      `http://10.58.52.78/products/2/12?formulation=${formulation}&scent=${scent}`,
+      {
+        method: 'GET',
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        setHandCardList(data.data);
+      });
+  }, [scent, formulation, price]);
 
-  // const onChange = useCallback(e => {
-  //   setCheckdeValues(e.target.value);
-  // });
+  // useEffect(() => {
+  //   fetch('./data/MockData.json', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setHandCardList(data.data);
+  //     });
+  // }, []);
+
+  const onChange = (e, category, subcategory) => {
+    if (category === '아로마') setScent(e.target.value);
+    else if (category === '가격 범위') setPrice(e.target.value);
+    else if (category === '제형 타입') setFormulation(e.target.value);
+    // setCheckedValue([...checkedValue, subcategory.title]);
+  };
 
   return (
     <>
@@ -63,12 +65,9 @@ export default function HandList() {
         <img className="logo" src="./images/asaplogo.png" alt="logo-img" />
         <h1 className="title">핸드</h1>
         <FilterNav onChange={onChange} />
-        {isModal && <FilterModal setIsModal={setIsModal} onChange={onChange} />}
+        {isModal && <HandFilter setIsModal={setIsModal} onChange={onChange} />}
         <FilterButton ModalHandler={ModalHandler} isModal={isModal} />
-        <HandProductList
-          handCardList={handCardList}
-          checkdeValues={checkdeValues}
-        />
+        <HandProductList handCardList={handCardList} />
       </section>
       <section className="present-body">
         <div className="present-wrapper">

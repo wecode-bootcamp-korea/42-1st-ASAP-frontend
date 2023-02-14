@@ -86,7 +86,7 @@ export const BodyFilterData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     category: '제형 타입',
     subcategory: [
       {
