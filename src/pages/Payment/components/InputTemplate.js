@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './InputTemplate.scss';
 
-function InputTemplate({ value, element, displayText, inputStyle }) {
+function InputTemplate({
+  inputs,
+  name,
+  value,
+  element,
+  displayText,
+  inputStyle,
+}) {
   return (
     <div className="inputTemplate">
       <input
-        name={element}
+        name={name}
         type="text"
         placeholder=" "
-        id={inputStyle}
+        id="inputTrue"
         value={value}
         onChange={displayText}
       />
-      <label className="labelInput" for="{inputStyle}">
+      <label className="labelInput" for="inputTrue">
         {element}
       </label>
     </div>

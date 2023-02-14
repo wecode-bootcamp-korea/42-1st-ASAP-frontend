@@ -1,28 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import InputTemplate from './InputTemplate';
-import './PaymentStep02.scss';
+import './PaymentName.scss';
 
-function PaymentStep02({
-  성,
-  이름,
+function PaymentName({
+  lastName,
+  firstName,
   value,
+  email,
   element,
   displayText,
   inputStyle,
   onClickName,
 }) {
   return (
-    <div className="paymentStep02">
+    <div className="paymentName">
       <form className="inputForm">
         <div className="inputWrapper">
           <InputTemplate
-            value={성}
+            name={lastName}
+            value={value}
             inputStyle={inputStyle}
             element="성"
             displayText={displayText}
           />
           <InputTemplate
-            value={이름}
+            name={firstName}
+            value={value}
             inputStyle={inputStyle}
             element="이름"
             displayText={displayText}
@@ -36,4 +39,4 @@ function PaymentStep02({
   );
 }
 
-export default PaymentStep02;
+export default PaymentName;

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import InputTemplate from './InputTemplate';
-import './PaymentStep03.scss';
+import './PaymentAddress.scss';
 
-function PaymentStep03({
-  성,
-  이름,
-  이메일,
-  전화번호,
-  주소,
+function PaymentAddress({
+  lastName,
+  firstName,
+  email,
+  address,
   value,
   element,
   displayText,
@@ -16,43 +15,46 @@ function PaymentStep03({
   onClickAddress,
 }) {
   return (
-    <div className="paymentStep03">
+    <div className="paymentAddress">
       <section className="orderInfo">
         <h2 className="noticeName">주문자 성함</h2>
-        <span className="orderInfoText">{이름}님</span>
-        <span className="orderInfoText">{이메일}</span>
+        <span className="orderInfoText">{firstName}님</span>
+        <span className="orderInfoText">{email}</span>
       </section>
       <h2 className="noticeWhere">주문을 어디로 보내시겠습니까?</h2>
       <form className="inputForm">
         <InputTemplate
-          value={성}
+          value={lastName}
           inputStyle={inputStyle}
+          name="lastName"
           element="성"
           displayText={displayText}
         />
         <InputTemplate
-          value={이름}
+          value={firstName}
           inputStyle={inputStyle}
+          name="firstName"
           element="이름"
           displayText={displayText}
         />
       </form>
       <div className="countryNumber">
         <select name="country" className="selectCountry">
-          <option value="apple">USA</option>
-          <option value="orange">CHN</option>
-          <option value="grape">JPN</option>
-          <option value="melon">KOR</option>
+          <option value="usa">USA</option>
+          <option value="chn">CHN</option>
+          <option value="jpn">JPN</option>
+          <option value="kor">KOR</option>
         </select>
         <InputTemplate
-          value={주소}
+          value={address}
           inputStyle={inputStyle}
           element="주소"
+          name="address"
           displayText={displayText}
         />
       </div>
 
-      {isAddressValid ? null : (
+      {!isAddressValid && (
         <button className="btnGo" onClick={onClickAddress}>
           배송 정보로 계속
         </button>
@@ -61,4 +63,4 @@ function PaymentStep03({
   );
 }
 
-export default PaymentStep03;
+export default PaymentAddress;

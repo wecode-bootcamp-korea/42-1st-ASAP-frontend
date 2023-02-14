@@ -1,65 +1,69 @@
 import React, { useState, useEffect } from 'react';
-import PaymentStep01 from './PaymentStep01';
-import PaymentStep03 from './PaymentStep03';
-import PaymentStep04 from './PaymentStep04';
-
+import PaymentEmail from './components/PaymentEmail';
+import PaymentAddress from './components/PaymentAddress';
+import PaymentShipping from './components/PaymentShipping';
 import './Payment.scss';
-import { isCompositeComponent } from 'react-dom/test-utils';
 
 function Payment() {
   const [inputs, setInputs] = useState({
-    이메일: '',
-    성: '',
-    이름: '',
-    전화번호: '',
-    주소: '',
-    배송요청사항: '',
-    포장요청사항: '',
+    email: '',
+    lastName: '',
+    firstName: '',
+    phone: '',
+    address: '',
   });
-  const [inputStyle, setInputStyle] = useState('inputTrue');
-  const [isEmailValid, setIsEmailVaild] = useState(false);
-  const [isNameValid, setIsNameValid] = useState(false);
-  const [isAddressValid, setIsAddressValid] = useState(false);
 
-  const { 이메일, 성, 이름, 전화번호, 주소, 배송요청사항, 포장요청사항 } =
-    inputs;
+  const [isValid, setIsValid] = useState({
+    default: true,
+    email: false,
+    name: false,
+    address: false,
+  });
+
+  const { email, lastName, firstName, address } = inputs;
 
   const displayText = e => {
     const { value, name } = e.target;
     setInputs({ ...inputs, [name]: value });
-    setInputStyle('inputTrue');
-    console.log(inputs.주문요청사항);
   };
+
   const onClickEmail = e => {
     e.preventDefault();
-    if (inputs.이메일.includes('@')) {
-      setInputStyle('inputTrue');
-      setIsEmailVaild(true);
+    if (inputs.email.includes('@')) {
+      setIsValid({ ...isValid, default: true, email: true });
     } else {
-      setInputStyle('inputFalse');
-      setInputs({ 이메일: '', 성: '', 이름: '' });
+      setInputs({ email: '', lastName: '', firstName: '' });
+    }
+  };
+  const onClickName = e => {
+    e.preventDefault();
+    if (inputs.lastName && inputs.firstName) {
+      setIsValid({ ...isValid, default: false, name: true });
+    } else {
+      setIsValid({ ...isValid, name: false });
     }
   };
 
-  const onClickName = () => {
-    if (inputs.성 && inputs.이름) {
-      setIsNameValid(true);
-      setIsEmailVaild(false);
+  const onClickAddress = e => {
+    e.preventDefault();
+    if (inputs.address) {
+      setIsValid({ ...isValid, address: true });
     } else {
-      setIsEmailVaild(false);
+      setIsValid({ ...isValid, address: false });
     }
   };
-
-  const onClickAddress = () =>
-    inputs.주소.valueOf && inputs.전화번호.valueOf && setIsAddressValid(true);
 
   const handleClickOutside = () => {
-    if (inputs.이메일.includes('@')) {
-      setInputStyle('inputTrue');
-      setIsEmailVaild(true);
+    if (inputs.email.includes('@')) {
+      setIsValid({ ...isValid, email: true });
     } else {
-      setInputStyle('inputFalse');
-      setInputs({ 이메일: '', 성: '', 이름: '', 전화번호: '', 주소: '' });
+      setInputs({
+        email: '',
+        lastName: '',
+        firstName: '',
+        phone: '',
+        address: '',
+      });
     }
   };
 
@@ -67,7 +71,6 @@ function Payment() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   });
-
   return (
     <div className="Payment">
       <div className="left">
@@ -75,33 +78,35 @@ function Payment() {
           <img alt="logo" className="logo" src="./images/asaplogo.png" />
         </div>
         <div className="contextWrapper">
-          {isNameValid ? null : (
-            <PaymentStep01
-              value={(성, 이름, 전화번호, 주소, 이메일)}
-              inputStyle={inputStyle}
-              element={(성, 이름, 전화번호, 주소, 이메일)}
+          {isValid.default && (
+            <PaymentEmail
+              value={email}
+              element={email}
+              name={email}
               displayText={displayText}
-              isEmailValid={isEmailValid}
+              isValid={isValid}
               onClickEmail={onClickEmail}
               onClickName={onClickName}
             />
           )}
 
-          {isNameValid ? (
-            <PaymentStep03
-              value={(성, 이름, 전화번호, 주소, 이메일)}
-              inputStyle={inputStyle}
-              element={(성, 이름, 전화번호, 주소, 이메일)}
+          {isValid.name && (
+            <PaymentAddress
+              value={address}
+              element={address}
               displayText={displayText}
-              isEmailValid={isEmailValid}
-              isAddressValid={isAddressValid}
+              isValid={isValid}
               onClickAddress={onClickAddress}
             />
-          ) : null}
+          )}
 
-          {isAddressValid ? (
-            <PaymentStep04 displayText={displayText} inputs={inputs} />
-          ) : null}
+          {isValid.address && (
+            <PaymentShipping
+              isValid={isValid}
+              displayText={displayText}
+              inputs={inputs}
+            />
+          )}
         </div>
       </div>
       <div className="right">

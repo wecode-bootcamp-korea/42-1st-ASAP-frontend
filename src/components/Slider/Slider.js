@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ItemCard from './ItemCard';
+import leftArrowImage from '../../images/slideArrow.png';
+import rightArrowImage from '../../images/slideArrowB.png';
 import './Slider.scss';
 
 const IMG_WIDTH = 500;
@@ -44,13 +46,13 @@ const Slider = () => {
     <div className="SliderContainer">
       <div className="slider">
         <img
-          src="./images/slideArrowB.png"
+          src={rightArrowImage}
           className="leftArrow"
           onClick={moveLeft}
           alt="arrowIcon"
         />
         <img
-          src="/images/slideArrow.png"
+          src={leftArrowImage}
           className="rightArrow"
           onClick={moveRight}
           alt="arrowIcon"
@@ -73,13 +75,13 @@ const Slider = () => {
               </p>
               <button className="recommendBtn">제품 보기→</button>
             </div>
-            {recommendData.map(item => {
+            {recommendData.map(({ id, name, image_url, description }, item) => {
               return (
                 <ItemCard
-                  key={item.id}
-                  name={item.name}
-                  img={item.image_url}
-                  description={item.description}
+                  key={id}
+                  name={name}
+                  img={image_url}
+                  description={description}
                 />
               );
             })}

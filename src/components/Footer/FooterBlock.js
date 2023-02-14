@@ -1,6 +1,7 @@
 import React from 'react';
 import FooterMenuList from './FooterMenuList';
 import FooterCheckbox from './FooterCheckbox';
+import leftArrowImage from '../../images/slideArrow.png';
 import './FooterBlock.scss';
 
 const FooterBlock = ({ FOOTER_DATA }) => {
@@ -39,7 +40,7 @@ const FooterBlock = ({ FOOTER_DATA }) => {
             <img
               alt="emailBtnImg"
               className="emailBtnImg"
-              src="./images/goIcon.png"
+              src={leftArrowImage}
             />
           </button>
         </div>

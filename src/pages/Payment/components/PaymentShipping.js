@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import Checkbox from './ShippingCheckbox';
 import ShippingInputBox from './ShippingInputBox';
-import './PaymentStep04.scss';
+import './PaymentShipping.scss';
 
-function PaymentStep04({ displayText }) {
-  const [isCheckValid01, setIsCheckValid01] = useState(false);
-  const [isCheckValid02, setIsCheckValid02] = useState(false);
+function PaymentShipping({ displayText }) {
+  const [isCheckValidShipping, setIsCheckValidShipping] = useState(false);
+  const [isCheckValidGift, setIsCheckValidGift] = useState(false);
 
-  const onClickChecked01 = event => {
+  const onClickCheckedShipping = event => {
     event.stopPropagation();
-    isCheckValid01 ? setIsCheckValid01(false) : setIsCheckValid01(true);
+    setIsCheckValidShipping(prev => !prev);
   };
 
-  const onClickChecked02 = event => {
+  const onClickCheckedGift = event => {
     event.stopPropagation();
-    isCheckValid02 ? setIsCheckValid02(false) : setIsCheckValid02(true);
+    setIsCheckValidGift(prev => !prev);
   };
   return (
-    <div className="paymentStep04">
+    <div className="paymentShipping">
       <span className="shippingMethodText">
         원하는 배송 방법을 선택하십시오
       </span>
@@ -32,11 +32,11 @@ function PaymentStep04({ displayText }) {
       </div>
 
       <Checkbox
-        isCheckValid={isCheckValid01}
-        onClickChecked={onClickChecked01}
+        isCheckValid={isCheckValidShipping}
+        onClickChecked={onClickCheckedShipping}
         shippingCheckboxText="배송 기사님께 요청 사항이 있습니다"
       />
-      {isCheckValid01 && (
+      {isCheckValidShipping && (
         <ShippingInputBox
           name="배송요청사항"
           displayText={displayText}
@@ -45,11 +45,11 @@ function PaymentStep04({ displayText }) {
       )}
 
       <Checkbox
-        isCheckValid={isCheckValid02}
-        onClickChecked={onClickChecked02}
+        isCheckValid={isCheckValidGift}
+        onClickChecked={onClickCheckedGift}
         shippingCheckboxText="주문 포장 및 기타 요청 사항이 있습니다. (예: 개별 포장, 개별 기프트 메시지 카드)"
       />
-      {isCheckValid02 && (
+      {isCheckValidGift && (
         <ShippingInputBox
           name="주문요청사항"
           displayText={displayText}
@@ -62,4 +62,4 @@ function PaymentStep04({ displayText }) {
   );
 }
 
-export default PaymentStep04;
+export default PaymentShipping;
