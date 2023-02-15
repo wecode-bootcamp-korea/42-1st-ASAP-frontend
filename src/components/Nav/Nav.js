@@ -12,8 +12,6 @@ const Nav = () => {
   const [menuSelected, setMenuSelected] = useState(0);
   const [navMenuList, setNavMenuList] = useState([]);
 
-  console.log(token);
-
   useEffect(() => {
     fetch('/data/menulist.json')
       .then(res => res.json())
