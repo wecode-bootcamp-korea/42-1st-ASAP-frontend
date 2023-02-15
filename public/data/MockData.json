@@ -1,0 +1,409 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "sub_category_id": 12,
+      "sub_category": "핸드",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "시트러스 핸드 워시",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product05.png?raw=true",
+      "description": "부드러운 핸드 워시",
+      "feeling_of_use": ["깔끔한", "상쾌한"],
+      "scents": ["시트러스", "우드", "허브"],
+      "main_ingredient": "만다린, 로즈마리 리프, 시더우드 아틀라스",
+      "ingredient": "정제수, 소듐하이드록시프로필설포네이트라우릴글루코 사이드크로스폴리머, 코카미도프로필하이드록시설테인, 소듐메틸코코일타우레이트, 피이지-40하이드로제네이티드캐스터오일, 소듐클로라이드, 1,2-헥산다이올, 피이지-120메틸글루코스디올리에이트, 필리핀오렌지껍질오일, 에틸헥실글리세린, 아틀라스시다나무껍질오일, 라벤더오일, 오렌지오일, 소듐데하이드로아세테이트, 로즈마리잎오일, 코코넛애씨드, 시트릭애씨드, 토코페롤, 리모넨, 리날룰",
+      "options": [
+        {
+          "size": "500 mL (펌프 포함)",
+          "price": 47000,
+          "product_option_id": 1
+        },
+        {
+          "size": "500 mL (펌프 미포함)",
+          "price": 46000,
+          "product_option_id": 2
+        }
+      ],
+      "guides": [
+        {
+          "texture": "거품이 적은, 젤 타입",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide01.png?raw=true",
+          "usage_amount": "펌프 1회",
+          "usage_description": "젖은 손에 덜어 내어 거품을 낸 다음 깨끗하게 헹굽니다."
+        }
+      ],
+      "formulation": "젤"
+    },
+    {
+      "id": 2,
+      "sub_category_id": 12,
+      "sub_category": "핸드",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "우드 핸드 워시",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product02.png?raw=true",
+      "description": "상쾌한 핸드 워시",
+      "feeling_of_use": ["깔끔한", "매끄러운", "부드러운"],
+      "scents": ["시트러스", "우드", "허브"],
+      "main_ingredient": "베티버뿌리오일, 비터오렌지잎/잔가지오일, 베르가모트오일",
+      "ingredient": "정제수, 소듐라우로암포아세테이트, 소듐메틸코코일타우레이트, 아크릴레이트코폴리머, 부석, 소듐클로라이드, 코코-베타인, 1,2-헥산다이올, 페녹시에탄올, 베르가모트오일, 코코넛애씨드, 비터오렌지잎/잔가지오일, 에틸헥실글리세린, 베티버뿌리오일, 왕귤껍질오일, 웨스트오스트레일리아산달우드목부오일, 리모넨, 리날룰, 파네솔, 제라니올, 시트랄",
+      "options": [
+        {
+          "size": "500 mL (펌프 포함)",
+          "price": 47000,
+          "product_option_id": 3
+        },
+        {
+          "size": "500 mL (펌프 미포함)",
+          "price": 46000,
+          "product_option_id": 4
+        }
+      ],
+      "guides": [
+        {
+          "texture": "알갱이가 있는, 젤 타입",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide02.png?raw=true",
+          "usage_amount": "펌프 1회",
+          "usage_description": "젖은 손에 덜어 내어 거품을 낸 다음 깨끗하게 헹굽니다."
+        }
+      ],
+      "formulation": "젤"
+    },
+    {
+      "id": 3,
+      "sub_category_id": 12,
+      "sub_category": "핸드",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "시트러스 핸드 밤",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product07.png?raw=true",
+      "description": "향긋한 핸드 밤",
+      "feeling_of_use": ["부드러운", "유분기 없는"],
+      "scents": ["우드", "흙내음", "스모키"],
+      "main_ingredient": "만다린, 로즈마리 리프, 시더우드 아틀라스",
+      "ingredient": "정제수, 글리세린, 스위트아몬드오일, 세테아릴알코올, 팔미틱애씨드, 세테아레스-20, 코코넛야자오일, 퀸즈랜드넛오일, 스테아릭애씨드, 필리핀오렌지껍질오일, 글리세릴스테아레이트, 아틀라스시다나무껍질오일, 알로에베라잎즙, 라벤더오일, 시어버터, 카카오씨버터, 오렌지오일, 토코페롤, 해바라기씨오일, 페녹시에탄올, 로즈마리잎오일, 왕귤씨추출물, 밀배아오일, 돌콩오일, 다이소듐이디티에이, 베타-카로틴, 당근추출물, 리모넨, 리날룰, 제라니올, 시트랄",
+      "options": [
+        {
+          "size": "75 mL",
+          "price": 31000,
+          "product_option_id": 5
+        },
+        {
+          "size": "120 mL",
+          "price": 45000,
+          "product_option_id": 6
+        },
+        {
+          "size": "500 mL",
+          "price": 120000,
+          "product_option_id": 7
+        }
+      ],
+      "guides": [
+        {
+          "texture": "크림 타입",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide03.png?raw=true",
+          "usage_amount": "반 티스푼",
+          "usage_description": "필요할 때마다 깨끗한 손에 바릅니다."
+        }
+      ],
+      "formulation": "크림"
+    },
+    {
+      "id": 4,
+      "sub_category_id": 12,
+      "sub_category": "핸드",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "우드 핸드 밤",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product08.png?raw=true",
+      "description": "촉촉한 핸드 밤",
+      "feeling_of_use": ["부드러운", "유분기 없는"],
+      "scents": ["우드", "흙내음", "스모키"],
+      "main_ingredient": "베르가모트오일, 베티버뿌리오일, 비터오렌지잎/잔가지오일",
+      "ingredient": "정제수, 글리세린, 스위트아몬드오일, 스테아릭애씨드, 세테아릴알코올, 세테아레스-20, 코코넛야자오일, 마카다미아씨오일, 베르가모트오일, 글리세릴스테아레이트, 피이지-100스테아레이트, 알로에베라잎즙, 페녹시에탄올, 토코페롤, 시어버터, 카카오씨버터, 포타슘락테이트, 비터오렌지잎/잔가지오일, 베티버뿌리오일, 밀배아오일, 돌콩오일, 락틱애씨드, 왕귤껍질오일, 웨스트오스트레일리아산달우드목부오일, 다이소듐이디티에이, 벤조익애씨드, 데하이드로아세틱애씨드, 에틸헥실글리세린, 당근추출물, 베타-카로틴, 리모넨, 리날룰, 파네솔, 시트랄",
+      "options": [
+        {
+          "size": "75 mL",
+          "price": 31000,
+          "product_option_id": 8
+        },
+        {
+          "size": "500 mL",
+          "price": 120000,
+          "product_option_id": 9
+        }
+      ],
+      "guides": [
+        {
+          "texture": "크림 타입",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide04.png?raw=true",
+          "usage_amount": "반 티스푼",
+          "usage_description": "필요할 때마다 깨끗한 손에 바릅니다."
+        }
+      ],
+      "formulation": "크림"
+    },
+    {
+      "id": 5,
+      "sub_category_id": 13,
+      "sub_category": "바디",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "바디 클렌져",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product03.png?raw=true",
+      "description": "향기로운 클렌징 젤",
+      "feeling_of_use": ["따뜻한", "깨끗한", "상쾌한"],
+      "scents": ["플로랄", "스파이시", "따뜻함"],
+      "main_ingredient": "로즈, 카다멈, 블랙 페퍼",
+      "ingredient": "정제수, 소듐라우레스설페이트, 코카미도프로필하이드록시설테인, 피이지-40하이드로제네이티드캐스터오일, 글리세린, 페녹시에탄올, 씨솔트, 소듐클로라이드, 소듐데하이드로아세테이트, 시트릭애씨드, 다마스크장미꽃오일, 소두구씨오일, 후추열매오일, 시트로넬올, 제라니올",
+      "options": [
+        {
+          "size": "100 mL",
+          "price": 20000,
+          "product_option_id": 10
+        },
+        {
+          "size": "500 mL (펌프 미포함)",
+          "price": 55000,
+          "product_option_id": 11
+        },
+        {
+          "size": "500 mL",
+          "price": 56000,
+          "product_option_id": 12
+        }
+      ],
+      "guides": [
+        {
+          "texture": "투명하고 거품이 적은 젤",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide05.png?raw=true",
+          "usage_amount": "필요한 만큼",
+          "usage_description": "손 또는 샤월 볼에 충분히 덜어 목에서 발끝까지 젖은 피부에 마사지 한 후 완전히 헹굽니다."
+        }
+      ],
+      "formulation": "젤"
+    },
+    {
+      "id": 6,
+      "sub_category_id": 13,
+      "sub_category": "바디",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "바디 오일",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product04.png?raw=true",
+      "description": "비타민을 함유한 바디 오일",
+      "feeling_of_use": ["집중 수분 공급", "부드러운"],
+      "scents": ["우드", "가벼운 시트러스향"],
+      "main_ingredient": "오렌지, 호호바 씨드, 로렐 리프",
+      "ingredient": "스위트아몬드오일, 퀸즈랜드넛오일, 호호바씨오일, 오렌지껍질오일, 해바라기씨오일, 토코페롤, 광곽향오일, 월계수잎오일, 리모넨, 리날룰, 시트랄",
+      "options": [
+        {
+          "size": "100 mL",
+          "price": 39000,
+          "product_option_id": 13
+        }
+      ],
+      "guides": [
+        {
+          "texture": "중간 정도 무게감의 오일",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide01.png?raw=true",
+          "usage_amount": "1티스푼",
+          "usage_description": "몸을 깨끗하게 씻은 뒤 팔꿈치, 무릎, 발 등의 건조한 부위를 집중적으로 마사지합니다."
+        }
+      ],
+      "formulation": "오일"
+    },
+    {
+      "id": 7,
+      "sub_category_id": 13,
+      "sub_category": "바디",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "바디 밤",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product09.png?raw=true",
+      "description": "향기로운 바디 밤",
+      "feeling_of_use": ["탄력", "부드러운", "촉촉한"],
+      "scents": ["그린", "시트러스", "상쾌함"],
+      "main_ingredient": "제라늄 리프, 만다린, 베르가못",
+      "ingredient": "정제수, 스위트아몬드오일, 글리세린, 세테아릴알코올, 팔미틱애씨드, 세테아레스-20, 코코넛야자오일, 퀸즈랜드넛오일, 스테아릭애씨드, 글리세릴스테아레이트, 베르가모트오일, 필리핀오렌지껍질오일, 센티드제라늄추출물, 알로에베라잎즙, 시어버터, 페녹시에탄올, 카카오씨버터, 토코페롤, 해바라기씨오일, 밀배아오일, 돌콩오일, 다이소듐이디티에이, 벤잘코늄클로라이드, 소듐시트레이트, 베타-카로틴, 당근추출물, 리모넨, 리날룰, 시트로넬올, 제라니올, 시트랄",
+      "options": [
+        {
+          "size": "100 mL",
+          "price": 39000,
+          "product_option_id": 14
+        },
+        {
+          "size": "500 mL",
+          "price": 120000,
+          "product_option_id": 15
+        }
+      ],
+      "guides": [
+        {
+          "texture": "중간 정도 무게감의 크림",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide02.png?raw=true",
+          "usage_amount": "원하는 만큼의 양",
+          "usage_description": "아침 저녁으로 몸을 깨끗하게 씻은 후 몸 전체에 발라줍니다. 특히, 팔꿈치, 무릎, 발 등의 건조한 부위를 집중적으로 마사지합니다."
+        }
+      ],
+      "formulation": "크림"
+    },
+    {
+      "id": 8,
+      "sub_category_id": 13,
+      "sub_category": "바디",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "바디 트리트먼트",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product05.png?raw=true",
+      "description": "보습 바디 오일",
+      "feeling_of_use": ["집중 수분 공급", "상쾌한", "부드러운"],
+      "scents": ["그린", "시트러스", "상쾌함"],
+      "main_ingredient": "제라늄 리프, 만다린, 베르가못",
+      "ingredient": "스위트아몬드오일, 유럽개암씨오일, 퀸즈랜드넛오일, 밀배아오일, 해바라기씨오일, 토코페롤, 베르가모트오일, 필리핀오렌지껍질오일, 센티드제라늄추출물, 리모넨, 리날룰, 시트로넬올, 제라니올, 시트랄",
+      "options": [
+        {
+          "size": "100 mL",
+          "price": 39000,
+          "product_option_id": 16
+        }
+      ],
+      "guides": [
+        {
+          "texture": "중간 정도 무게감의 오일",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide03.png?raw=true",
+          "usage_amount": "한 티스푼",
+          "usage_description": "샤워 후, 팔꿈치, 무릎, 발 등의 건조한 부위를 집중적으로 마사지합니다."
+        }
+      ],
+      "formulation": "오일"
+    },
+    {
+      "id": 9,
+      "sub_category_id": 13,
+      "sub_category": "바디",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "바디 클렌징 슬랩",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product09.png?raw=true",
+      "description": "식물성 비누",
+      "feeling_of_use": ["상쾌한", "깨끗한"],
+      "scents": ["시트러스", "플로랄", "상쾌함"],
+      "main_ingredient": "베르가못, 일랑일랑, 타히티안 라임",
+      "ingredient": "소듐팔메이트, 소듐팜커넬레이트, 정제수, 소듐글루코네이트, 글리세린, 라임전초오일, 소듐클로라이드, 일랑일랑꽃오일, 베르가모트오일, 리모넨, 리날룰, 벤질벤조에이트, 벤질살리실레이트, 파네솔, 제라니올",
+      "options": [
+        {
+          "size": "310 g",
+          "price": 29000,
+          "product_option_id": 17
+        }
+      ],
+      "guides": [
+        {
+          "texture": "거품이 적은 고체 비누",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide04.png?raw=true",
+          "usage_amount": "필요한 만큼",
+          "usage_description": "풍성한 거품을 낸 뒤 목에서 발끝까지 젖은 피부에 마사지한 후 완전히 헹굽니다."
+        }
+      ],
+      "formulation": "고체"
+    },
+    {
+      "id": 11,
+      "sub_category_id": 13,
+      "sub_category": "바디",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "바디 젤",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product03.png?raw=true",
+      "description": "애프터 썬 하이드레이터",
+      "feeling_of_use": ["신속하게 흡수되며 끈적이지 않는"],
+      "scents": ["시트러스", "상쾌함", "그린"],
+      "main_ingredient": "그레이프푸르트, 판테놀, 위치 헤이즐",
+      "ingredient": "정제수, 알로에베라잎즙, 버지니아풍년화수, 폴리솔베이트20 , 피이지-6카프릴릭/카프릭글리세라이즈, 피이지-40하이드로제네이티드캐스터오일, 코세스-7, 피피지-1-피이지-9라우릴글라이콜에터,폴리솔베이트60, 페녹시에탄올, 카보머, 에틸헥실글리세린, 왕귤껍질오일, 레몬껍질오일, 판테놀, 다이소듐이디티에이, 아미노메틸프로판올, 벤조익애씨드, 비터오렌지잎/잔가지오일, 데하이드로아세틱애씨드, 커먼자스민오일, 리모넨, 리날룰, 시트랄, 제라니올, 벤질벤조에이트",
+      "options": [
+        {
+          "size": "150 mL",
+          "price": 47000,
+          "product_option_id": 19
+        }
+      ],
+      "guides": [
+        {
+          "texture": "가벼운 무게감의 젤",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide01.png?raw=true",
+          "usage_amount": "원하는 만큼의 양",
+          "usage_description": "샤워 후, 햇빛에 노출된 부위에 발라줍니다. 더욱 시원하게 사용하시려면 여름에는 냉장고에 보관하면 좋습니다."
+        }
+      ],
+      "formulation": "젤"
+    },
+    {
+      "id": 12,
+      "sub_category_id": 13,
+      "sub_category": "바디",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "바디 스크럽",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product02.png?raw=true",
+      "description": "상쾌한 바디 각질완화제",
+      "feeling_of_use": ["신선한", "매끄러운", "부드러운"],
+      "scents": ["그린", "시트러스", "상쾌함"],
+      "main_ingredient": "뱀부, 퓨마이스, 제라늄 리프",
+      "ingredient": "정제수, 부석, 소듐라우로암포아세테이트, 소듐메틸코코일타우레이트, 아크릴레이트코폴리머, 소듐클로라이드, 코코-베타인, 1,2-헥산다이올, 페녹시에탄올, 시트릭애씨드, 가시대나무줄기추출물, 베르가모트오일, 필리핀오렌지껍질오일, 센티드제라늄추출물, 코코넛애씨드, 에틸헥실글리세린, 석영, 리모넨, 리날룰, 시트로넬올, 제라니올",
+      "options": [
+        {
+          "size": "180 mL",
+          "price": 43000,
+          "product_option_id": 20
+        }
+      ],
+      "guides": [
+        {
+          "texture": "투명하며 굵은 입자를 포함한 젤",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide02.png?raw=true",
+          "usage_amount": "원하는 만큼의 양",
+          "usage_description": "매주 1~2회, 목에서 발끝까지 젖은 피부에 마사지한 후 완전히 헹굽니다."
+        }
+      ],
+      "formulation": "스크럽"
+    },
+    {
+      "id": 13,
+      "sub_category_id": 12,
+      "sub_category": "핸드",
+      "main_category_id": 2,
+      "main_category": "바디 & 핸드",
+      "name": "핸드 크림",
+      "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product10.png?raw=true",
+      "description": "향기로운 핸드 크림",
+      "feeling_of_use": ["촉촉한", "따뜻한"],
+      "scents": ["시트러스", "바닐라", "우드"],
+      "main_ingredient": "웨스트오스트레일리아산달우드목부오일,바닐린, 탄제린껍질오일",
+      "ingredient": "정제수, 글리세린, 스위트아몬드오일, 세테아릴알코올, 탄제린껍질오일, 팔미틱애씨드, 세테아레스-20, 코코넛야자오일, 퀸즈랜드넛오일, 스테아릭애씨드, 글리세릴스테아레이트, 아틀라스시다나무껍질오일, 웨스트오스트레일리아산달우드목부오일, 알로에베라잎즙, 시어버터, 카카오씨버터, 토코페롤, 해바라기씨오일, 페녹시에탄올, 왕귤씨추출물, 밀배아오일, 돌콩오일, 다이소듐이디티에이, 바닐린, 베타-카로틴, 당근추출물, 소듐시트레이트, 리모넨, 파네솔, 리날룰, 시트랄, 시트로넬올",
+      "options": [
+        {
+          "size": "100 mL",
+          "price": 35000,
+          "product_option_id": 21
+        },
+        {
+          "size": "500 mL",
+          "price": 110000,
+          "product_option_id": 22
+        }
+      ],
+      "guides": [
+        {
+          "texture": "가벼운 무게감의 크림",
+          "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/%EC%82%AC%EC%9A%A9%EB%B2%95%EC%9D%B4%EB%AF%B8%EC%A7%80%205%EC%A2%85/guide03.png?raw=true",
+          "usage_amount": "원하는 만큼의 양",
+          "usage_description": "손을 깨끗하게 씻은 후 손에 발라줍니다. 특히, 건조한 부위를 집중적으로 마사지합니다."
+        }
+      ],
+      "formulation": "크림"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+@import '../../../styles/mixins.scss';
+
+.body-color {
+  background-color: #ebeade;
+  padding-bottom: 100px;
+  overflow-y: hidden;
+
+  .product-photo {
+    width: 140px;
+    height: 340px;
+    background-size: cover;
+  }
+
+  .product-wrapper {
+    @include itemCenter;
+    line-height: 1.5;
+
+    .product-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 120px;
+
+      &:hover {
+        .description-title {
+          text-decoration: underline;
+          text-underline-offset: 0.3rem;
+        }
+      }
+
+      .button {
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .description {
+    margin-top: 20px;
+    text-align: center;
+  }
+}

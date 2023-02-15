@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "시트러스 핸드 워시",
+    "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product01.png?raw=true",
+    "options": "[{\"size\": \"500 mL (펌프 포함)\", \"price\": 47000}, {\"size\": \"500 mL (펌프 미포함)\", \"price\": 46000}]",
+    "feeling_of_use": "[\"깔끔한\", \"상쾌한\"]",
+    "scents": "[\"시트러스\", \"우드\", \"허브\"]",
+    "formulation": "젤"
+  },
+  {
+    "id": 2,
+    "name": "우드 핸드 워시",
+    "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product02.png?raw=true",
+    "options": "[{\"size\": \"500 mL (펌프 포함)\", \"price\": 47000}, {\"size\": \"500 mL (펌프 미포함)\", \"price\": 46000}]",
+    "feeling_of_use": "[\"깔끔한\", \"매끄러운\", \"부드러운\"]",
+    "scents": "[\"시트러스\", \"우드\", \"허브\"]",
+    "formulation": "젤"
+  },
+  {
+    "id": 3,
+    "name": "시트러스 핸드 밤",
+    "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product07.png?raw=true",
+    "options": "[{\"size\": \"75 mL\", \"price\": 31000}, {\"size\": \"120 mL\", \"price\": 45000}, {\"size\": \"500 mL\", \"price\": 120000}]",
+    "feeling_of_use": "[\"부드러운\", \"유분기 없는\"]",
+    "scents": "[\"우드\", \"흙내음\", \"스모키\"]",
+    "formulation": "크림"
+  },
+  {
+    "id": 4,
+    "name": "우드 핸드 밤",
+    "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product08.png?raw=true",
+    "options": "[{\"size\": \"75 mL\", \"price\": 31000}, {\"size\": \"500 mL\", \"price\": 120000}]",
+    "feeling_of_use": "[\"부드러운\", \"유분기 없는\"]",
+    "scents": "[\"우드\", \"흙내음\", \"스모키\"]",
+    "formulation": "크림"
+  },
+  {
+    "id": 13,
+    "name": "핸드 크림",
+    "image_url": "https://github.com/jangjuseong/asap-img-repo/blob/main/asap-image/product10.png?raw=true",
+    "options": "[{\"size\": \"100 mL\", \"price\": 35000}, {\"size\": \"500 mL\", \"price\": 110000}]",
+    "feeling_of_use": "[\"촉촉한\", \"따뜻한\"]",
+    "scents": "[\"시트러스\", \"바닐라\", \"우드\"]",
+    "formulation": "크림"
+  }
+]
