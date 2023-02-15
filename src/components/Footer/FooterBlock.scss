@@ -1,0 +1,94 @@
+.footerBlock {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 50px;
+
+  .linkText {
+    color: lightgray;
+    text-decoration: none;
+  }
+
+  .communication {
+    .communicationText {
+      font-size: 15px;
+      line-height: 30px;
+    }
+
+    .detail1 {
+      overflow: scroll;
+      height: 90px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid lightgray;
+    }
+
+    .detail2 {
+      padding: 10px;
+      border: 1px solid lightgray;
+    }
+
+    .inputWrapper {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: space-between;
+      margin-top: 30px;
+      border: 1px solid lightgray;
+      width: 100%;
+      height: 50px;
+
+      .emailInput {
+        background-color: transparent;
+        font-size: 30px;
+        color: lightgray;
+        padding: 10px;
+        border: 0px;
+
+        input::placeholder {
+          color: lightgray;
+        }
+      }
+
+      .emailBtn {
+        height: 100%;
+        border: 0px;
+        border-left: 1px solid lightgray;
+        background-color: transparent;
+
+        .emailBtnImg {
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .devider {
+    margin-bottom: 20px;
+    border-top: 1px solid lightgray;
+  }
+
+  .text {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .location {
+    .locationBox {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      .locationLink {
+        text-decoration: underline;
+        margin-top: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,298 @@
+.signOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  overflow-y: scroll;
+
+  .signModal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    padding: 50px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: black;
+    z-index: 999;
+    overflow-y: auto;
+
+    .imageLine {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .arrow {
+        width: 20px;
+        cursor: pointer;
+      }
+
+      .delete {
+        width: 15px;
+        cursor: pointer;
+      }
+    }
+    .signUpText {
+      font-size: 25px;
+      margin-top: 30px;
+    }
+
+    .signUpAlram {
+      margin-top: 20px;
+      color: #666666;
+    }
+
+    .inputBox {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+
+      .firstInputContainer {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin: 10px auto 0;
+        .firstInput {
+          box-sizing: border-box;
+          padding: 20px 0 0;
+          width: 100%;
+          height: 100%;
+          border: 0 none;
+          color: #595f63;
+          font-size: 20px;
+          outline: none;
+          &:focus + .firstInputLabel .firstInputName,
+          &:valid + .firstInputLabel .firstInputName {
+            transform: translateY(-200%);
+            font-size: 12px;
+          }
+        }
+        .firstInputLabel {
+          position: absolute;
+          left: 0%;
+          bottom: 0;
+          width: 80%;
+          height: 100%;
+          border-bottom: 1px solid #cccccc;
+          text-align: left;
+          pointer-events: none;
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 0;
+            height: 100%;
+            border-bottom: 3px solid #5fa8d3;
+            transition: all 0.3s ease;
+          }
+          span {
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            color: #838381;
+            transition: all 0.3s ease;
+            font-size: 20px;
+          }
+        }
+      }
+      .secondInputContainer {
+        position: relative;
+        width: 80%;
+        height: 50px;
+        margin: 10px auto 0;
+        .secondInput {
+          box-sizing: border-box;
+          padding: 20px 0 0;
+          width: 100%;
+          height: 100%;
+          border: 0 none;
+          color: #595f63;
+          font-size: 20px;
+          outline: none;
+          &:focus + .secondInputLabel .secondInputName,
+          &:valid + .secondInputLabel .secondInputName {
+            transform: translateY(-200%);
+            font-size: 12px;
+          }
+        }
+        .secondInputLabel {
+          position: absolute;
+          left: 0%;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          border-bottom: 1px solid #cccccc;
+          text-align: left;
+          pointer-events: none;
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 0;
+            height: 100%;
+            border-bottom: 3px solid #5fa8d3;
+            transition: all 0.3s ease;
+          }
+          span {
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            color: #838381;
+            transition: all 0.3s ease;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .thirdInputContainer {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      margin: 10px auto 0;
+      .thirdInput {
+        box-sizing: border-box;
+        padding: 20px 0 0;
+        width: 100%;
+        height: 100%;
+        border: 0 none;
+        color: #595f63;
+        font-size: 20px;
+        outline: none;
+        &:focus + .thirdInputLabel .thirdInputName,
+        &:valid + .thirdInputLabel .thirdInputName {
+          transform: translateY(-300%);
+          font-size: 12px;
+        }
+      }
+      .thirdInputLabel {
+        position: absolute;
+        left: 0%;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #cccccc;
+        text-align: left;
+        pointer-events: none;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 0;
+          height: 100%;
+          border-bottom: 3px solid #5fa8d3;
+          transition: all 0.3s ease;
+        }
+        span {
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+          color: #838381;
+          transition: all 0.3s ease;
+          font-size: 20px;
+        }
+      }
+    }
+    .fourthInputContainer {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      margin: 10px auto 0;
+      .fourthInput {
+        box-sizing: border-box;
+        padding: 20px 0 0;
+        width: 100%;
+        height: 100%;
+        border: 0 none;
+        color: #595f63;
+        font-size: 20px;
+        outline: none;
+        &:focus + .fourthInputLabel .fourthInputName,
+        &:valid + .fourthInputLabel .fourthInputName {
+          transform: translateY(-300%);
+          font-size: 12px;
+        }
+      }
+      .fourthInputLabel {
+        position: absolute;
+        left: 0%;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #cccccc;
+        text-align: left;
+        pointer-events: none;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 0;
+          height: 100%;
+          border-bottom: 3px solid #5fa8d3;
+          transition: all 0.3s ease;
+        }
+        span {
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+          color: #838381;
+          transition: all 0.3s ease;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .firstCheckBox {
+      margin-top: 50px;
+
+      .checkBoxBtn {
+        margin-right: 10px;
+      }
+    }
+
+    .secondCheckBox {
+      margin-top: 10px;
+
+      .checkBoxBtn {
+        margin-right: 10px;
+      }
+    }
+
+    .terms {
+      height: 100px;
+      margin-top: 10px;
+      padding: 2px;
+      border: 1px solid;
+      overflow-y: scroll;
+    }
+
+    .signUpBtn {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #333333;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+}
+
+.signUpClose {
+  display: none;
+  z-index: -2;
+
+  .modalClose {
+    display: none;
+  }
+}

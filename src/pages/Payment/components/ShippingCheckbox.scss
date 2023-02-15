@@ -1,0 +1,17 @@
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+
+  .shippingCheckboxText {
+    margin-left: 10px;
+    color: gray;
+  }
+}
+
+#shippingCheckbox {
+  accent-color: #ebeadf;
+  width: 20px;
+  height: 20px;
+}

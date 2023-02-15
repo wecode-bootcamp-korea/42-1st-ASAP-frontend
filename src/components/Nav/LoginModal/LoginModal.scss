@@ -1,0 +1,189 @@
+.loginOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+
+  .loginModal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    height: 650px;
+    width: 600px;
+    padding: 50px;
+    background-color: #fff;
+    color: black;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    animation: fadeIn 0.9s;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .loginDelete {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 50px;
+      .closeBtn {
+        width: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .loginText {
+      font-size: 25px;
+    }
+
+    .idInputContainer {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      margin: 10px auto 0;
+      .idInput {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0 0;
+        border: 0 none;
+        color: #595f63;
+        font-size: 20px;
+        outline: none;
+
+        &:focus + .idLabel .idName,
+        &:valid + .idLabel .idName {
+          transform: translateY(-300%);
+          font-size: 12px;
+        }
+      }
+
+      .idLabel {
+        position: absolute;
+        left: 0%;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #cccccc;
+        pointer-events: none;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 0;
+          height: 100%;
+          transition: all 0.3s ease;
+          transform: translateX(-100%);
+        }
+        .idName {
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+          color: #838381;
+          transition: all 0.3s ease;
+          font-size: 20px;
+        }
+      }
+    }
+    .pwInputContainer {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      margin: 10px auto 0;
+      .pwInput {
+        box-sizing: border-box;
+        padding: 20px 0 0;
+        width: 100%;
+        height: 100%;
+        border: 0 none;
+        color: #595f63;
+        font-size: 20px;
+        outline: none;
+        &:focus + .pwLabel .pwName,
+        &:valid + .pwLabel .pwName {
+          transform: translateY(-300%);
+          font-size: 12px;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .pwLabel {
+        position: absolute;
+        left: 0%;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #cccccc;
+        text-align: left;
+        pointer-events: none;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 0;
+          height: 100%;
+          border-bottom: 3px solid #5fa8d3;
+          transition: all 0.3s ease;
+        }
+        span {
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+          font-size: 20px;
+          color: #838381;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    .loginBtn {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #333333;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: black;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+        color: red;
+      }
+    }
+
+    .notMember {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: 350;
+    }
+
+    .signupBtn {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #d6d5cb;
+      color: black;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #333333;
+        color: #fffef2;
+      }
+    }
+  }
+}

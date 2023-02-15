@@ -1,0 +1,91 @@
+.Payment {
+  display: flex;
+  flex-direction: row;
+  background-color: #e8e7db;
+
+  .left {
+    display: flex;
+    flex-direction: row;
+    padding: 150px 50px;
+    width: 60%;
+
+    .logoWrapper {
+      width: 30%;
+      position: relative;
+
+      .logo {
+        position: absolute;
+        width: 100px;
+        left: 40px;
+      }
+    }
+
+    .contextWrapper {
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+      width: 100%;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100vw;
+  padding-top: 150px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #d5d4c6;
+
+  .paymentOverview {
+    padding: 0px 20px;
+
+    .overviewDetail {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 15px;
+
+      &:first-child {
+        margin-top: 0px;
+      }
+
+      &:last-child {
+        margin-top: 30px;
+      }
+    }
+
+    .viewAll {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-top: 1px solid gray;
+      border-bottom: 1px solid gray;
+    }
+
+    .presentOption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .presentLeft {
+        display: flex;
+        align-items: center;
+        .presents {
+          width: 50px;
+          margin-right: 10px;
+        }
+      }
+      .modify {
+        font-size: 15px;
+        color: gray;
+      }
+    }
+  }
+}
