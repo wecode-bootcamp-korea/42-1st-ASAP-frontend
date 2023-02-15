@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import Slider from '../../components/Slider/Slider';
 import logoImage from '../../images/asaplogo_modified.png';
 import './ProductDetail.scss';
@@ -8,14 +9,11 @@ const ProductDetail = () => {
   const [optionState, setOptionState] = useState(true);
   const [optionChoice, setOptionChioice] = useState('');
 
-  // useEffect(() => {
-  //   fetch('/data/detailData.json')
-  //     .then(res => res.json())
-  //     .then(data => setDetailData(data));
-  // }, []);
+  const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://10.58.52.78:3000/products/detail/4')
+    fetch(`http://10.58.52.68:3000/products/detail/${params.id}`)
       .then(res => res.json())
       .then(data => setDetailData(data.data[0]));
   }, []);
