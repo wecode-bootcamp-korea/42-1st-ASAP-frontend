@@ -1,0 +1,234 @@
+body {
+  background-color: #fffef0;
+}
+
+$default-font-color: #585858;
+$default-font-weight: 100;
+
+.productDetail {
+  .productName {
+    font-size: 30px;
+  }
+
+  .logo {
+    width: 150px;
+    position: absolute;
+    left: 100px;
+    top: 180px;
+  }
+
+  .topContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 150px;
+    align-items: center;
+  }
+
+  .topLeft {
+    width: 60%;
+  }
+
+  .imgWrapper {
+    margin-left: auto;
+    margin-right: 30px;
+    width: 300px;
+
+    .productImg1 {
+      width: 150px;
+    }
+  }
+
+  .topRight {
+    width: 40%;
+
+    .detailWrapper {
+      width: 450px;
+
+      .categoryList {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      .categoryDot::before {
+        content: '· ';
+      }
+
+      .productDetail {
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-weight: $default-font-weight;
+      }
+
+      .descriptionWrapper {
+        .textLists {
+          dt {
+            padding-top: 20px;
+            margin-bottom: 10px;
+
+            &:first-child {
+              border-top: 2px solid#585858;
+            }
+          }
+
+          dd {
+            font-weight: $default-font-weight;
+            padding-bottom: 20px;
+            border-bottom: 1px solid lightgray;
+
+            &:last-child {
+              border-bottom: 0px;
+              margin-bottom: 10px;
+            }
+          }
+
+          .radioBoxContainer {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            .radioBtn {
+              accent-color: black;
+            }
+          }
+        }
+      }
+    }
+    .addCart {
+      display: block;
+      padding: 25px;
+      width: 450px;
+      background-color: #363636;
+      border-width: 0px;
+      font-size: 13px;
+      font-weight: $default-font-weight;
+      text-align: center;
+      color: white;
+
+      &:hover {
+        background-color: black;
+        transition: 1s;
+      }
+    }
+  }
+
+  .asideWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-size: 15px;
+
+    .asideLeft {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      padding-left: 200px;
+      padding-right: 200px;
+
+      .asideTitle {
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: $default-font-color;
+      }
+
+      .asideText {
+        color: $default-font-color;
+        font-weight: $default-font-weight;
+      }
+    }
+
+    .asideRight {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 100px;
+      padding-right: 100px;
+      width: 50%;
+      border-left: 1px solid lightgray;
+
+      .asideTitle {
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: $default-font-color;
+      }
+
+      .asideText {
+        color: $default-font-color;
+        font-weight: $default-font-weight;
+      }
+    }
+  }
+
+  .howTo {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    background-color: #f6f5e8;
+
+    .howToLeft {
+      width: 50%;
+
+      .howToImg {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .howToRight {
+      width: 50%;
+
+      .howToContainer {
+        margin-left: 150px;
+        width: 60%;
+
+        .smallTitle {
+          font-size: 15px;
+          color: $default-font-color;
+        }
+
+        .howToDetail {
+          font-size: 30px;
+          font-weight: 3s00;
+          margin-top: 15px;
+          margin-bottom: 20px;
+          line-height: 35px;
+        }
+
+        .howToBox {
+          padding-top: 20px;
+          padding-bottom: 20px;
+
+          .howToTitle {
+            padding-top: 20px;
+
+            &:first-child {
+              border-top: 2px solid black;
+            }
+          }
+
+          .howToText {
+            margin-top: 15px;
+            padding-bottom: 20px;
+            color: $default-font-color;
+            border-bottom: 1px solid gray;
+
+            &:last-child {
+              boder-bottom: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

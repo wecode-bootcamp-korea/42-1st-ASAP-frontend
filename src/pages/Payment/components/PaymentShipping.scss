@@ -1,0 +1,75 @@
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.paymentShipping {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 100px;
+  font-size: 15px;
+  animation: smoothAppear 1s;
+
+  .shippingMethodText {
+    color: gray;
+  }
+
+  .freeShippingWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 40px 30px;
+    margin-top: 20px;
+    background-color: #fffef2;
+
+    #shippingRadio {
+      display: none;
+    }
+    #shippingRadio + label {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 30px;
+      background-color: #444444;
+      border: 5px double #fffef2;
+      cursor: pointer;
+    }
+
+    .shippingText {
+      margin-left: 20px;
+      .freeShippingHeader {
+        margin-bottom: 15px;
+        color: #444444;
+        font-size: 25px;
+      }
+
+      .shippingDate {
+        font-size: 15px;
+        margin-top: 5px;
+        color: gray;
+      }
+    }
+  }
+
+  .btnGo {
+    padding: 20px 20px;
+    width: 250px;
+    margin-top: 50px;
+    border: 0px;
+    background-color: #333333;
+    color: lightgray;
+
+    &:hover {
+      transition: 0.5s;
+      opacity: 1;
+      background-color: black;
+    }
+  }
+}
