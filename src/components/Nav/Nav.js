@@ -8,6 +8,7 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginStatus, setLoginStatus] = useState('로그인');
   const [menuOpen, setMenuOpen] = useContext(MenuContext);
+  const token = localStorage.getItem('login-token');
   const [menuSelected, setMenuSelected] = useState(0);
   const [navMenuList, setNavMenuList] = useState([]);
 
@@ -19,6 +20,11 @@ const Nav = () => {
 
   const menuSelect = id => {
     setMenuSelected(id - 1);
+  };
+
+  const deleteToken = () => {
+    localStorage.removeItem('login-token');
+    setIsOpen(() => prev => !prev);
   };
   return (
     <>
@@ -62,10 +68,12 @@ const Nav = () => {
           <li className="menuBtn">
             <div className="modalBtn">
               <button
-                onClick={() => setIsOpen(prev => !prev)}
+                onClick={
+                  token === null ? () => setIsOpen(prev => !prev) : deleteToken
+                }
                 className={!menuOpen ? 'navLoginBtn' : 'navLoginBtn clicked'}
               >
-                {loginStatus}
+                {token === null ? '로그인' : '로그아웃'}
               </button>
               <LoginModal
                 isOpen={isOpen}

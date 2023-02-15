@@ -19,7 +19,7 @@ const SignupModal = props => {
     signUpForm.first_name.length > 0;
 
   const signUp = () => {
-    fetch('http://10.58.52.217:8000/user/signup', {
+    fetch('http://10.58.52.97:8000/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -70,35 +70,55 @@ const SignupModal = props => {
           있습니다.
         </div>
         <div className="inputBox">
-          <input
-            name="last_name"
-            className="firstInput"
-            placeholder="성"
-            onChange={changeSignUpInput}
-            value={signUpForm.last_name}
-          />
-          <input
-            name="first_name"
-            className="secondInput"
-            placeholder="이름"
-            onChange={changeSignUpInput}
-            value={signUpForm.first_name}
-          />
+          <div className="firstInputContainer">
+            <input
+              name="last_name"
+              autoComplete="off"
+              className="firstInput"
+              onChange={changeSignUpInput}
+              value={signUpForm.last_name}
+            />
+            <label className="firstInputLabel">
+              <span className="firstInputName">성</span>
+            </label>
+          </div>
+          <div className="secondInputContainer">
+            <input
+              name="first_name"
+              autoComplete="off"
+              className="secondInput"
+              onChange={changeSignUpInput}
+              value={signUpForm.first_name}
+            />
+            <label className="secondInputLabel">
+              <span className="secondInputName">이름</span>
+            </label>
+          </div>
         </div>
-        <input
-          name="email"
-          className="thirdInput"
-          placeholder="이메일주소"
-          onChange={changeSignUpInput}
-          value={signUpForm.email}
-        />
-        <input
-          name="password"
-          className="fourthInput"
-          placeholder="비밀번호"
-          onChange={changeSignUpInput}
-          value={signUpForm.password}
-        />
+        <div className="thirdInputContainer">
+          <input
+            name="email"
+            autoComplete="off"
+            className="thirdInput"
+            onChange={changeSignUpInput}
+            value={signUpForm.email}
+          />
+          <label className="thirdInputLabel">
+            <span className="thirdInputName">이메일주소</span>
+          </label>
+        </div>
+        <div className="fourthInputContainer">
+          <input
+            name="password"
+            autoComplete="off"
+            className="fourthInput"
+            onChange={changeSignUpInput}
+            value={signUpForm.password}
+          />
+          <label className="fourthInputLabel">
+            <span className="fourthInputName">비밀번호</span>
+          </label>
+        </div>
         <div className="secondCheckBox">
           <input className="checkBoxBtn" type="checkbox" />
           <span>이용 약관에 동의합니다 (필수)</span>

@@ -12,7 +12,6 @@ const Home = () => {
     <div className={!menuOpen ? 'mainArea' : 'mainAreaClose'}>
       <FirstContainer />
       <SecondContainer />
-      <div className="borderLine" />
     </div>
   );
 };

@@ -32,12 +32,15 @@
 
       h5 {
         margin-top: 20px;
-        font-weight: 300;
+        font-weight: 400;
+        font-size: 13px;
       }
 
       h4 {
         margin-top: 20px;
-        font-weight: 350;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 25px;
       }
 
       .arrowBox {
@@ -72,13 +75,14 @@
     align-items: flex-end;
     width: 50%;
     padding-bottom: 50px;
-    background: linear-gradient(0deg, #daae63, aquamarine);
+    background: linear-gradient(180deg, #b98437, #f6d9a4);
     overflow: hidden;
 
     .productZindex {
       position: absolute;
-      width: 130px;
-      z-index: 2;
+      width: 150px;
+      bottom: 0;
+      right: 30px;
     }
 
     .background {
