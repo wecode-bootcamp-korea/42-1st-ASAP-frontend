@@ -10,7 +10,6 @@ const ProductDetail = () => {
   const [optionChoice, setOptionChioice] = useState('');
 
   const params = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://10.58.52.68:3000/products/detail/${params.id}`)
