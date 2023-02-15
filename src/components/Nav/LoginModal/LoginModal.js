@@ -20,8 +20,7 @@ const LoginModal = props => {
     };
   }, [isOpen]);
 
-  //TODO: 함수명 소문자로 변환
-  const login = () => {
+  const loginHandler = () => {
     fetch('http://10.58.52.97:8000/users/signin', {
       method: 'POST',
       headers: {
@@ -97,7 +96,7 @@ const LoginModal = props => {
 
         <button
           className="loginBtn"
-          onClick={login}
+          onClick={loginHandler}
           disabled={
             !(formData.email.includes('@') && formData.password.length > 5)
           }
