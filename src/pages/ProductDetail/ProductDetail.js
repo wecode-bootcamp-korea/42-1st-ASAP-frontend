@@ -14,6 +14,12 @@ const ProductDetail = () => {
   //     .then(data => setDetailData(data));
   // }, []);
 
+  // useEffect(() => {
+  //   fetch('/data/detailData.json')
+  //     .then(res => res.json())
+  //     .then(data => setDetailData(data));
+  // }, []);
+
   useEffect(() => {
     fetch('http://10.58.52.78:3000/products/detail/4')
       .then(res => res.json())
