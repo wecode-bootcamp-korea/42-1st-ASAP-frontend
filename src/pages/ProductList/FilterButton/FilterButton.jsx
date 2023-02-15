@@ -24,7 +24,7 @@ export default function FilterButton({ ModalHandler, isModal }) {
           필터
           <img
             className="filter-arrow"
-            src="./images/arrow.png"
+            src="./images/downarrow.png"
             alt="filter-arrow"
           />
           <img

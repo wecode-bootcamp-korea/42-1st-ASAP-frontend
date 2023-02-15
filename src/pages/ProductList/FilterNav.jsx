@@ -24,7 +24,7 @@ export default function FilterNav() {
             key={productListData.id}
             onClick={() => onClick(productListData.prductList)}
           >
-            <li className="navbarList">{productListData.prductList}</li>
+            <li className="navbar-list">{productListData.prductList}</li>
           </button>
         ))}
       </ul>
