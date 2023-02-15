@@ -1,4 +1,3 @@
-// import BodyCard from './../Card/BodyCard';
 import Card from '../Card/Card';
 import './BodyProductList.scss';
 

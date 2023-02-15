@@ -5,7 +5,6 @@ import './Card.scss';
 
 export default function Card({ cardData }) {
   const [inputValue, setInputValue] = useState();
-  // const [productData, setProductData] = useState([]);
   const [sizeChoice, setSizeChoice] = useState(cardData.options[0].size);
   const [loading, setLoading] = useState(false);
   const cartLoading = e => {
@@ -16,7 +15,6 @@ export default function Card({ cardData }) {
     const { value, id } = event.target;
     setSizeChoice(id);
     setInputValue(value);
-    // setChecked(index);
   };
 
   useEffect(() => {
@@ -61,7 +59,7 @@ export default function Card({ cardData }) {
           </p>
           <div className="radio-box">
             {cardData.options.map((element, index) => (
-              <label className="radio-label" key={index}>
+              <label className="radio-label" key={element.size}>
                 <input
                   id={element.size}
                   type="radio"

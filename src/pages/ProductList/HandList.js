@@ -27,6 +27,7 @@ export default function HandList() {
       });
   }, []);
 
+  //TODO: API 연결 시 동작할 코드
   useEffect(() => {
     fetch(
       `http://10.58.52.68:3000/products/2/12?formulation=${formulation}&scent=${scent}`,
@@ -41,6 +42,7 @@ export default function HandList() {
       });
   }, [scent, formulation, price]);
 
+  //TOFIX: mockData 연결 시 동작할 코드
   // useEffect(() => {
   //   fetch('./data/MockData.json', {
   //     method: 'GET',

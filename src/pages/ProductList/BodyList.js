@@ -18,6 +18,7 @@ export default function BodyList() {
     setIsModal(prev => !prev);
   };
 
+  //TODO: API 연결 시 동작할 코드
   useEffect(() => {
     fetch('http://10.58.52.68:3000/products/2/13', {
       method: 'GET',
@@ -42,6 +43,7 @@ export default function BodyList() {
       });
   }, [scents, formulations, prices, ingredient]);
 
+  //TOFIX: mockData 연결 시 동작할 코드
   // useEffect(() => {
   //   fetch('./data/MockData.json', {
   //     method: 'GET',

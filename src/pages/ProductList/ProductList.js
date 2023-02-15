@@ -24,6 +24,7 @@ const ProductList = () => {
     }
   };
 
+  //TOFIX: mockData 연결 시 동작할 코드
   // useEffect(() => {
   //   fetch('./data/MockData.json', {
   //     method: 'GET',
@@ -34,6 +35,7 @@ const ProductList = () => {
   //     });
   // }, []);
 
+  //TODO: API 연결 시 동작할 코드
   useEffect(() => {
     fetch('http://10.58.52.68:3000/products/2?limit=13', {
       method: 'GET',
