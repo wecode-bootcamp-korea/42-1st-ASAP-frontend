@@ -1,16 +1,8 @@
+import React from 'react';
 import { BodyFilterData } from '../Data/BodyFilterData';
 import './BodyFilter.scss';
-export default function BodyFilter({ onChange }) {
-  // useEffect(() => {
-  //   fetch('http://10.58.52.162:3000/products/body-hand/hand', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setCheckdeValues(data.data);
-  //     });
-  // }, []);
 
+export default function BodyFilter({ onChange }) {
   return (
     <div className="filter-box">
       {BodyFilterData.map(category => (
@@ -22,7 +14,7 @@ export default function BodyFilter({ onChange }) {
                 <input
                   id={subcategory.title}
                   type="checkbox"
-                  onChange={onChange}
+                  onChange={e => onChange(e, category.category)}
                   value={subcategory.title}
                   className="checkbox"
                   name={subcategory.title}

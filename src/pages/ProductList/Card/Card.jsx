@@ -5,9 +5,9 @@ import './Card.scss';
 
 export default function Card({ cardData }) {
   const [inputValue, setInputValue] = useState();
-  const [sizeChoice, setSizeChoice] = useState();
+  // const [productData, setProductData] = useState([]);
+  const [sizeChoice, setSizeChoice] = useState(cardData.options[0].size);
   const [loading, setLoading] = useState(false);
-
   const cartLoading = e => {
     setLoading(true);
   };
@@ -16,11 +16,12 @@ export default function Card({ cardData }) {
     const { value, id } = event.target;
     setSizeChoice(id);
     setInputValue(value);
+    // setChecked(index);
   };
 
   useEffect(() => {
     if (loading)
-      fetch('http://10.58.52.78:3000/orders/carts', {
+      fetch('http://10.58.52.68:3000/orders/carts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
@@ -64,10 +65,10 @@ export default function Card({ cardData }) {
                 <input
                   id={element.size}
                   type="radio"
-                  name={element.product_options_id}
-                  value={element.product_options_id}
+                  name={element.product_option_id}
+                  value={element.product_option_id}
                   onChange={handleChangeValue}
-                  checked={index === 0 && 'checked'}
+                  checked={element.size === sizeChoice && 'checked'}
                 />
                 {element.size}
               </label>

@@ -8,25 +8,18 @@ import './BodyList.scss';
 
 export default function BodyList() {
   const [BodycardList, setBodyCardList] = useState([]);
-  const [checkdeValues, setCheckdeValues] = useState(null);
+  const [scents, setScents] = useState('');
+  const [prices, setPrices] = useState('');
+  const [ingredient, setIngredient] = useState('');
+  const [formulations, setFormulations] = useState('');
   const [isModal, setIsModal] = useState(false);
 
   const ModalHandler = () => {
     setIsModal(prev => !prev);
   };
 
-  // useEffect(() => {
-  //   fetch('http://10.58.52.78:3000/products/2/13', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setBodyCardList(data.data);
-  //     });
-  // }, []);
-
   useEffect(() => {
-    fetch('./data/MockData.json', {
+    fetch('http://10.58.52.68:3000/products/2/13', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -35,8 +28,39 @@ export default function BodyList() {
       });
   }, []);
 
-  const onChange = e => {
-    setCheckdeValues(e.target.value);
+  useEffect(() => {
+    fetch(
+      `http://10.58.52.68:3000/products/2/13?formulation=${formulations}&scent=${scents}&ingredient${ingredient}`,
+      {
+        method: 'GET',
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        //
+        setBodyCardList(data.data);
+      });
+  }, [scents, formulations, prices, ingredient]);
+
+  // useEffect(() => {
+  //   fetch('./data/MockData.json', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setBodyCardList(data.data);
+  //     });
+  // }, []);
+
+  const onChange = (e, category) => {
+    if (category === '성분')
+      setIngredient(prev => (prev === e.target.value ? '' : e.target.value));
+    else if (category === '아로마')
+      setScents(prev => (prev === e.target.value ? '' : e.target.value));
+    else if (category === '가격 범위')
+      setPrices(prev => (prev === e.target.value ? '' : e.target.value));
+    else if (category === '제형 타입')
+      setFormulations(prev => (prev === e.target.value ? '' : e.target.value));
   };
 
   return (
@@ -47,10 +71,7 @@ export default function BodyList() {
         <FilterNav onChange={onChange} />
         {isModal && <BodyFilter setIsModal={setIsModal} onChange={onChange} />}
         <FilterButton ModalHandler={ModalHandler} isModal={isModal} />
-        <BodyProductList
-          BodycardList={BodycardList}
-          checkdeValues={checkdeValues}
-        />
+        <BodyProductList BodycardList={BodycardList} />
       </section>
       <section className="present-body">
         <div className="present-wrapper">

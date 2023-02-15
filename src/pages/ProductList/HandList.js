@@ -11,26 +11,25 @@ export default function HandList() {
   const [scent, setScent] = useState('');
   const [price, setPrice] = useState('');
   const [formulation, setFormulation] = useState('');
-  // console.log(scent, price, formulation);
   const [isModal, setIsModal] = useState(false);
 
   const ModalHandler = () => {
     setIsModal(prev => !prev);
   };
 
-  // useEffect(() => {
-  //   fetch('http://10.58.52.78:3000/products/2/12', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setHandCardList(data.data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('http://10.58.52.68:3000/products/2/12', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setHandCardList(data.data);
+      });
+  }, []);
 
   useEffect(() => {
     fetch(
-      `http://10.58.52.78/products/2/12?formulation=${formulation}&scent=${scent}&price${price}`,
+      `http://10.58.52.68:3000/products/2/12?formulation=${formulation}&scent=${scent}`,
       {
         method: 'GET',
       }
@@ -42,15 +41,15 @@ export default function HandList() {
       });
   }, [scent, formulation, price]);
 
-  useEffect(() => {
-    fetch('./data/MockData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setHandCardList(data.data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('./data/MockData.json', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setHandCardList(data.data);
+  //     });
+  // }, []);
 
   const onChange = (e, category) => {
     if (category === '아로마')

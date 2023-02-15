@@ -23,20 +23,9 @@ const ProductList = () => {
       return navigate('/product-list');
     }
   };
-  // GET
-  // getProductsByMainCategory
-  useEffect(() => {
-    fetch('./data/MockData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setAllProductData(data.data);
-      });
-  }, []);
 
   // useEffect(() => {
-  //   fetch('http://10.58.52.78:3000/products/2', {
+  //   fetch('./data/MockData.json', {
   //     method: 'GET',
   //   })
   //     .then(res => res.json())
@@ -44,6 +33,16 @@ const ProductList = () => {
   //       setAllProductData(data.data);
   //     });
   // }, []);
+
+  useEffect(() => {
+    fetch('http://10.58.52.68:3000/products/2?limit=13', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setAllProductData(data.data);
+      });
+  }, []);
 
   return (
     <>
