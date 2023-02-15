@@ -2,36 +2,85 @@
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
-  height: 500px;
+  position: relative;
+  // height: calc(100vh - 100px);
   padding-bottom: 30px;
   background-color: #fffef2;
-  border-bottom: 1px solid #000;
+  overflow: hidden;
+  padding-top: 150px;
 
-  .secondContainer-text {
-    margin-bottom: 200px;
-    width: 400px;
+  .nextBtn,
+  .preBtn {
+    border: none;
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+  }
 
-    .firstTextLine {
-      margin-bottom: 20px;
-      font-size: 15px;
-      font-weight: 300;
-    }
+  .nextBtn {
+    right: 0;
 
-    .secondTextLine {
-      margin-bottom: 20px;
+    p {
+      height: 60px;
+      width: 60px;
       font-size: 20px;
-    }
-
-    .thirdTextLine {
-      margin-bottom: 20px;
-      font-size: 15px;
-      font-weight: 300;
-    }
-
-    .showProducts {
-      background-color: transparent;
-      border: none;
+      background-color: #252525;
+      color: white;
       cursor: pointer;
+    }
+  }
+  .preBtn {
+    left: 0;
+
+    p {
+      height: 60px;
+      width: 60px;
+      font-size: 20px;
+      background-color: #252525;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .productContainer {
+    display: flex;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 1px;
+    }
+    .textLine {
+      min-width: 450px;
+      margin-top: 100px;
+      margin-left: 80px;
+      .firstTextLine {
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      .secondTextLine {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+
+      .thirdTextLine {
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 25px;
+      }
+
+      .showProducts {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
     }
   }
 }

@@ -6,7 +6,7 @@ const LoginModal = props => {
   const { isOpen, setIsOpen, setLoginStatus, setMenuOpen } = props;
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [signUpOpen, setSignUpOpen] = useState(false);
-  const [dataLift, setDataLift] = useState('');
+  const [showPw, setShowPw] = useState(false);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -20,8 +20,9 @@ const LoginModal = props => {
     };
   }, [isOpen]);
 
-  const Login = () => {
-    fetch('http://10.58.52.217:8000/user/signin', {
+  //TODO: 함수명 소문자로 변환
+  const login = () => {
+    fetch('http://10.58.52.97:8000/users/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -31,19 +32,14 @@ const LoginModal = props => {
         password: formData.password,
       }),
     })
-      .then(response => {
-        if (response.ok === true) {
-          return response.json('통신실패');
-        }
-        throw new Error();
-      })
-      .catch(error => console.log(error))
+      .then(response => response.json())
+      .catch(error => alert('서버와의 연결이 원활하지 않습니다'))
       .then(data => {
-        if (data.result) {
+        if (data.accessToken) {
           alert('로그인 되셨습니다');
+          localStorage.setItem('login-token', data.accessToken);
           setIsOpen(false);
           setFormData({ email: '', password: '' });
-          setLoginStatus('로그아웃');
         } else {
           alert('아이디 혹은 비밀번호를 확인해주세요!');
         }
@@ -73,25 +69,35 @@ const LoginModal = props => {
           />
         </div>
         <div className="loginText">로그인</div>
-        <label className="label1" for="inputEmail" />
-        <input
-          className="loginInput"
-          id="inputEmail"
-          name="email"
-          placeholder="이메일 주소"
-          onChange={changeFormInput}
-          value={formData.email}
-        />
-        <input
-          className="loginInput"
-          name="password"
-          placeholder="비밀번호"
-          onChange={changeFormInput}
-          value={formData.password}
-        />
+        <p className="idInputContainer">
+          <input
+            className="idInput"
+            id="inputEmail"
+            name="email"
+            onChange={changeFormInput}
+            value={formData.email}
+          />
+          <label className="idLabel">
+            <span className="idName">이메일주소</span>
+          </label>
+        </p>
+        <p className="pwInputContainer">
+          <input
+            className="pwInput"
+            name="password"
+            type="password"
+            onChange={changeFormInput}
+            value={formData.password}
+            autoComplete="current-password"
+          />
+          <label className="pwLabel">
+            <span className="pwName">비밀번호</span>
+          </label>
+        </p>
+
         <button
           className="loginBtn"
-          onClick={Login}
+          onClick={login}
           disabled={
             !(formData.email.includes('@') && formData.password.length > 5)
           }
@@ -107,7 +113,6 @@ const LoginModal = props => {
           setSignUpOpen={setSignUpOpen}
           setIsOpen={setIsOpen}
           setMenuOpen={setMenuOpen}
-          setDataLift={setDataLift}
         />
       </div>
     </div>

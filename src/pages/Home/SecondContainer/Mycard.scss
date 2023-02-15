@@ -1,0 +1,20 @@
+.mycard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 350px;
+  min-width: 350px;
+  height: 550px;
+  margin-right: 80px;
+  color: #252525;
+  .link {
+    .insideImg {
+      width: 120px;
+      margin-bottom: 30px;
+    }
+  }
+  .productName {
+    margin-bottom: 10px;
+  }
+}

@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './ScProduct.scss';
+import './Mycard.scss';
 
-const ScProduct = ({ pro }) => {
-  const { id, image_url, name, info } = pro;
+const Mycard = ({ pro }) => {
+  const { id, image_url, name, description } = pro;
 
   return (
-    <div className="scProduct" key={id}>
+    <div className="mycard">
       <Link className="link" to="/product-detail">
         <img className="insideImg" src={image_url} alt="productImage" />
       </Link>
-      <div>{name}</div>
-      <div>{info}</div>
+      <div className="productName">{name}</div>
+      <div>{description}</div>
     </div>
   );
 };
 
-export default ScProduct;
+export default Mycard;
