@@ -113,8 +113,8 @@ const Nav = () => {
               <button
                 className={!menuOpen ? 'navLoginBtn' : 'navLoginBtn clicked'}
               >
-                카트
-                <span className="cartCount">{quantityTotal()}</span>
+                결제
+                {/* <span className="cartCount">{quantityTotal()}</span> */}
               </button>
             </Link>
           </li>

@@ -24,10 +24,21 @@
     margin-top: 100px;
     font-size: 30px;
   }
-
   .orderInfoText {
-    color: gray;
-    height: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .orderInfoTextName {
+      font-size: 23px;
+      color: black;
+    }
+
+    .orderInfoTextEmail {
+      font-weight: 300;
+      margin-top: 10px;
+      font-size: 23px;
+      color: gray;
+    }
   }
 
   .inputForm {

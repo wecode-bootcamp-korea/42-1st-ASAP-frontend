@@ -28,6 +28,7 @@ function Payment() {
 
   const [paymentData, setPaymentData] = useState([]);
   const [cartData, setCartData] = useState([]);
+  const [userData, setUserData] = useState([]);
 
   const { email, lastName, firstName, address } = inputs;
 
@@ -39,7 +40,7 @@ function Payment() {
   let token = localStorage.getItem('login-token');
 
   useEffect(() => {
-    fetch('http://10.58.52.200:3000/orders/price', {
+    fetch('http://10.58.52.200:3000/users', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -47,7 +48,19 @@ function Payment() {
       },
     })
       .then(res => res.json())
-      .then(data => setPaymentData(data.data[0]));
+      .then(data => setUserData(data.data && data.data[0]));
+  }, []);
+
+  useEffect(() => {
+    fetch('http://10.58.52.200:3000/carts/price', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: token,
+      },
+    })
+      .then(res => res.json())
+      .then(data => setPaymentData(data.data && data.data[0]));
   }, []);
 
   useEffect(() => {
@@ -59,34 +72,11 @@ function Payment() {
       },
     })
       .then(res => res.json())
-      .then(data => setCartData(data.data));
+      .then(data => setCartData(data.data && data.data));
   }, []);
-  // console.log(paymentData.message[0].total_price);
 
-  // const onClickEmail = e => {
-  //   e.preventDefault();
-  //   if (inputs.email.includes('@')) {
-  //     setIsValid({ ...isValid, default: true, email: true });
-  //   } else {
-  //     setInputs({ email: '', lastName: '', firstName: '' });
-  //   }
-  // };
-  // const onClickName = e => {
-  //   e.preventDefault();
-  //   if (inputs.lastName && inputs.firstName) {
-  //     setIsValid({ ...isValid, default: false, name: true });
-  //   } else {
-  //     setIsValid({ ...isValid, name: false });
-  //   }
-  // };
   const onClickAddress = e => {
     e.preventDefault();
-    // if (address) {
-    //   setIsValid({ ...isValid, address: true });
-    // } else {
-    //   setIsValid({ ...isValid, address: false });
-    // }
-
     setIsValid({ ...isValid, address: true });
   };
 
@@ -126,8 +116,6 @@ function Payment() {
               name={email}
               displayText={displayText}
               isValid={isValid}
-              // onClickEmail={onClickEmail}
-              // onClickName={onClickName}
             />
           )}
 
@@ -140,6 +128,7 @@ function Payment() {
               onClickAddress={onClickAddress}
               choiceCountry={choiceCountry}
               handleCountry={handleCountry}
+              userData={userData}
             />
           )}
 
@@ -149,6 +138,7 @@ function Payment() {
               displayText={displayText}
               inputs={inputs}
               onClickPay={onClickPay}
+              userData={userData}
             />
           )}
         </div>
@@ -156,12 +146,7 @@ function Payment() {
       <div className="right">
         <section className="paymentOverview">
           <div className="overviewDetail">
-            <dt>상품 가격</dt>
-            <dd>-</dd>
-          </div>
-
-          <div className="overviewDetail">
-            <dt>배송</dt>
+            <dt>배송비</dt>
             <dd>₩0</dd>
           </div>
 

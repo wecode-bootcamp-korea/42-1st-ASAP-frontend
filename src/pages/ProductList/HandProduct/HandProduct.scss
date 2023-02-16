@@ -13,8 +13,10 @@
   .product-box {
     display: flex;
     flex-direction: column;
+    justify-items: center;
     align-items: center;
-    margin-right: 120px;
+    margin-right: 180px;
+    height: 800px;
 
     &:hover {
       .description-title {

@@ -74,7 +74,7 @@
     justify-content: center;
     align-items: flex-end;
     width: 50%;
-    padding-bottom: 50px;
+    // padding-bottom: 50px;
     background: linear-gradient(180deg, #b98437, #f6d9a4);
     overflow: hidden;
 
@@ -85,12 +85,17 @@
       right: 30px;
     }
 
-    .background {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      object-fit: cover;
+    .asapVideo {
+      height: 550px;
+      object-fit: fill;
     }
+
+    // .background {
+    //   position: absolute;
+    //   top: 0;
+    //   width: 100%;
+    //   object-fit: cover;
+    // }
   }
 }
 .firstAdContainerOpen {

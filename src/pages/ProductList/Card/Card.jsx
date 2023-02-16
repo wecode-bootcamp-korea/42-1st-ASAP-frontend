@@ -23,7 +23,7 @@ export default function Card({ cardData }) {
 
   useEffect(() => {
     if (loading)
-      fetch('http://10.58.52.200:3000/orders/carts', {
+      fetch('http://10.58.52.200:3000/carts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
@@ -59,7 +59,7 @@ export default function Card({ cardData }) {
             alt="hand-product-img"
           />
         </Link>
-        <div className="title-wrapper">
+        <div className="h-title-wrapper">
           <h3 className="title-name">{cardData.name}</h3>
           <p className="size">
             2 사이즈 / ￦&nbsp;

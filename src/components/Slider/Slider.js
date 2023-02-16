@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemCard from './ItemCard';
-import leftArrowImage from './images/slideArrowB.png';
+import leftArrowImage from './images/slideArrow.png';
 import rightArrowImage from './images/slideArrowB.png';
 import './Slider.scss';
 

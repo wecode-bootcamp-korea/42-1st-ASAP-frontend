@@ -1,20 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import {
-  getCartLength,
-  MenuContext,
-} from '../../components/Nav/MenuModal/Hide';
 import Slider from '../../components/Slider/Slider';
 import logoImage from './images/asaplogo_modified.png';
-import * as NavFunction from '../../components/Nav/Nav';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [detailData, setDetailData] = useState([]);
   const [optionChoice, setOptionChioice] = useState('');
   const [optionSize, setOptionSize] = useState();
-  const { cartLength } = useContext(MenuContext);
-  console.log(cartLength);
 
   const params = useParams();
 
@@ -34,10 +27,22 @@ const ProductDetail = () => {
 
   const onSubmitCart = event => {
     event.preventDefault();
-
-    getCartLength(optionChoice).then(console.log);
-
-    NavFunction.quantityTotal();
+    fetch('http://10.58.52.200:3000/carts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: token,
+      },
+      body: JSON.stringify({
+        userId: 1,
+        productOptionId: optionChoice,
+        quantity: 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      });
   };
 
   const onChangeOption = event => {

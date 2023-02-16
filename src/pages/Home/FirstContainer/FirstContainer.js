@@ -25,7 +25,16 @@ const FirstContainer = () => {
         </div>
       </div>
       <div className="firstAdContainer-right">
-        <img src="images/product04.png" alt="" className="productZindex" />
+        <video
+          autoPlay
+          loop
+          muted
+          width="100%"
+          height="100%"
+          className="asapVideo"
+        >
+          <source type="video/mp4" src="/videos/asap.mp4" />
+        </video>
       </div>
     </div>
   );
