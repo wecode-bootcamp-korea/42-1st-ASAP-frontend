@@ -1,43 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import {
+  getCartLength,
+  MenuContext,
+} from '../../components/Nav/MenuModal/Hide';
 import Slider from '../../components/Slider/Slider';
-import logoImage from '../../images/asaplogo_modified.png';
+import logoImage from './images/asaplogo_modified.png';
+import * as NavFunction from '../../components/Nav/Nav';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [detailData, setDetailData] = useState([]);
-  const [optionState, setOptionState] = useState(true);
   const [optionChoice, setOptionChioice] = useState('');
+  const [optionSize, setOptionSize] = useState();
+  const { cartLength } = useContext(MenuContext);
+  console.log(cartLength);
 
   const params = useParams();
 
+  const token = localStorage.getItem('login-token');
+
   useEffect(() => {
-    fetch(`http://10.58.52.68:3000/products/detail/${params.id}`)
+    fetch(`http://10.58.52.200:3000/products/detail/${params.id}`)
       .then(res => res.json())
       .then(data => setDetailData(data.data[0]));
   }, []);
 
+  useEffect(() => {
+    detailData.options && setOptionSize(detailData.options[0].size);
+  }, [detailData]);
+
+  const detailOption = detailData.options;
+
   const onSubmitCart = event => {
     event.preventDefault();
 
-    fetch('http://10.58.52.78:3000/orders/carts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify({
-        UserId: 1,
-        productOptionId: optionChoice,
-        quantity: 1,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => console.log(data));
+    getCartLength(optionChoice).then(console.log);
+
+    NavFunction.quantityTotal();
   };
 
   const onChangeOption = event => {
-    setOptionState(prev => !prev);
-    setOptionChioice(event.target.value);
+    const { value, id } = event.target;
+    setOptionChioice(value);
+    setOptionSize(id);
   };
 
   return (
@@ -76,7 +82,7 @@ const ProductDetail = () => {
                         <dt>사용감</dt>
                         <dd>
                           {detailData.feeling_of_use &&
-                            detailData.feeling_of_use.join(' , ')}
+                            detailData.feeling_of_use.join(', ')}
                         </dd>
                         <dt>향</dt>
                         <dd>
@@ -86,37 +92,31 @@ const ProductDetail = () => {
                         <dd>{detailData.main_ingredient}</dd>
                         <dt>사이즈</dt>
                         <dd className="radioBoxContainer">
-                          <div className="RadioBox">
-                            <input
-                              type="radio"
-                              id="option01"
-                              name="sizeText"
-                              className="radioBtn"
-                              value={
-                                detailData.options &&
-                                detailData.options[0].product_options_id
-                              }
-                              onChange={onChangeOption}
-                              checked={optionState === true}
-                            />
-                            <label htmlFor="option01">
-                              {detailData.options && detailData.options[0].size}
-                            </label>
+                          <div className="radioBox">
+                            {detailData.options &&
+                              detailData.options.map(optionRadio => (
+                                <div key={optionRadio.size}>
+                                  <label
+                                    className="optionSizeText"
+                                    htmlFor="option01"
+                                  >
+                                    <input
+                                      type="radio"
+                                      id={optionRadio.size}
+                                      name="sizeText"
+                                      className="radioBtn"
+                                      value={optionRadio.product_option_id}
+                                      onChange={onChangeOption}
+                                      checked={
+                                        optionRadio.size === optionSize &&
+                                        'checked'
+                                      }
+                                    />
 
-                            <input
-                              type="radio"
-                              id="option02"
-                              name="sizeText"
-                              className="radioBtn"
-                              value={
-                                detailData.options &&
-                                detailData.options[1].product_options_id
-                              }
-                              onChange={onChangeOption}
-                            />
-                            <label htmlFor="option02">
-                              {detailData.options && detailData.options[1].size}
-                            </label>
+                                    {optionRadio.size}
+                                  </label>
+                                </div>
+                              ))}
                           </div>
                         </dd>
                         <dd className="radioBoxContainer" />
@@ -125,9 +125,18 @@ const ProductDetail = () => {
                     <button className="addCart">
                       <span>
                         카트에 추가하기&nbsp;-&nbsp;₩
-                        {optionState
-                          ? detailData.options && detailData.options[0].price
-                          : detailData.options && detailData.options[1].price}
+                        {detailOption &&
+                          detailOption.filter(
+                            el =>
+                              el.product_option_id === optionChoice ||
+                              el.size === optionSize
+                          )[0] &&
+                          detailOption &&
+                          detailOption.filter(
+                            el =>
+                              el.product_option_id === optionChoice ||
+                              el.size === optionSize
+                          )[0].price}
                       </span>
                     </button>
                   </div>

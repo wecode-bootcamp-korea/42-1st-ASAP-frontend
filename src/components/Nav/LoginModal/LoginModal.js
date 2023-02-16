@@ -21,7 +21,7 @@ const LoginModal = props => {
   }, [isOpen]);
 
   const loginHandler = () => {
-    fetch('http://10.58.52.97:8000/users/signin', {
+    fetch('http://10.58.52.200:3000/users/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

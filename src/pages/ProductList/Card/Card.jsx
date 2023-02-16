@@ -6,10 +6,14 @@ import './Card.scss';
 export default function Card({ cardData }) {
   const [inputValue, setInputValue] = useState();
   const [sizeChoice, setSizeChoice] = useState(cardData.options[0].size);
+
   const [loading, setLoading] = useState(false);
+
   const cartLoading = e => {
     setLoading(true);
   };
+
+  let token = localStorage.getItem('login-token');
 
   const handleChangeValue = event => {
     const { value, id } = event.target;
@@ -19,10 +23,11 @@ export default function Card({ cardData }) {
 
   useEffect(() => {
     if (loading)
-      fetch('http://10.58.52.68:3000/orders/carts', {
+      fetch('http://10.58.52.200:3000/orders/carts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
+          authorization: token,
         },
         body: JSON.stringify({
           userId: 1,
@@ -44,7 +49,10 @@ export default function Card({ cardData }) {
   return (
     <div className="h-product-wrapper">
       <div className="product">
-        <Link className="product-detail-link" to="/product-detail">
+        <Link
+          className="product-detail-link"
+          to={`/productdetail/${cardData.id}`}
+        >
           <img
             className="hand-product"
             src={cardData.image_url}

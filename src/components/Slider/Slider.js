@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ItemCard from './ItemCard';
-import leftArrowImage from '../../images/slideArrow.png';
-import rightArrowImage from '../../images/slideArrowB.png';
+import leftArrowImage from './images/slideArrowB.png';
+import rightArrowImage from './images/slideArrowB.png';
 import './Slider.scss';
 
 const IMG_WIDTH = 500;
@@ -19,7 +19,7 @@ const Slider = () => {
   // }, []);
 
   useEffect(() => {
-    fetch('http://10.58.52.78:3000/products?limit=5')
+    fetch('http://10.58.52.200:3000/products?limit=5')
       .then(res => res.json())
       .then(data => setRecommendData(data.data));
   }, []);

@@ -6,7 +6,7 @@ export default function HandProduct({ HandData }) {
     <div className="product-wrapper">
       {HandData.map(handtListData => (
         <div className="product-box" key={handtListData.id}>
-          <Link className="button" to="/product-detail">
+          <Link className="button" to={`/productdetail/${handtListData.id}`}>
             <img
               className="product-photo"
               src={handtListData.image_url}

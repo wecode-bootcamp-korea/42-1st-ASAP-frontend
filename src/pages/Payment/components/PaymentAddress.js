@@ -13,6 +13,9 @@ function PaymentAddress({
   inputStyle,
   isAddressValid,
   onClickAddress,
+  choiceCountry,
+  handleCountry,
+  onClickPay,
 }) {
   return (
     <div className="paymentAddress">
@@ -39,11 +42,15 @@ function PaymentAddress({
         />
       </form>
       <div className="countryNumber">
-        <select name="country" className="selectCountry">
-          <option value="usa">USA</option>
-          <option value="chn">CHN</option>
-          <option value="jpn">JPN</option>
-          <option value="kor">KOR</option>
+        <select
+          name="country"
+          className="selectCountry"
+          onChange={handleCountry}
+        >
+          <option value="USA">USA</option>
+          <option value="CHN">CHN</option>
+          <option value="JPN">JPN</option>
+          <option value="KOR">KOR</option>
         </select>
         <InputTemplate
           value={address}

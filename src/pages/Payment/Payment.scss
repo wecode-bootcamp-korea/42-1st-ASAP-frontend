@@ -15,7 +15,7 @@
 
       .logo {
         position: absolute;
-        width: 100px;
+        width: 130px;
         left: 40px;
       }
     }
@@ -62,17 +62,50 @@
       flex-direction: row;
       justify-content: space-between;
       margin-top: 30px;
-      margin-bottom: 30px;
       padding-top: 15px;
       padding-bottom: 15px;
       border-top: 1px solid gray;
       border-bottom: 1px solid gray;
     }
 
+    .cartDataList {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid black;
+
+      .cartImage {
+        width: 30px;
+        margin-left: 15px;
+      }
+
+      .cartTextWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        .cartTextName {
+          font-weight: 700;
+        }
+        .cartTextPrice {
+          margin-top: 10px;
+        }
+        .cartTextQuantity {
+          margin-top: 10px;
+          color: gray;
+        }
+      }
+    }
+
     .presentOption {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: 20px;
 
       .presentLeft {
         display: flex;

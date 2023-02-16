@@ -3,7 +3,7 @@ import './ShippingCheckbox.scss';
 
 function Checkbox({ isCheckValid, onClickChecked, shippingCheckboxText }) {
   return (
-    <div className="checkbox">
+    <div className="shippingCheckboxWrapper">
       <label id="shippingCheckboxLabel" for="shippingCheckbox">
         <input
           type="checkbox"

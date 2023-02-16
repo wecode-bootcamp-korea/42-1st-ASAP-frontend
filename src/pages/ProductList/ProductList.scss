@@ -2,11 +2,15 @@
   background-color: #f6f5e8;
 }
 
-.background-img {
-  position: relative;
-  width: 100%;
-  height: 460px;
-  background-size: cover;
+.bgImgWrapper {
+  overflow: hidden;
+  height: 420px;
+
+  .background-img {
+    position: relative;
+    background-size: cover;
+    top: -200px;
+  }
 }
 
 .goods {

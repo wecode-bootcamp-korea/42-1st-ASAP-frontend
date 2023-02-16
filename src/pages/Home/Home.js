@@ -6,7 +6,7 @@ import SecondContainer from './SecondContainer/SecondContainer';
 import './Home.scss';
 
 const Home = () => {
-  const [menuOpen, setMenuOpen] = useContext(MenuContext);
+  const { menuOpen, setMenuOpen } = useContext(MenuContext);
 
   return (
     <div className={!menuOpen ? 'mainArea' : 'mainAreaClose'}>

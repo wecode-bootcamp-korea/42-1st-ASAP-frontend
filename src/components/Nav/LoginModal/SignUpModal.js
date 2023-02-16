@@ -19,7 +19,7 @@ const SignupModal = props => {
     signUpForm.first_name.length > 0;
 
   const signUp = () => {
-    fetch('http://10.58.52.97:8000/users/signup', {
+    fetch('http://10.58.52.68:3000/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

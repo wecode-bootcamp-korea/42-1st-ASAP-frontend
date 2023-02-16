@@ -18,7 +18,7 @@ export default function HandList() {
   };
 
   useEffect(() => {
-    fetch('http://10.58.52.68:3000/products/2/12', {
+    fetch('http://10.58.52.200:3000/products/2/12', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -30,7 +30,7 @@ export default function HandList() {
   //TODO: API 연결 시 동작할 코드
   useEffect(() => {
     fetch(
-      `http://10.58.52.68:3000/products/2/12?formulation=${formulation}&scent=${scent}`,
+      `http://10.58.52.200:3000products/2/12?formulation=${formulation}&scent=${scent}`,
       {
         method: 'GET',
       }
