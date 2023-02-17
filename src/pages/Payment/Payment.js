@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MenuContext } from '../../components/Nav/MenuModal/Hide';
 import PaymentEmail from './components/PaymentEmail';
 import PaymentAddress from './components/PaymentAddress';
 import PaymentShipping from './components/PaymentShipping';
@@ -30,6 +31,7 @@ function Payment() {
   const [paymentData, setPaymentData] = useState([]);
   const [cartData, setCartData] = useState([]);
   const [userData, setUserData] = useState([]);
+  const [menuOpen, setMenuOpen] = useContext(MenuContext);
 
   const { email, lastName, firstName, address } = inputs;
 
@@ -108,7 +110,7 @@ function Payment() {
   };
 
   return (
-    <div className="Payment">
+    <div className={!menuOpen ? 'Payment' : 'PaymentClose'}>
       <div className="left">
         <div className="logoWrapper">
           <img alt="logo" className="logo" src="./images/asaplogo.png" />

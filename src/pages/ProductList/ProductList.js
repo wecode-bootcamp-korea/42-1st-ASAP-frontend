@@ -5,11 +5,12 @@ import BodyProduct from './BodyProduct/BodyProduct';
 import Nav from '../../components/Nav/Nav';
 import ProductBox from './ProductBox/ProductBox';
 import './ProductList.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { MenuContext } from '../../components/Nav/MenuModal/Hide';
 
 const ProductList = () => {
   const [allProductData, setAllProductData] = useState([]);
-
+  const [menuOpen, setMenuOpen] = useContext(MenuContext);
   const HandData = allProductData.filter(el => el.sub_category === '핸드');
   const BodyData = allProductData.filter(el => el.sub_category === '바디');
 
@@ -48,7 +49,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="body">
+    <div className={!menuOpen ? 'body' : 'bodyClose'}>
       <div className="bgImgWrapper">
         <img
           className="background-img"
@@ -109,7 +110,7 @@ const ProductList = () => {
         <div className="product-description">
           <ProductBox
             title="바디"
-            seeAll="바디 모두보기&#40;6&#41;"
+            seeAll="바디 모두보기&#40;8&#41;"
             to="/body-list"
             allProductData={allProductData}
           >

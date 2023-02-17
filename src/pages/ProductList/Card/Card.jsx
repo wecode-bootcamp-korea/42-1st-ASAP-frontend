@@ -23,7 +23,7 @@ export default function Card({ cardData }) {
 
   useEffect(() => {
     if (loading)
-      fetch('http://10.58.52.200:3000/carts', {
+      fetch('http://10.58.52.186:3000/carts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',

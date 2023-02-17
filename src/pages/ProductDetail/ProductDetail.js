@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { MenuContext } from '../../components/Nav/MenuModal/Hide';
 import Slider from '../../components/Slider/Slider';
 import logoImage from './images/asaplogo_modified.png';
 import './ProductDetail.scss';
@@ -9,6 +10,7 @@ const ProductDetail = () => {
   const [optionChoice, setOptionChioice] = useState('');
   const [optionSize, setOptionSize] = useState();
   const [navCartData, setNavCartData] = useState([]);
+  const [menuOpen, setMenuOpen] = useContext(MenuContext);
 
   const params = useParams();
 
@@ -67,7 +69,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="productDetail">
+    <div className={!menuOpen ? 'productDetail' : 'productDetailClose'}>
       {detailData && (
         <>
           <div className="topWrapper">

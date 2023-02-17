@@ -14,10 +14,7 @@ export default function ProductBox({
     <div className="title-wrapper">
       <h1 className="title">{title}</h1>
       <p className="title-box">{children}</p>
-      <Link
-        className={linkstyle ? 'scent' : 'see-all'}
-        to={`/productdetail/${allProductData.id}`}
-      >
+      <Link className={linkstyle ? 'scent' : 'see-all'} to={to}>
         {seeAll}
         <img
           className="see-all-arrow"
