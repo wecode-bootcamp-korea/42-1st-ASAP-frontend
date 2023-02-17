@@ -5,11 +5,12 @@ import BodyProduct from './BodyProduct/BodyProduct';
 import Nav from '../../components/Nav/Nav';
 import ProductBox from './ProductBox/ProductBox';
 import './ProductList.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { MenuContext } from '../../components/Nav/MenuModal/Hide';
 
 const ProductList = () => {
   const [allProductData, setAllProductData] = useState([]);
-
+  const [menuOpen, setMenuOpen] = useContext(MenuContext);
   const HandData = allProductData.filter(el => el.sub_category === '핸드');
   const BodyData = allProductData.filter(el => el.sub_category === '바디');
 
@@ -26,19 +27,8 @@ const ProductList = () => {
   };
 
   //TOFIX: mockData 연결 시 동작할 코드
-  useEffect(() => {
-    fetch('./data/MockData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setAllProductData(data.data);
-      });
-  }, []);
-
-  //TODO: API 연결 시 동작할 코드
   // useEffect(() => {
-  //   fetch('http://10.58.52.68:3000/products/2?limit=13', {
+  //   fetch('./data/MockData.json', {
   //     method: 'GET',
   //   })
   //     .then(res => res.json())
@@ -47,13 +37,26 @@ const ProductList = () => {
   //     });
   // }, []);
 
+  // TODO: API 연결 시 동작할 코드
+  useEffect(() => {
+    fetch('http://10.58.52.186:3000/products/2?limit=13', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setAllProductData(data.data);
+      });
+  }, []);
+
   return (
-    <div className="body">
-      <img
-        className="background-img"
-        src="./images/background-img.jpeg"
-        alt="background-img"
-      />
+    <div className={!menuOpen ? 'body' : 'bodyClose'}>
+      <div className="bgImgWrapper">
+        <img
+          className="background-img"
+          src="./images/background-img.jpeg"
+          alt="background-img"
+        />
+      </div>
       <div className="goods">
         <Link to="/">
           <img className="logo" src="./images/asaplogo_w.png" alt="logo-img" />
@@ -91,6 +94,7 @@ const ProductList = () => {
             title="핸드"
             seeAll="핸드 모두보기&#40;5&#41;"
             to="/hand-list"
+            allProductData={allProductData}
           >
             매일 우리에게 안락함을 선사하는 손은 보살핌을
             <br />
@@ -106,8 +110,9 @@ const ProductList = () => {
         <div className="product-description">
           <ProductBox
             title="바디"
-            seeAll="바디 모두보기&#40;6&#41;"
+            seeAll="바디 모두보기&#40;8&#41;"
             to="/body-list"
+            allProductData={allProductData}
           >
             보태니컬 원료가 풍부하게 함유된 바디 클랜저,
             <br />
@@ -121,7 +126,13 @@ const ProductList = () => {
       </section>
       <section className="scent-body">
         <div className="scent-wrapper">
-          <ProductBox title="향수" seeAll="향수보기" to="/" linkstyle={true}>
+          <ProductBox
+            title="향수"
+            seeAll="향수보기"
+            to="/"
+            linkstyle={true}
+            allProductData={allProductData}
+          >
             일본의 숲과 높은 산의 정상, 모로코의 재래시장처럼
             <br />
             다채로운 지역 특성에서 영감을 받아 탄생한

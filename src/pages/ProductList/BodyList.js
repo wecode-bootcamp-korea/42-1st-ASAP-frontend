@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { MenuContext } from '../../components/Nav/MenuModal/Hide';
 import FilterNav from './FilterNav';
 import BodyFilter from './Filter/BodyFilter';
 import BodyProductList from './BodyProductList/BodyProductList';
@@ -13,6 +14,7 @@ export default function BodyList() {
   const [ingredient, setIngredient] = useState('');
   const [formulations, setFormulations] = useState('');
   const [isModal, setIsModal] = useState(false);
+  const [menuOpen, setMenuOpen] = useContext(MenuContext);
 
   const ModalHandler = () => {
     setIsModal(prev => !prev);
@@ -20,7 +22,7 @@ export default function BodyList() {
 
   //TODO: API 연결 시 동작할 코드
   useEffect(() => {
-    fetch('http://10.58.52.68:3000/products/2/13', {
+    fetch('http://10.58.52.186:3000/products/2/13', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -31,7 +33,7 @@ export default function BodyList() {
 
   useEffect(() => {
     fetch(
-      `http://10.58.52.68:3000/products/2/13?formulation=${formulations}&scent=${scents}&ingredient${ingredient}`,
+      `http://10.58.52.186:3000/products/2/13?formulation=${formulations}&scent=${scents}&ingredient${ingredient}`,
       {
         method: 'GET',
       }
@@ -66,9 +68,11 @@ export default function BodyList() {
   };
 
   return (
-    <>
+    <div className={!menuOpen ? 'bodyContainer' : 'bodyContainerClose'}>
       <section className="body-body">
-        <img className="logo" src="./images/asaplogo.png" alt="logo-img" />
+        <Link to="/">
+          <img className="logo" src="./images/asaplogo.png" alt="logo-img" />
+        </Link>
         <h1 className="title">바디</h1>
         <FilterNav onChange={onChange} />
         {isModal && <BodyFilter setIsModal={setIsModal} onChange={onChange} />}
@@ -97,6 +101,6 @@ export default function BodyList() {
           alt="present-img"
         />
       </section>
-    </>
+    </div>
   );
 }

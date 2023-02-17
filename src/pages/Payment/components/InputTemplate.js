@@ -18,6 +18,7 @@ function InputTemplate({
         id="inputTrue"
         value={value}
         onChange={displayText}
+        autoComplete="off"
       />
       <label className="labelInput" for="inputTrue">
         {element}

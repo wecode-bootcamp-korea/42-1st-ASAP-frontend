@@ -1,7 +1,7 @@
 import React from 'react';
 import FooterMenuList from './FooterMenuList';
 import FooterCheckbox from './FooterCheckbox';
-import leftArrowImage from '../../images/slideArrow.png';
+import leftArrowImage from './images/slideArrow.png';
 import './FooterBlock.scss';
 
 const FooterBlock = ({ FOOTER_DATA }) => {

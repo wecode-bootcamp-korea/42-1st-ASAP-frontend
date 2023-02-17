@@ -2,7 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductBox.scss';
 
-export default function ProductBox({ children, title, seeAll, to, linkstyle }) {
+export default function ProductBox({
+  children,
+  title,
+  seeAll,
+  to,
+  linkstyle,
+  allProductData,
+}) {
   return (
     <div className="title-wrapper">
       <h1 className="title">{title}</h1>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { MenuContext } from '../../components/Nav/MenuModal/Hide';
 import FilterNav from './FilterNav';
 import HandFilter from './Filter/HandFilter';
 import HandProductList from './HandProductList/HandProductList';
@@ -12,13 +13,14 @@ export default function HandList() {
   const [price, setPrice] = useState('');
   const [formulation, setFormulation] = useState('');
   const [isModal, setIsModal] = useState(false);
+  const [menuOpen, setMenuOpen] = useContext(MenuContext);
 
   const ModalHandler = () => {
     setIsModal(prev => !prev);
   };
 
   useEffect(() => {
-    fetch('http://10.58.52.68:3000/products/2/12', {
+    fetch('http://10.58.52.186:3000/products/2/12', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -30,7 +32,7 @@ export default function HandList() {
   //TODO: API 연결 시 동작할 코드
   useEffect(() => {
     fetch(
-      `http://10.58.52.68:3000/products/2/12?formulation=${formulation}&scent=${scent}`,
+      `http://10.58.52.186:3000/products/2/12?formulation=${formulation}&scent=${scent}&price${price}`,
       {
         method: 'GET',
       }
@@ -63,9 +65,11 @@ export default function HandList() {
   };
 
   return (
-    <>
+    <div className={!menuOpen ? 'handContainer' : 'handContainerClose'}>
       <section className="hand-body">
-        <img className="logo" src="./images/asaplogo.png" alt="logo-img" />
+        <Link to="/">
+          <img className="logo" src="./images/asaplogo.png" alt="logo-img" />
+        </Link>
         <h1 className="title">핸드</h1>
         <FilterNav onChange={onChange} />
         {isModal && <HandFilter setIsModal={setIsModal} onChange={onChange} />}
@@ -94,6 +98,6 @@ export default function HandList() {
           alt="present-img"
         />
       </section>
-    </>
+    </div>
   );
 }

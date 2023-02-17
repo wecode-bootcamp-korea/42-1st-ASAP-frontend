@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { MenuContext } from '../Nav/MenuModal/Hide';
 import FooterBlock from './FooterBlock';
 import './Footer.scss';
+import Menu from '../Nav/MenuModal/Menu';
 
 function Footer() {
+  const [menuOpen, setMenuOpen] = useContext(MenuContext);
+
   return (
-    <div className="Footer">
+    <div className={!menuOpen ? 'Footer' : 'FooterClose'}>
       <div className="footerBlockWrapper">
         <FooterBlock FOOTER_DATA={FOOTER_DATA} />
       </div>

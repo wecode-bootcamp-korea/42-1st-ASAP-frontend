@@ -3,7 +3,7 @@ import Checkbox from './ShippingCheckbox';
 import ShippingInputBox from './ShippingInputBox';
 import './PaymentShipping.scss';
 
-function PaymentShipping({ displayText }) {
+function PaymentShipping({ displayText, onClickPay }) {
   const [isCheckValidShipping, setIsCheckValidShipping] = useState(false);
   const [isCheckValidGift, setIsCheckValidGift] = useState(false);
 
@@ -57,7 +57,9 @@ function PaymentShipping({ displayText }) {
         />
       )}
 
-      <button className="btnGo">결제하기</button>
+      <button className="btnGo" onClick={onClickPay}>
+        결제하기
+      </button>
     </div>
   );
 }

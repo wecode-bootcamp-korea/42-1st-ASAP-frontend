@@ -13,13 +13,22 @@ function PaymentAddress({
   inputStyle,
   isAddressValid,
   onClickAddress,
+  choiceCountry,
+  handleCountry,
+  onClickPay,
+  userData,
 }) {
   return (
     <div className="paymentAddress">
       <section className="orderInfo">
         <h2 className="noticeName">주문자 성함</h2>
-        <span className="orderInfoText">{firstName}님</span>
-        <span className="orderInfoText">{email}</span>
+        <div className="orderInfoText">
+          <span className="orderInfoTextName">
+            {userData.last_name}&nbsp;
+            {userData.first_name}&nbsp;님
+          </span>
+          <span className="orderInfoTextEmail">{userData.email}</span>
+        </div>
       </section>
       <h2 className="noticeWhere">주문을 어디로 보내시겠습니까?</h2>
       <form className="inputForm">
@@ -39,11 +48,15 @@ function PaymentAddress({
         />
       </form>
       <div className="countryNumber">
-        <select name="country" className="selectCountry">
-          <option value="usa">USA</option>
-          <option value="chn">CHN</option>
-          <option value="jpn">JPN</option>
-          <option value="kor">KOR</option>
+        <select
+          name="country"
+          className="selectCountry"
+          onChange={handleCountry}
+        >
+          <option value="USA">USA</option>
+          <option value="CHN">CHN</option>
+          <option value="JPN">JPN</option>
+          <option value="KOR">KOR</option>
         </select>
         <InputTemplate
           value={address}

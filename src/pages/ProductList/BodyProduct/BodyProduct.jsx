@@ -6,7 +6,7 @@ export default function BodyProduct({ BodyData }) {
     <div className="product-wrapper">
       {BodyData.map(bodyListData => (
         <div className="product-box" key={bodyListData.id}>
-          <Link className="button" to="/Product-Detail">
+          <Link className="button" to={`/productdetail/${bodyListData.id}`}>
             <img
               className="product-photo"
               src={bodyListData.image_url}

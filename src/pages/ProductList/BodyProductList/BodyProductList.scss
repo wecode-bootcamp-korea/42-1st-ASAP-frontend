@@ -1,8 +1,17 @@
 .card-box {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 100px;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  // display: flex;
+  // align-items: flex-end;
+  // flex-wrap: wrap;
+  // padding-top: 100px;
+  // justify-content: space-around;
+
+  .container-box {
+    margin-left: 60px;
+    height: 100%;
+  }
 
   .b-product-title {
     margin-left: 40px;

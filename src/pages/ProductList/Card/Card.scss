@@ -1,5 +1,10 @@
 .h-product-wrapper {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+
   width: 400px;
+
   margin-left: 60px;
   margin-bottom: 50px;
 
@@ -36,14 +41,17 @@
     align-items: center;
 
     .hand-product {
-      width: 160px;
       height: 370px;
+      width: 160px;
       padding: 20px;
       background-size: cover;
     }
   }
 
-  .title-wrapper {
+  .h-title-wrapper {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
     text-align: center;
     margin-top: 30px;
     line-height: 2;
@@ -57,7 +65,6 @@
     visibility: hidden;
 
     .radio-label {
-      margin-right: 30px;
     }
   }
 

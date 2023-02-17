@@ -1,16 +1,21 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, Component } from 'react';
 import { MenuContext } from './MenuModal/Hide';
+import { Link } from 'react-router-dom';
 import Menu from './MenuModal/Menu';
 import LoginModal from './LoginModal/LoginModal';
 import './Nav.scss';
+
+export const quantityTotal = React.createContext();
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginStatus, setLoginStatus] = useState('로그인');
   const [menuOpen, setMenuOpen] = useContext(MenuContext);
-  const token = localStorage.getItem('login-token');
   const [menuSelected, setMenuSelected] = useState(0);
   const [navMenuList, setNavMenuList] = useState([]);
+  const [navCartData, setNavCartData] = useState([]);
+
+  const token = localStorage.getItem('login-token');
 
   useEffect(() => {
     fetch('/data/menulist.json')
@@ -18,9 +23,29 @@ const Nav = () => {
       .then(data => setNavMenuList(data));
   }, []);
 
+  useEffect(() => {
+    fetch('http://10.58.52.186:3000/carts/quantity', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: token,
+      },
+    })
+      .then(res => res.json())
+      .then(data => setNavCartData(data.data[0].quantity));
+  }, []);
+
   const menuSelect = id => {
     setMenuSelected(id - 1);
   };
+
+  // function quantityTotal() {
+  //   let quantity = 0;
+  //   for (let i = 0; i < navCartData.length; i++) {
+  //     quantity += navCartData[i].info[0].quantity;
+  //   }
+  //   return quantity;
+  // }
 
   const deleteToken = () => {
     localStorage.removeItem('login-token');
@@ -84,11 +109,14 @@ const Nav = () => {
             </div>
           </li>
           <li className="menuBtn">
-            <button
-              className={!menuOpen ? 'navLoginBtn' : 'navLoginBtn clicked'}
-            >
-              카트
-            </button>
+            <Link className="cartLink" to="/payment">
+              <button
+                className={!menuOpen ? 'navLoginBtn' : 'navLoginBtn clicked'}
+              >
+                결제
+                <span className="cartCount">{navCartData}</span>
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
