@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PaymentEmail from './components/PaymentEmail';
 import PaymentAddress from './components/PaymentAddress';
 import PaymentShipping from './components/PaymentShipping';
@@ -37,10 +38,12 @@ function Payment() {
     setInputs({ ...inputs, [name]: value });
   };
 
+  const navigate = useNavigate();
+
   let token = localStorage.getItem('login-token');
 
   useEffect(() => {
-    fetch('http://10.58.52.200:3000/users', {
+    fetch('http://10.58.52.186:3000/users', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -52,7 +55,7 @@ function Payment() {
   }, []);
 
   useEffect(() => {
-    fetch('http://10.58.52.200:3000/carts/price', {
+    fetch('http://10.58.52.186:3000/carts/price', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -64,7 +67,7 @@ function Payment() {
   }, []);
 
   useEffect(() => {
-    fetch('http://10.58.52.200:3000/carts', {
+    fetch('http://10.58.52.186:3000/carts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -82,7 +85,7 @@ function Payment() {
 
   const onClickPay = e => {
     e.preventDefault();
-    fetch('http://10.58.52.200:3000/orders', {
+    fetch('http://10.58.52.186:3000/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -98,8 +101,10 @@ function Payment() {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-      })
-      .finally(() => alert('결제가 완료되었습니다.'));
+      });
+    // .finally(() => alert('결제가 완료되었습니다.'));
+    alert('결제가 완료되었습니다.');
+    navigate('/');
   };
 
   return (

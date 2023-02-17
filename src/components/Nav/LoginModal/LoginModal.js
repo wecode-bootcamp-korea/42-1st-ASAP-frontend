@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SignupModal from './SignUpModal';
+import deleteImg from './images/delete.png';
 import './LoginModal.scss';
 
 const LoginModal = props => {
@@ -21,7 +22,7 @@ const LoginModal = props => {
   }, [isOpen]);
 
   const loginHandler = () => {
-    fetch('http://10.58.52.200:3000/users/signin', {
+    fetch('http://10.58.52.186:3000/users/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -58,7 +59,7 @@ const LoginModal = props => {
         <div className="loginDelete">
           <img
             className="closeBtn"
-            src="images/delete.png"
+            src={deleteImg}
             onClick={() => {
               setIsOpen(false);
               setMenuOpen(false);
@@ -75,6 +76,7 @@ const LoginModal = props => {
             name="email"
             onChange={changeFormInput}
             value={formData.email}
+            autoComplete="off"
           />
           <label className="idLabel">
             <span className="idName">이메일주소</span>

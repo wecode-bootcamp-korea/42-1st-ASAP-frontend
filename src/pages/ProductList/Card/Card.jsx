@@ -41,6 +41,7 @@ export default function Card({ cardData }) {
         })
         .finally(() => {
           setLoading(false);
+          alert('상품이 추가되었습니다');
         });
   }, [loading]);
 
@@ -62,7 +63,7 @@ export default function Card({ cardData }) {
         <div className="h-title-wrapper">
           <h3 className="title-name">{cardData.name}</h3>
           <p className="size">
-            2 사이즈 / ￦&nbsp;
+            {cardData.options.length} 사이즈 / ￦&nbsp;
             {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원 부터
           </p>
           <div className="radio-box">

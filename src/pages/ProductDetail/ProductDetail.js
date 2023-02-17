@@ -8,13 +8,14 @@ const ProductDetail = () => {
   const [detailData, setDetailData] = useState([]);
   const [optionChoice, setOptionChioice] = useState('');
   const [optionSize, setOptionSize] = useState();
+  const [navCartData, setNavCartData] = useState([]);
 
   const params = useParams();
 
   const token = localStorage.getItem('login-token');
 
   useEffect(() => {
-    fetch(`http://10.58.52.200:3000/products/detail/${params.id}`)
+    fetch(`http://10.58.52.186:3000/products/detail/${params.id}`)
       .then(res => res.json())
       .then(data => setDetailData(data.data[0]));
   }, []);
@@ -23,11 +24,23 @@ const ProductDetail = () => {
     detailData.options && setOptionSize(detailData.options[0].size);
   }, [detailData]);
 
+  // useEffect(() => {
+  //   fetch('http://10.58.52.200:3000/carts/quantity', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json;charset=utf-8',
+  //       authorization: token,
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => setNavCartData(data.data[0].quantity));
+  // }, [onSubmitCart]);
+
   const detailOption = detailData.options;
 
   const onSubmitCart = event => {
     event.preventDefault();
-    fetch('http://10.58.52.200:3000/carts', {
+    fetch('http://10.58.52.186:3000/carts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -43,6 +56,8 @@ const ProductDetail = () => {
       .then(data => {
         console.log(data);
       });
+
+    alert('상품이 추가되었습니다');
   };
 
   const onChangeOption = event => {

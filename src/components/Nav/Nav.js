@@ -24,7 +24,7 @@ const Nav = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://10.58.52.200:3000/carts', {
+    fetch('http://10.58.52.186:3000/carts/quantity', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -32,20 +32,20 @@ const Nav = () => {
       },
     })
       .then(res => res.json())
-      .then(data => setNavCartData(data.data));
+      .then(data => setNavCartData(data.data[0].quantity));
   }, []);
 
   const menuSelect = id => {
     setMenuSelected(id - 1);
   };
 
-  function quantityTotal() {
-    let quantity = 0;
-    for (let i = 0; i < navCartData.length; i++) {
-      quantity += navCartData[i].info[0].quantity;
-    }
-    return quantity;
-  }
+  // function quantityTotal() {
+  //   let quantity = 0;
+  //   for (let i = 0; i < navCartData.length; i++) {
+  //     quantity += navCartData[i].info[0].quantity;
+  //   }
+  //   return quantity;
+  // }
 
   const deleteToken = () => {
     localStorage.removeItem('login-token');
@@ -114,7 +114,7 @@ const Nav = () => {
                 className={!menuOpen ? 'navLoginBtn' : 'navLoginBtn clicked'}
               >
                 결제
-                {/* <span className="cartCount">{quantityTotal()}</span> */}
+                <span className="cartCount">{navCartData}</span>
               </button>
             </Link>
           </li>
