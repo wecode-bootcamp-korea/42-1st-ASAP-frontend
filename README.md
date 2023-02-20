@@ -1,6 +1,7 @@
-​
+​![asaplogo_w](https://user-images.githubusercontent.com/118322531/219989726-44085f88-591e-4586-ab14-e86adb52f667.png)
 
-## oo 프로젝트 Front-end/Back-end 소개
+
+## ASAP 프로젝트 Front-end/Back-end 소개
 
 - 프리미엄 코스메틱 브랜드 Aesop 클론 프로젝트
 - 짧은 프로젝트 기간동안 개발에 집중해야 하므로 디자인/기획 부분만 클론했습니다.
