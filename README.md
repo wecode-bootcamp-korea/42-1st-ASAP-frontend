@@ -23,7 +23,7 @@
 
 ### 데모 영상(이미지 클릭)
 
-[![ASAP 페이지 데모영상](http://img.youtu.be/oADqkrk6GPM/0.jpg)](https://youtu.be/oADqkrk6GPM)
+[![ASAP 페이지 데모영상]((http://img.youtube.com/vi/oADqkrk6GPM/0.jpg)](https://youtu.be/oADqkrk6GPM)
 ​
 
 ## 적용 기술 및 구현 기능
